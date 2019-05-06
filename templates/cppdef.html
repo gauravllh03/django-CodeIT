@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Default Arguments in C++ Functions</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>The default arguments are used when you provide no arguments or only few arguments while calling a function. The default arguments are used during compilation of program. For example, lets say you have a user-defined function <code>sum</code> declared like this: <code>int sum(int a=10, int b=20)</code>, now while calling this function you do not provide any arguments, simply called sum(); then in this case the result would be 30, compiler used the default values 10 and 20 declared in function signature. If you pass only one argument like this: sum(80) then the result would be 100, using the passed argument 80 as first value and 20 taken from the default argument.</p>
+<h2>Example: Default arguments in C++</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int sum(int a, int b=10, int c=20);
+
+int main(){
+   /* In this case a value is passed as
+    * 1 and b and c values are taken from
+    * default arguments.
+    */
+   cout&lt;&lt;sum(1)&lt;&lt;endl;
+
+   /* In this case a value is passed as
+    * 1 and b value as 2, value of c values is
+    * taken from default arguments.
+    */
+   cout&lt;&lt;sum(1, 2)&lt;&lt;endl;
+
+   /* In this case all the three values are
+    * passed during function call, hence no
+    * default arguments have been used.
+    */
+   cout&lt;&lt;sum(1, 2, 3)&lt;&lt;endl;
+   return 0;
+}
+int sum(int a, int b, int c){
+   int z;
+   z = a+b+c;
+   return z;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>31
+23
+6</pre>
+<h2>Rules of default arguments</h2>
+<p>As you have seen in the above example that I have assigned the default values for only two arguments b and c during function declaration. It is up to you to assign default values to all arguments or only selected arguments but remember the following rule while assigning default values to only some of the arguments:</p>
+<blockquote><p><strong>If you assign default value to an argument, the subsequent arguments must have default values assigned to them, else you will get compilation error.</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div></blockquote>
+<p><strong>For example: </strong> Lets see some valid and invalid cases.<br />
+<strong>Valid:</strong> Following function declarations are valid &#8211;</p>
+<pre>int sum(int a=10, int b=20, int c=30);
+int sum(int a, int b=20, int c=30);
+int sum(int a, int b, int c=30);
+</pre>
+<p><strong>Invalid:</strong> Following function declarations are invalid &#8211;</p>
+<pre>/* Since a has default value assigned, all the
+ * arguments after a (in this case b and c) must have 
+ * default values assigned
+ */
+int sum(int a=10, int b, int c=30);
+
+/* Since b has default value assigned, all the
+ * arguments after b (in this case c) must have 
+ * default values assigned
+ */
+int sum(int a, int b=20, int c);
+
+/* Since a has default value assigned, all the
+ * arguments after a (in this case b and c) must have 
+ * default values assigned, b has default value but
+ * c doesn't have, thats why this is also invalid
+ */
+int sum(int a=10, int b=20, int c);
+</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/func">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/rec">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}

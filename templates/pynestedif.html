@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python Nested If else statement</h1>
+    <div class="entry-content" itemprop="text"> In this tutorial, we will learn the nesting of these control statements.</p>
+    <p>When there is an if statement (or if..else or if..elif..else) is present inside another if statement (or if..else or if..elif..else) then this is calling the <strong>nesting of control statements</strong>.</p>
+    <h2>Nested if..else statement example</h2>
+    <p>Here we have a if statement inside another if..else statement block. Nesting control statements makes us to check multiple conditions.</p>
+    <pre>num = -99
+    if num &gt; 0:
+        print("Positive Number")
+    else:
+        print("Negative Number")
+        #nested if
+        if -99&lt;=num:
+            print("Two digit Negative Number")
+    </pre>
+    <p>Output:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <pre>Negative Number
+    Two digit Negative Number</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/ifelif">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/for">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>	
+        
+</div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Python Recursion</h1>
+        <div class="entry-content" itemprop="text"><p>A function is said to be a <strong>recursive</strong> if it calls itself. For example, lets say we have a function <code>abc()</code> and in the body of <code>abc()</code> there is a call to the <code>abc()</code>.</p>
+        <h2>Python example of Recursion</h2>
+        <p>In this example we are defining a <strong>user-defined function</strong> <code>factorial()</code>. This function finds the factorial of a number by calling itself repeatedly until the <strong>base case</strong>(We will discuss more about base case later, after this example) is reached.</p>
+        <pre>
+        # Example of recursion in Python to
+        # find the factorial of a given number
+        
+        def factorial(num):
+            """This function calls itself to find
+            the factorial of a number"""
+        
+            if num == 1:
+                return 1
+            else:
+                return (num * factorial(num - 1))
+        
+        
+        num = 5
+        print("Factorial of", num, "is: ", factorial(num))
+        </pre>
+        <p>Output:</p>
+        <pre>Factorial of 5 is:  120</pre>
+        <p>Lets see what happens in the above example:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <pre>
+            factorial(5) returns 5 * factorial(5-1) 
+            i.e. 5 * factorial(4)
+                       |__5*4*factorial(3)
+                              |__5*4*3*factorial(2)
+                                   |__5*4*3*2*factorial(1)
+        </pre>
+        <p><strong>Note:</strong> factorial(1) is a base case for which we already know the value of factorial. The base case is defined in the body of function with this code:</p>
+        <pre>
+            if num == 1:
+            return 1</pre>
+        <h2>What is a base case in recursion</h2>
+        <p>When working with recursion, we should define a base case for which we already know the answer. In the above example we are finding factorial of an integer number and we already know that the factorial of 1 is 1 so this is our base case.</p>
+        <p>Each <strong>successive recursive call</strong> to the function should bring it closer to the base case, which is exactly what we are doing in above example.</p>
+        <p>We use base case in recursive function so that the function stops calling itself when the base case is reached. Without the base case, the function would keep calling itself indefinitely.</p>
+        <h2>Why use recursion in programming?</h2>
+        <p>We use recursion to break a big problem in small problems and those small problems into further smaller problems and so on. At the end the solutions of all the smaller subproblems are collectively helps in finding the solution of the big main problem.</p>
+        <h3>Advantages of recursion</h3>
+        <p>Recursion makes our program:<br />
+        1. Easier to write.<br />
+        2. Readable &#8211; Code is easier to read and understand.<br />
+        3. Reduce the lines of code &#8211; It takes less lines of code to solve a problem using recursion.</p>
+        <h3>Disadvantages of recursion</h3>
+        <p>1. Not all problems can be solved using recursion.<br />
+        2. If you don&#8217;t define the base case then the code would run indefinitely.<br />
+        3. Debugging is difficult in recursive functions as the function is calling itself in a loop and it is hard to understand which call is causing the issue.<br />
+        4. Memory overhead &#8211; Call to the recursive function is not memory efficient.</p>
+        <div class="bb-nav"><a class="pretut" href="/python/func">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/oops">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>
+</div>
+
+{% endblock %}

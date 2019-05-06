@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python If Statement explained with examples</h1>
+    <div class="entry-content" itemprop="text"><p>If statements are control flow statements which helps us to run a particular code only when a certain condition is satisfied. For example, you want to print a message on the screen only when a condition is true then you can use if statement to accomplish this in programming. In this guide, we will learn how to use <strong>if statements in Python programming</strong> with the help of examples.</p>
+    <blockquote><p>There are other control flow statements available in Python such as if..else, if..elif..else,<br />
+    nested if etc. However in this guide, we will only cover the if statements, other control statements are covered in separate tutorials.</p></blockquote>
+    <h2>Syntax of If statement in Python</h2>
+    <p>The syntax of if statement in Python is pretty simple.</p>
+    <pre>if <em>condition</em>:
+       block_of_code
+    </pre>
+    <h2>If statement flow diagram</h2>
+    <p><img class="aligncenter size-full wp-image-6529" src="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram.jpg" alt="if statement flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <h2>Python &#8211; If statement Example</h2>
+    <pre>flag = True
+    if flag==True:
+        print("Welcome")
+        print("To")
+        print("BeginnersBook.com")</pre>
+    <p>Output:</p>
+    <pre>Welcome
+    To
+    BeginnersBook.com</pre>
+    <p>In the above example we are checking the value of flag variable and if the value is True then we are executing few print statements. The important point to note here is that even if we do not compare the value of flag with the &#8216;True&#8217; and simply put &#8216;flag&#8217; in place of condition, the code would run just fine so the better way to write the above code would be:</p>
+    <pre>flag = True
+    if flag:
+        print("Welcome")
+        print("To")
+        print("BeginnersBook.com")</pre>
+    <p>By seeing this we can understand how if statement works. The output of the condition would either be true or false. If the outcome of condition is true then the statements inside body of &#8216;if&#8217; executes, however if the outcome of condition is false then the statements inside &#8216;if&#8217; are <strong>skipped</strong>. Lets take another example to understand this:</p>
+    <pre>flag = False
+    if flag:
+        print("You Guys")
+        print("are")
+        print("Awesome")</pre>
+    <p>The output of this code is none, it does not print anything because the outcome of condition is &#8216;false&#8217;.</p>
+    <h2>Python if example without boolean variables</h2>
+    <p>In the above examples, we have used the boolean variables in place of conditions. However we can use any variables in our conditions. For example:</p>
+    <pre>num = 100
+    if num &lt; 200:
+        print("num is less than 200")</pre>
+    <p>Output:</p>
+    <pre>num is less than 200</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/comments">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/ifelse">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+        
+</div>
+
+{% endblock %}

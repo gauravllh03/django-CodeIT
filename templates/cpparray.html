@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Arrays in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>An array is a collection of similar items stored in contiguous memory locations. In programming, sometimes a simple variable is not enough to hold all the data. For example, lets say we want to store the marks of 500 students, having 500 different variables for this task is not feasible, we can define an array with size 500 that can hold the marks of all students.<br />
+<img class="aligncenter size-full wp-image-6658" src="https://beginnersbook.com/wp-content/uploads/2017/08/cpp_arrays.jpg" alt="C++ arrays" width="300" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/cpp_arrays.jpg 300w, https://beginnersbook.com/wp-content/uploads/2017/08/cpp_arrays-150x150.jpg 150w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<h2>Declaring an array in C++</h2>
+<p>There are couple of ways to declare an array.<br />
+Method 1:</p>
+<pre>int arr[5];
+arr[0] = 10;
+arr[1] = 20;
+arr[2] = 30;
+arr[3] = 40;
+arr[4] = 50;</pre>
+<p>Method 2:</p>
+<pre>int arr[] = {10, 20, 30, 40, 50};</pre>
+<p>Method 3:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>int arr[5] = {10, 20, 30, 40, 50};</pre>
+<h2>Accessing Array Elements</h2>
+<p>Array index starts with 0, which means the first array element is at index 0, second is at index 1 and so on. We can use this information to display the array elements. See the code below:</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+   int arr[] = {11, 22, 33, 44, 55};
+   cout&lt;&lt;arr[0]&lt;&lt;endl;
+   cout&lt;&lt;arr[1]&lt;&lt;endl;
+   cout&lt;&lt;arr[2]&lt;&lt;endl;
+   cout&lt;&lt;arr[3]&lt;&lt;endl;
+   cout&lt;&lt;arr[4]&lt;&lt;endl;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>11
+22
+33
+44
+55
+</pre>
+<p>Although this code worked fine, displaying all the elements of array like this is not recommended. When you want to access a particular array element then this is fine but if you want to display all the elements then you should use a loop like this:</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+   int arr[] = {11, 22, 33, 44, 55};
+   int n=0;
+  
+   while(n&lt;=4){
+      cout&lt;&lt;arr[n]&lt;&lt;endl;
+      n++;
+   }
+   return 0;
+}</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/rec">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/multi">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

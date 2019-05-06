@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python for Loop explained with examples</h1>
+    <div class="entry-content" itemprop="text"><p>A loop is a used for iterating over a set of statements repeatedly. In Python we have three types of loops <strong>for</strong>, <strong>while</strong> and <strong>do-while</strong>. In this guide, we will learn <strong>for loop</strong> and the other two loops are covered in the separate tutorials.</p>
+    <h2>Syntax of For loop in Python</h2>
+    <pre>for &lt;variable&gt; in &lt;sequence&gt;:  
+       # body_of_loop that has set of statements
+       # which requires repeated execution
+    </pre>
+    <p>Here &lt;variable&gt; is a variable that is used for iterating over a &lt;sequence&gt;. On every iteration it takes the <strong>next value</strong> from &lt;sequence&gt;  until the end of sequence is reached.</p>
+    <p>Lets take few examples of for loop to understand the usage.</p>
+    <h2>Python &#8211; For loop example</h2>
+    <p>The following example shows the use of for loop to iterate over a list of numbers. In the body of for loop we are calculating the square of each number present in list and displaying the same.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <pre># Program to print squares of all numbers present in a list
+    
+    # List of integer numbers
+    numbers = [1, 2, 4, 6, 11, 20]
+    
+    # variable to store the square of each num temporary
+    sq = 0
+    
+    # iterating over the given list
+    for val in numbers:
+        # calculating square of each number
+        sq = val * val
+        # displaying the squares
+        print(sq)
+    </pre>
+    <p>Output:</p>
+    <pre>
+    1
+    4
+    16
+    36
+    121
+    400</pre>
+    <h2>Function range()</h2>
+    <p>In the above example, we have iterated over a list using for loop. However we can also use a range() function in for loop to iterate over numbers defined by range().</p>
+    <p><strong>range(n)</strong>: generates a set of whole numbers starting from 0 to (n-1).<br />
+    For example:<br />
+    range(8) is equivalent to [0, 1, 2, 3, 4, 5, 6, 7]</p>
+    <p><strong>range(start, stop)</strong>: generates a set of whole numbers starting from <code>start</code> to <code>stop-1</code>.<br />
+    For example:<br />
+    range(5, 9) is equivalent to [5, 6, 7, 8]</p>
+    <p><strong>range(start, stop, step_size)</strong>: The default step_size is 1 which is why when we didn&#8217;t specify the step_size, the numbers generated are having difference of 1. However by specifying step_size we can generate numbers having the difference of step_size.<br />
+    For example:<br />
+    range(1, 10, 2) is equivalent to [1, 3, 5, 7, 9]</p>
+    <p>Lets use the <strong>range() function</strong> in for loop:</p>
+    <h2>Python for loop example using range() function</h2>
+    <p>Here we are using <strong>range() function</strong> to calculate and display the sum of first 5 natural numbers.</p>
+    <pre># Program to print the sum of first 5 natural numbers
+    
+    # variable to store the sum
+    sum = 0
+    
+    # iterating over natural numbers using range()
+    for val in range(1, 6):
+        # calculating sum
+        sum = sum + val
+    
+    # displaying sum of first 5 natural numbers
+    print(sum)</pre>
+    <p>Output:</p>
+    <pre>15</pre>
+    <h2>For loop with else block</h2>
+    <p>Unlike Java, In Python we can have an optional &#8216;else&#8217; block associated with the loop. The &#8216;else&#8217; block executes only when the loop has completed all the iterations. Lets take an example:</p>
+    <pre>
+        for val in range(5):
+        print(val)
+    else:
+        print("The loop has completed execution")
+    </pre>
+    <p>Output:</p>
+    <pre>
+    0
+    1
+    2
+    3
+    4
+    The loop has completed execution</pre>
+    <p><strong>Note:</strong> The else block only executes when the loop is finished.</p>
+    <h2>Nested For loop in Python</h2>
+    <p>When a for loop is present inside another for loop then it is called a nested for loop. Lets take an example of nested for loop.</p>
+    <pre>
+        for num1 in range(3):
+        for num2 in range(10, 14):
+            print(num1, ",", num2)
+    </pre>
+    <p>Output:</p>
+    <pre>
+    0 , 10
+    0 , 11
+    0 , 12
+    0 , 13
+    1 , 10
+    1 , 11
+    1 , 12
+    1 , 13
+    2 , 10
+    2 , 11
+    2 , 12
+    2 , 13</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/nestedif">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/while">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+        
+</div>
+
+{% endblock %}

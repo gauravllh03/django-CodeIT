@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Strings in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Strings are words that are made up of characters, hence they are known as sequence of characters. In C++ we have two ways to create and use strings: 1) By creating char arrays and treat them as string 2) By creating <code>string</code> object</p>
+<p>Lets discuss these two ways of creating string first and then we will see which method is better and why.</p>
+<h2>1) Array of Characters &#8211; Also known as C Strings</h2>
+<p><strong>Example 1:</strong><br />
+A simple example where we have initialized the char array during declaration.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   char book[50] = "A Song of Ice and Fire";
+   cout&lt;&lt;book;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>A Song of Ice and Fire</pre>
+<p><strong>Example 2: Getting user input as string</strong><br />
+This can be considered as inefficient method of reading user input, why? Because when we read the user input string using <code>cin</code> then only the first word of the string is stored in char array and rest get ignored. The cin function considers the space in the string as delimiter and ignore the part after it.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   char book[50];
+   cout&lt;&lt;"Enter your favorite book name:";
+   //reading user input
+   cin&gt;&gt;book;
+   cout&lt;&lt;"You entered: "&lt;&lt;book;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Enter your favorite book name:The Murder of Roger Ackroyd
+You entered: The</pre>
+<p>You can see that only the &#8220;The&#8221; got captured in the book and remaining part after space got ignored. How to deal with this then? Well, for this we can use <code>cin.get</code> function, which reads the complete line entered by user.</p>
+<p><strong>Example 3: Correct way of capturing user input string using cin.get</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   char book[50];
+   cout&lt;&lt;"Enter your favorite book name:";
+ 
+   //reading user input
+   cin.get(book, 50);
+   cout&lt;&lt;"You entered: "&lt;&lt;book;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Enter your favorite book name:The Murder of Roger Ackroyd
+You entered: The Murder of Roger Ackroyd</pre>
+<h3>Drawback of this method</h3>
+<p>1) Size of the char array is fixed, which means the size of the string created through it is fixed in size, more memory cannot be allocated to it during runtime. For example, lets say you have created an array of character with the size 10 and user enters the string of size 15 then the last five characters would be truncated from the string.<br />
+On the other hand if you create a larger array to accommodate user input then the memory is wasted if the user input is small and array is much larger then what is needed.</p>
+<p>2) In this method, you can only use the in-built functions created for array which don&#8217;t help much in string manipulation.</p>
+<p><strong>What is the solution of these problems?</strong><br />
+We can create string using string object. Lets see how we can do it.</p>
+<h2>String object in C++</h2>
+<p>Till now we have seen how to handle strings in C++ using char arrays. Lets see another and better way of handling strings in C++ &#8211; string objects.</p>
+<pre>#include&lt;iostream&gt;
+using namespace std;
+int main(){
+   // This is how we create string object
+   string str;
+   cout&lt;&lt;"Enter a String:";
+   /* This is used to get the user input
+    * and store it into str
+    */
+   getline(cin,str);
+   cout&lt;&lt;"You entered: ";
+   cout&lt;&lt;str&lt;&lt;endl;
+
+   /* This function adds a character at
+    * the end of the string
+    */ str.push_back('A');
+   cout&lt;&lt;"The string after push_back: "&lt;&lt;str&lt;&lt;endl;
+   /* This function deletes a character from
+    * the end of the string
+    */
+   str.pop_back();
+   cout &lt;&lt; "The string after pop_back: "&lt;&lt;str&lt;&lt;endl;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+Enter a String:XYZ
+You entered: XYZ
+The string after push_back: XYZA
+The string after pop_back: XYZ</pre>
+<p>The advantage of using this method is that you need not to declare the size of the string, the size is determined at run time, so this is better memory management method. The memory is allocated dynamically at runtime so no memory is wasted.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/pass">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/pointer">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}

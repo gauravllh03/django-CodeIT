@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">How to Install Python</h1>
+     <div class="entry-content" itemprop="text"><p>You can install Python on any operating system such as Windows, Mac OS X, Linux/Unix and others.</p>
+        <p>To install the Python on your operating system, go to this link: <a href="https://www.python.org/downloads/" target="_blank" rel="noopener">https://www.python.org/downloads/</a>. You will see a screen like this.<br />
+        <img class="aligncenter size-large wp-image-8286" src="https://beginnersbook.com/wp-content/uploads/2018/01/Python_Downloads-1024x678.jpg" alt="Python Downloads" width="1024" height="678" srcset="https://beginnersbook.com/wp-content/uploads/2018/01/Python_Downloads-1024x678.jpg 1024w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_Downloads-300x199.jpg 300w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_Downloads-768x509.jpg 768w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_Downloads.jpg 1338w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+        <p>This is the <strong>official Python website</strong> and it will detect the operating system and based on that it would recommend you to download Python. Here I am using Mac OS X so it gave me the download options for Python 2 and Python 3 for Mac OS X. I would recommend you to download the <strong>latest version of Python 3</strong> (Python 3.6.4 in the screenshot).</p>
+        <p>Installation steps are pretty simple. You just have to accept the agreement and finish the installation.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <blockquote><p>If you are using Mac OS X then you may notice that Python is already installed in your system,<br />
+        however it would most likely be a Python 2 so you can download the latest Python 3 version from here and install it in your system.</p></blockquote>
+        <div class="bb-nav"><a class="pretut" href="/python/intro">❮ Previous</a> &nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/ide">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+                
+</div>
+
+{% endblock %}

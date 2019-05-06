@@ -1,0 +1,177 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Java Access Modifiers &#8211; Public, Private, Protected &#038; Default</h1>
+</header><div class="entry-content" itemprop="text"><p>You must have seen public, private and protected keywords while practising java programs, these are called access modifiers. An access modifier restricts the access of a class, constructor, data member and method in another class. In java we have four access modifiers:<br />
+1. default<br />
+2. private<br />
+3. protected<br />
+4. public</p>
+<h2>1. Default access modifier</h2>
+<p>When we do not mention any access modifier, it is called default access modifier. The scope of this modifier is limited to the package only. This means that if we have a class with the default access modifier in a package, only those classes that are in this package can access this class. No other class outside this package can access this class. Similarly, if we have a default method or data member in a class, it would not be visible in the class of another package. Lets see an example to understand this:</p>
+<h3>Default Access Modifier Example in Java</h3>
+<blockquote><p>To understand this example, you must have the knowledge of packages in java.</p></blockquote>
+<p>In this example we have two classes, Test class is trying to access the default method of Addition class, since class Test belongs to a different package, this program would throw compilation error, because the scope of default modifier is limited to the same package in which it is declared.<br />
+<strong>Addition.java</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>package abcpackage;
+
+public class Addition {
+   /* Since we didn't mention any access modifier here, it would
+    * be considered as default.
+    */
+   int addTwoNumbers(int a, int b){
+    return a+b;
+   }
+}</pre>
+<p><strong>Test.java</strong></p>
+<pre>package xyzpackage;
+
+/* We are importing the abcpackage
+ * but still we will get error because the
+ * class we are trying to use has default access
+ * modifier.
+ */
+import abcpackage.*;
+public class Test {
+   public static void main(String args[]){
+    Addition obj = new Addition();
+        /* It will throw error because we are trying to access
+         * the default method in another package
+         */
+    obj.addTwoNumbers(10, 21);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+The method addTwoNumbers(int, int) from the type Addition is not visible
+at xyzpackage.Test.main(Test.java:12)</pre>
+<h2>2. Private access modifier</h2>
+<p>The scope of private modifier is limited to the class only.</p>
+<ol>
+<li>Private Data members and methods are only accessible within the class</li>
+<li>Class and Interface cannot be declared as private</li>
+<li>If a class has private constructor then you cannot create the object of that class from outside of the class.</li>
+</ol>
+<p>Let&#8217;s see an example to understand this:</p>
+<h3>Private access modifier example in java</h3>
+<p>This example throws compilation error because we are trying to access the private data member and method of class ABC in the class Example. The private data member and method are only accessible within the class.</p>
+<pre>class ABC{  
+   private double num = 100;
+   private int square(int a){
+    return a*a;
+   }
+}  
+public class Example{
+   public static void main(String args[]){  
+    ABC obj = new ABC();  
+    System.out.println(obj.num); 
+    System.out.println(obj.square(10));
+   }  
+}</pre>
+<p>Output:</p>
+<pre>Compile - time error</pre>
+<h2>3. Protected Access Modifier</h2>
+<p>Protected data member and method are only accessible by the classes of the same package and the subclasses present in any package. You can also say that the protected access modifier is similar to default access modifier with one exception that it has visibility in sub classes.<br />
+Classes cannot be declared protected. This access modifier is generally used in a parent child relationship.</p>
+<h3>Protected access modifier example in Java</h3>
+<p>In this example the class Test which is present in another package is able to call the <code>addTwoNumbers()</code> method, which is declared protected. This is because the Test class extends class Addition and the protected modifier allows the access of protected members in subclasses (in any packages).<br />
+<strong>Addition.java</strong></p>
+<pre>package abcpackage;
+public class Addition {
+
+   protected int addTwoNumbers(int a, int b){
+    return a+b;
+   }
+}</pre>
+<p><strong>Test.java</strong></p>
+<pre>package xyzpackage;
+import abcpackage.*;
+class Test extends Addition{
+   public static void main(String args[]){
+    Test obj = new Test();
+    System.out.println(obj.addTwoNumbers(11, 22));
+   }
+}</pre>
+<p>Output:</p>
+<pre>33</pre>
+<h2>4. Public access modifier</h2>
+<p>The members, methods and classes that are declared public can be accessed from anywhere. This modifier doesn&#8217;t put any restriction on the access.</p>
+<h3>public access modifier example in java</h3>
+<p>Lets take the same example that we have seen above but this time the method addTwoNumbers() has public modifier and class Test is able to access this method without even extending the Addition class. This is because public modifier has visibility everywhere.<br />
+Addition.java</p>
+<pre>package abcpackage;
+
+public class Addition {
+
+   public int addTwoNumbers(int a, int b){
+    return a+b;
+   }
+}</pre>
+<p>Test.java</p>
+<pre>package xyzpackage;
+import abcpackage.*;
+class Test{
+   public static void main(String args[]){
+      Addition obj = new Addition();
+      System.out.println(obj.addTwoNumbers(100, 1));
+   }
+}</pre>
+<p>Output:</p>
+<pre>101</pre>
+<p>Lets see the scope of these access modifiers in tabular form:</p>
+<h2>The scope of access modifiers in tabular form</h2>
+<pre>------------+-------+---------+--------------+--------------+--------
+            | Class | Package | Subclass     | Subclass     |Outside|
+            |       |         |(same package)|(diff package)|Class  |
+————————————+———————+—————————+——————————----+—————————----—+————————
+public      | Yes   |  Yes    |    Yes       |    Yes       |   Yes |    
+————————————+———————+—————————+—————————----—+—————————----—+————————
+protected   | Yes   |  Yes    |    Yes       |    Yes       |   No  |    
+————————————+———————+—————————+————————----——+————————----——+————————
+default     | Yes   |  Yes    |    Yes       |    No        |   No  |
+————————————+———————+—————————+————————----——+————————----——+————————
+private     | Yes   |  No     |    No        |    No        |   No  |
+------------+-------+---------+--------------+--------------+--------
+</pre>
+<div class="bb-nav"><a class="pretut" href="/java/encap">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/handle">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}
+
+
+
+

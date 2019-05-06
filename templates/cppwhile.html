@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">While loop in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>In the last tutorial we discussed for loop. In this tutorial we will discuss while loop. As discussed earlier, loops are used for executing a block of program statements repeatedly until the given loop condition returns false.</p>
+<h4>Syntax of while loop</h4>
+<pre>while(condition)
+{
+   statement(s);
+}</pre>
+<h2>How while Loop works?</h2>
+<p>In while loop, condition is evaluated first and if it returns true then the statements inside while loop execute, this happens repeatedly until the condition returns false. When condition returns false, the control comes out of loop and jumps to the next statement in the program after while loop.</p>
+<p><strong>Note:</strong> The important point to note when using while loop is that we need to use increment or decrement statement inside while loop so that the loop variable gets changed on each iteration, and at some point condition returns false. This way we can end the execution of while loop otherwise the loop would execute indefinitely.</p>
+<h3>Flow Diagram of While loop</h3>
+<p><img class="aligncenter size-full wp-image-6669" src="https://beginnersbook.com/wp-content/uploads/2017/08/while_loop_cpp.jpg" alt="c++ while loop flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/while_loop_cpp.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/while_loop_cpp-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/while_loop_cpp-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>While Loop example in C++</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int i=1;
+   /* The loop would continue to print
+    * the value of i until the given condition
+    * i&lt;=6 returns false.
+    */
+   while(i&lt;=6){
+      cout&lt;&lt;"Value of variable i is: "&lt;&lt;i&lt;&lt;endl; i++;
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of variable i is: 1
+Value of variable i is: 2
+Value of variable i is: 3
+Value of variable i is: 4
+Value of variable i is: 5
+Value of variable i is: 6</pre>
+<h2>Infinite While loop</h2>
+<p>A while loop that never stops is said to be the infinite while loop, when we give the condition in such a way so that it never returns false, then the loops becomes infinite and repeats itself indefinitely.<br />
+<strong>An example of infinite while loop:</strong><br />
+This loop would never end as I&#8217;m decrementing the value of i which is 1 so the condition i&lt;=6 would never return false.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int i=1; while(i&lt;=6) {
+      cout&lt;&lt;"Value of variable i is: "&lt;&lt;i&lt;&lt;endl; i--;
+   }
+}</pre>
+<h2>Example: Displaying the elements of array using while loop</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int arr[]={21,87,15,99, -12};
+   /* The array index starts with 0, the
+    * first element of array has 0 index
+    * and represented as arr[0]
+    */
+   int i=0;
+   while(i&lt;5){
+      cout&lt;&lt;arr[i]&lt;&lt;endl;
+      i++;
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>21
+87
+15
+99
+-12
+</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/for">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/dowhile">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

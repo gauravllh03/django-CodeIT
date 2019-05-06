@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Constructors in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Constructor is a special member function of a class that initializes the object of the class. Constructor name is same as class name and it doesn&#8217;t have a return type. Lets take a simple example to understand the working of constructor.</p>
+<h2>Simple Example: How to use constructor in C++</h2>
+<p>Read the comments in the following program to understand each part of the program.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class constructorDemo{
+public:
+   int num;
+   char ch;
+   /* This is a default constructor of the
+    * class, do note that it's name is same as
+    * class name and it doesn't have return type.
+    */
+   constructorDemo() {
+      num = 100; ch = 'A';
+   }
+};
+int main(){
+   /* This is how we create the object of class,
+    * I have given the object name as obj, you can
+    * give any name, just remember the syntax:
+    * class_name object_name;
+    */
+   constructorDemo obj;
+
+   /* This is how we access data members using object
+    * we are just checking that the value we have
+    * initialized in constructor are reflecting or not.
+    */
+   cout&lt;&lt;"num: "&lt;&lt;obj.num&lt;&lt;endl;
+   cout&lt;&lt;"ch: "&lt;&lt;obj.ch;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>num: 100
+ch: A</pre>
+<h2>Constructor vs Member function</h2>
+<p>Now that we know what is constructor, lets discuss how a constructor is different from member function of the class.<br />
+1) Constructor doesn&#8217;t have a return type. Member function has a return type.<br />
+2) Constructor is automatically called when we create the object of the class. Member function needs to be called explicitly using object of class.<br />
+3) When we do not create any constructor in our class, C++ compiler generates a default constructor and insert it into our code. The same does not apply to member functions.<br />
+This is how a compiler generated default constructor looks:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>class XYZ
+{ 
+    ....
+    XYZ()
+    {
+        //Empty no code
+    }
+};
+</pre>
+<h2>Types of Constructor in C++</h2>
+<p>There are two types of constructor in C++. 1) Default constructor 2) Parameterized constructor</p>
+<h3>1) Default Constructor</h3>
+<p>A default constructor doesn&#8217;t have any arguments (or parameters)</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Website{
+public:
+   //Default constructor
+   Website() {
+      cout&lt;&lt;"Welcome to BeginnersBook"&lt;&lt;endl;
+   }
+};
+int main(void){
+   /*creating two objects of class Website.
+    * This means that the default constructor
+    * should have been invoked twice.
+    */
+   Website obj1;
+   Website obj2;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Welcome to BeginnersBook
+Welcome to BeginnersBook</pre>
+<blockquote><p>When you don&#8217;t specify any constructor in the class, a default constructor with no code (empty body) would be inserted into your code by compiler.</p></blockquote>
+<h3>2) Parameterized Constructor</h3>
+<p>Constructors with parameters are known as Parameterized constructors. These type of constructor allows us to pass arguments while object creation. Lets see how they look:</p>
+<p>Lets say class name is XYZ<br />
+<strong>Default constructor:</strong></p>
+<pre>XYZ() {
+
+}
+....
+XYZ obj;
+....</pre>
+<p><strong>Parameterized Constructor:</strong></p>
+<pre>XYZ(int a, int b) {
+
+}
+...
+XYZ obj(10, 20);</pre>
+<h4>Example:</h4>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Add{
+public:
+   //Parameterized constructor
+   Add(int num1, int num2) {
+     cout&lt;&lt;(num1+num2)&lt;&lt;endl;
+   }
+};
+int main(void){
+   /* One way of creating object. Also
+    * known as implicit call to the
+    * constructor
+    */
+   Add obj1(10, 20);
+   /* Another way of creating object. This
+    * is known as explicit calling the
+    * constructor.
+    */
+   Add obj2 = Add(50, 60);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+30
+110</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/oops">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/dest">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

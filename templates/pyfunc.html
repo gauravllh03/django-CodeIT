@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Python Functions</h1>
+        <div class="entry-content" itemprop="text"><p>In this guide, we will learn about <strong>functions in Python</strong>. A function is a block of code that contains one or more Python statements and used for performing a specific task.</p>
+        <h2>Why use function in Python?</h2>
+        <p>As I mentioned above, a function is a block of code that performs a specific task. Lets discuss what we can achieve in Python by using functions in our code:<br />
+        1. <strong>Code re-usability</strong>: Lets say we are writing an application in Python where we need to perform a specific task in several places of our code, assume that we need to write 10 lines of code to do that specific task. It would be better to write those 10 lines of code in a function and just call the function wherever needed, because writing those 10 lines every time you perform that task is tedious, it would make your code lengthy, less-readable and increase the chances of human errors.</p>
+        <p>2. <strong>Improves Readability</strong>: By using functions for frequent tasks you make your code structured and readable. It would be easier for anyone to look at the code and be able to understand the flow and purpose of the code.</p>
+        <p>3. <strong>Avoid redundancy</strong>: When you no longer repeat the same lines of code throughout the code and use functions in places of those, you actually avoiding the redundancy that you may have created by not using functions.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <h2>Syntax of functions in Python</h2>
+        <p><strong>Function declaration:</strong></p>
+        <pre>
+            def function_name(function_parameters):
+            function_body # Set of Python statements
+                return # optional return statement
+        </pre>
+        <p><strong>Calling the function:</strong></p>
+        <pre>
+        # when function doesn't return anything
+        function_name(parameters)</pre>
+        <p>OR</p>
+        <pre>
+        # when function returns something
+        # variable is to store the returned value
+        variable = function_name(parameters)</pre>
+        <h2>Python Function example</h2>
+        <p>Here we have a function <code>add()</code> that adds two numbers passed to it as parameters. Later after function declaration we are calling the function twice in our program to perform the addition.</p>
+        <pre>
+            def add(num1, num2):
+            return num1 + num2
+        
+        
+        sum1 = add(100, 200)
+        sum2 = add(8, 9)
+        print(sum1)
+        print(sum2)</pre>
+        <p>Output:</p>
+        <pre>
+        300
+        17</pre>
+        <h2>Default arguments in Function</h2>
+        <p>Now that we know how to declare and call a function, lets see how can we use the <strong>default arguments</strong>. By using default arguments we can avoid the errors that may arise while calling a function without passing all the parameters. Lets take an example to understand this:</p>
+        <p>In this example we have provided the default argument for the second parameter, this default argument would be used when we do not provide the second parameter while calling this function.</p>
+        <pre>
+        # default argument for second parameter
+        def add(num1, num2=1):
+            return num1 + num2
+        
+        
+        sum1 = add(100, 200)
+        sum2 = add(8)  # used default argument for second param
+        sum3 = add(100)  # used default argument for second param
+        print(sum1)
+        print(sum2)
+        print(sum3)</pre>
+        <p>Output:</p>
+        <pre>
+        300
+        9
+        101</pre>
+        <h2>Types of functions</h2>
+        <p>There are two types of functions in Python:<br />
+        1. <strong>Built-in functions</strong>: These functions are predefined in Python and we need not to declare these functions before calling them. We can freely invoke them as and when needed.<br />
+        2. <strong>User defined functions</strong>: The functions which we create in our code are user-defined functions. The add() function that we have created in above examples is a user-defined function.</p>
+        <p>We will cover more about these function types in the separate guides.</p>
+        <div class="bb-nav"><a class="pretut" href="/python/tuple">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/rec">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>
+        
+</div>
+
+{% endblock %}

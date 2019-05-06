@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Python OOPs Concepts</h1>
+        <div class="entry-content" itemprop="text"><p>Python is an <strong>object-oriented programming language</strong>. What this means is we can solve a problem in Python by creating objects in our programs. In this guide, we will discuss OOPs terms such as <strong>class</strong>, <strong>objects</strong>, <strong>methods</strong> etc. along with the Object oriented programming features such as <strong>inheritance</strong>, <strong>polymorphism</strong>, <strong>abstraction</strong>, <strong>encapsulation</strong>.</p>
+        <h2>Object</h2>
+        <p>An object is an entity that has attributes and behaviour. For example, <code>Ram</code> is an object who has attributes such as height, weight, color etc. and has certain behaviours such as walking, talking, eating etc.</p>
+        <h2>Class</h2>
+        <p>A class is a blueprint for the objects. For example, Ram, Shyam, Steve, Rick are all objects so we can define a template (blueprint) class <code>Human</code> for these objects. The class can define the common attributes and behaviours of all the objects.</p>
+        <h2>Methods</h2>
+        <p>As we discussed above, an object has attributes and behaviours. These behaviours are called methods in programming.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <h2>Example of Class and Objects</h2>
+        <p>In this example, we have two objects <code>Ram</code> and <code>Steve</code> that belong to the class <code>Human</code><br />
+        Object attributes: name, height, weight<br />
+        Object behaviour: eating()</p>
+        <h3>Source code</h3>
+        <pre>
+            class Human:
+            # instance attributes
+            def __init__(self, name, height, weight):
+                self.name = name
+                self.height = height
+                self.weight = weight
+        
+            # instance methods (behaviours)
+            def eating(self, food):
+                return "{} is eating {}".format(self.name, food)
+        
+        
+        # creating objects of class Human
+        ram = Human("Ram", 6, 60)
+        steve = Human("Steve", 5.9, 56)
+        
+        # accessing object information
+        print("Height of {} is {}".format(ram.name, ram.height))
+        print("Weight of {} is {}".format(ram.name, ram.weight))
+        print(ram.eating("Pizza"))
+        print("Weight of {} is {}".format(steve.name, steve.height))
+        print("Weight of {} is {}".format(steve.name, steve.weight))
+        print(steve.eating("Big Kahuna Burger"))</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        Height of Ram is 6
+        Weight of Ram is 60
+        Ram is eating Pizza
+        Weight of Steve is 5.9
+        Weight of Steve is 56
+        Steve is eating Big Kahuna Burger</pre>
+        <div class="bb-nav"><a class="pretut" href="/python/rec">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/class">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>
+        
+</div>
+
+{% endblock %}

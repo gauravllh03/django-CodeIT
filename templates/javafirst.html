@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+  		<h1 class="entry-title" itemprop="headline">How to Compile and Run your First Java Program</h1>
+</header><div class="entry-content" itemprop="text"><p>In this tutorial, we will see how to write, compile and run a java program. I will also cover java syntax, code conventions and several ways to run a java program.</p>
+<h2>Simple Java Program:</h2>
+<pre>public class FirstJavaProgram {
+  public static void main(String[] args){
+    System.out.println("This is my first program in java");
+
+  }//End of main
+}//End of FirstJavaProgram Class
+</pre>
+<p><b>Output:</b> This is my first program in java</p>
+<h3>How to compile and run the above program</h3>
+<blockquote><p><strong>Prerequisite:</strong> You need to have java installed on your system. </p></blockquote>
+<p><strong>Step 1:</strong> Open a text editor, like Notepad on windows and TextEdit on Mac. Copy the above program and paste it in the text editor.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<blockquote><p>You can also use IDE like Eclipse to run the java program but we will cover that part later in the coming tutorials. For the sake of simplicity, I will only use text editor and command prompt (or terminal) for this tutorial</p></blockquote>
+<p><strong>Step 2:</strong> Save the file as <strong>FirstJavaProgram.java</strong>. You may be wondering why we have named the file as FirstJavaProgram, the thing is that we should always name the file same as the <code>public class</code> name. In our program, the <code>public class</code> name is <code>FirstJavaProgram</code>, that&#8217;s why our file name should be <strong>FirstJavaProgram.java</strong>.</p>
+<p><strong>Step 3:</strong> In this step, we will compile the program. For this, open <strong>command prompt (cmd) on Windows</strong>, if you are <strong>Mac OS then open Terminal</strong>.<br />
+To compile the program, type the following command and hit enter.</p>
+<pre>javac FirstJavaProgram.java</pre>
+<blockquote><p>You may get this error when you try to compile the program: &#8220;<strong>javac&#8217; is not recognized as an internal or external command, operable program or batch file</strong>&#8220;. This error occurs when the java path is not set in your system</p></blockquote>
+<p>If you get this error then you first need to set the path before compilation.</p>
+<p><strong>Set Path in Windows:</strong><br />
+Open command prompt (cmd), go to the place where you have installed java on your system and locate the bin directory, copy the complete path and write it in the command like this.</p>
+<pre>set path=C:\Program Files\Java\jdk1.8.0_121\bin</pre>
+<p><strong>Note:</strong> Your jdk version may be different. Since I have java version 1.8.0_121 installed on my system, I mentioned the same while setting up the path.</p>
+<p><strong>Set Path in Mac OS X</strong><br />
+Open Terminal, type the following command and hit return.</p>
+<pre>export JAVA_HOME=/Library/Java/Home</pre>
+<p>Type the following command on terminal to confirm the path.</p>
+<pre>echo $JAVA_HOME</pre>
+<p>That&#8217;s it.</p>
+<blockquote><p>The steps above are for setting up the path temporary which means when you close the command prompt or terminal, the path settings will be lost and you will have to set the path again next time you use it. I will share the permanent path setup guide in the coming tutorial.</p></blockquote>
+<p><strong>Step 4:</strong> After compilation the .java file gets translated into the .class file(byte code). Now we can run the program. To run the program, type the following command and hit enter:</p>
+<pre>java FirstJavaProgram</pre>
+<blockquote><p>Note that you should not append the .java extension to the file name while running the program.</p></blockquote>
+<h2>Closer look to the First Java Program</h2>
+<p>Now that we have understood how to run a java program, let have a closer look at the program we have written above.</p>
+<pre>public class FirstJavaProgram {</pre>
+<p>This is the first line of our java program. Every java application must have at least one class definition that consists of <code>class</code> keyword followed by class name. When I say keyword, it means that it should not be changed, we should use it as it is. However the class name can be anything.</p>
+<p>I have made the class public by using public access modifier, I will cover access modifier in a separate post, all you need to know now that a java file can have any number of classes but it can have only one public class and the file name should be same as public class name.</p>
+<pre>public static void main(String[] args)  {</pre>
+<p>This is our next line in the program, lets break it down to understand it:<br />
+<code>public</code>: This makes the main method public that means that we can call the method from outside the class.</p>
+<p><code>static</code>: We do not need to create object for static methods to run. They can run itself.</p>
+<p><code>void</code>: It does not return anything.</p>
+<p><code>main</code>: It is the method name. This is the entry point method from which the JVM can run your program.</p>
+<p><code>(String[] args)</code>: Used for command line arguments that are passed as strings. We will cover that in a separate post.</p>
+<pre>System.out.println("This is my first program in java");</pre>
+<p>This method prints the contents inside the double quotes into the console and inserts a newline after.</p>
+<div class="bb-nav"><a class="pretut" href="/java/intro">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/var">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>    
+</div>
+
+{% endblock %}
+
+

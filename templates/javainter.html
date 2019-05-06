@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Interface in java with example programs</h1>
+</header><div class="entry-content" itemprop="text"><p>In the last tutorial we discussed abstract class which is used for achieving partial abstraction. Unlike abstract class an interface is used for full abstraction. Abstraction is a process where you show only &#8220;relevant&#8221; data and &#8220;hide&#8221; unnecessary details of an object from the user(See: Abstraction). In this guide, we will cover <strong>what is an interface in java</strong>, why we use it and what are rules that we must follow while using interfaces in Java Programming.</p>
+<h2>What is an interface in Java?</h2>
+<p>Interface looks like a class but it is not a class. An interface can have methods and variables just like the class but the methods declared in interface are by default abstract (only method signature, no body, see: Java abstract method). Also, the variables declared in an interface are public, static &amp; final by default. We will cover this in detail, later in this guide.</p>
+<h2>What is the use of interface in Java?</h2>
+<p>As mentioned above they are used for full abstraction. Since methods in interfaces do not have body, they have to be implemented by the class before you can access them. The class that implements interface must implement all the methods of that interface. Also, java programming language does not allow you to extend more than one class, However you can implement more than one interfaces in your class.</p>
+<p><strong>Syntax:</strong><br />
+Interfaces are declared by specifying a keyword &#8220;interface&#8221;. E.g.:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>interface MyInterface
+{
+   /* All the methods are public abstract by default
+    * As you see they have no body
+    */
+   public void method1();
+   public void method2();
+}</pre>
+<h2>Example of an Interface in Java</h2>
+<p>This is how a class implements an interface. It has to provide the body of all the methods that are declared in interface or in other words you can say that class has to implement all the methods of interface.</p>
+<blockquote><p><strong>Do you know?</strong> class <code>implements</code> interface but an interface <code>extends</code> another interface.</p></blockquote>
+<pre>interface MyInterface
+{
+   /* compiler will treat them as: 
+    * public abstract void method1();
+    * public abstract void method2();
+    */
+   public void method1();
+   public void method2();
+}
+class Demo implements MyInterface
+{
+   /* This class must have to implement both the abstract methods
+    * else you will get compilation error
+    */
+   public void method1()
+   {
+  System.out.println("implementation of method1");
+   }
+   public void method2()
+   {
+  System.out.println("implementation of method2");
+   }
+   public static void main(String arg[])
+   {
+  MyInterface obj = new Demo();
+  obj.method1();
+   }
+}
+</pre>
+<p>Output:</p>
+<pre>implementation of method1</pre>
+<p><strong>You may also like to read:</strong> Difference between abstract class and interface</p>
+<h2>Interface and Inheritance</h2>
+<p>As discussed above, an interface can not implement another interface. It has to extend the other interface. See the below example where we have two interfaces Inf1 and Inf2. Inf2 extends Inf1 so If class implements the Inf2 it has to provide implementation of all the methods of interfaces Inf2 as well as Inf1.</p>
+<blockquote><p>Learn more about inheritance here: Java Inheritance</p></blockquote>
+<pre>interface Inf1{
+   public void method1();
+}
+interface Inf2 extends Inf1 {
+   public void method2();
+}
+public class Demo implements Inf2{
+   /* Even though this class is only implementing the
+    * interface Inf2, it has to implement all the methods 
+    * of Inf1 as well because the interface Inf2 extends Inf1
+    */
+    public void method1(){
+  System.out.println("method1");
+    }
+    public void method2(){
+  System.out.println("method2");
+    }
+    public static void main(String args[]){
+  Inf2 obj = new Demo();
+  obj.method2();
+    }
+}
+</pre>
+<p>In this program, the class <code>Demo</code> only implements interface <code>Inf2</code>, however it has to provide the implementation of all the methods of interface <code>Inf1</code> as well, because interface Inf2 extends Inf1.</p>
+<h2>Tag or Marker interface in Java</h2>
+<p>An empty interface is known as tag or marker interface. For example Serializable, EventListener, Remote(java.rmi.Remote) are tag interfaces. These interfaces do not have any field and methods in it. Read more about it here.</p>
+<h3>Nested interfaces</h3>
+<p>An interface which is declared inside another interface or class is called nested interface. They are also known as inner interface. For example Entry interface in collections framework is declared inside Map interface, that&#8217;s why we don&#8217; use it directly, rather we use it like this: <code>Map.Entry</code>.</p>
+<p><strong>Key points:</strong> Here are the key points to remember about interfaces:<br />
+1) We can&#8217;t instantiate an interface in java. That means we cannot create the object of an interface</p>
+<p>2) Interface provides full abstraction as none of its methods have body. On the other hand abstract class provides partial abstraction as it can have abstract and concrete(methods with body) methods both.</p>
+<p>3) <code>implements</code> keyword is used by classes to implement an interface.</p>
+<p>4) While providing implementation in class of any method of an interface, it needs to be mentioned as public.</p>
+<p>5) Class that implements any interface must implement all the methods of that interface, else the class should be declared abstract.</p>
+<p>6) Interface cannot be declared as private, protected or transient.</p>
+<p>7) All the interface methods are by default <strong>abstract and public</strong>.</p>
+<p>8) Variables declared in interface are <strong>public, static and final</strong> by default.</p>
+<pre>interface Try
+{
+   int a=10;
+   public int a=10;
+   public static final int a=10;
+   final int a=10;
+   static int a=0;
+}</pre>
+<p>All of the above statements are identical.</p>
+<p>9) Interface variables must be initialized at the time of declaration otherwise compiler will throw an error.</p>
+<pre>interface Try
+{
+      int x;//Compile-time error
+}</pre>
+<p>Above code will throw a compile time error as the value of the variable x is not initialized at the time of declaration.</p>
+<p>10) Inside any implementation class, you cannot change the variables declared in interface because by default, they are public, static and final. Here we are implementing the interface &#8220;Try&#8221; which has a variable x. When we tried to set the value for variable x we got compilation error as the variable x is public static <strong>final</strong> by default and final variables can not be re-initialized.</p>
+<pre>class Sample implements Try
+{
+  public static void main(String args[])
+  {
+     x=20; //compile time error
+  }
+}</pre>
+<p>11) An interface can extend any interface but cannot implement it. Class implements interface and interface extends interface.</p>
+<p>12) A <strong>class</strong> can implement any <strong>number of interfaces</strong>.</p>
+<p>13) If there are <strong>two or more same methods</strong> in two interfaces and a class implements both interfaces, implementation of the method once is enough.</p>
+<pre>interface A
+{
+   public void aaa();
+}
+interface B
+{
+   public void aaa();
+}
+class Central implements A,B
+{
+   public void aaa()
+   {
+        //Any Code here
+   }
+   public static void main(String args[])
+   {
+        //Statements
+    }
+}</pre>
+<p>14) A class cannot implement two interfaces that have methods with same name but different return type.</p>
+<pre>interface A
+{
+   public void aaa();
+}
+interface B
+{
+   public int aaa();
+}
+
+class Central implements A,B
+{
+
+   public void aaa() // error
+   {
+   }
+   public int aaa() // error
+   {
+   }
+   public static void main(String args[])
+   {
+
+   }
+}</pre>
+<p>15) Variable names conflicts can be resolved by interface name.</p>
+<pre>interface A
+{
+    int x=10;
+}
+interface B
+{
+    int x=100;
+}
+class Hello implements A,B
+{
+    public static void Main(String args[])
+    {
+       /* reference to x is ambiguous both variables are x
+        * so we are using interface name to resolve the 
+        * variable
+        */
+       System.out.println(x); 
+       System.out.println(A.x);
+       System.out.println(B.x);
+    }
+}</pre>
+<h2>Advantages of interface in java:</h2>
+<p>Advantages of using interfaces are as follows:</p>
+<ol>
+<li>Without bothering about the implementation part, we can achieve the security of implementation</li>
+<li>In java, <strong>multiple inheritance</strong> is not allowed, however you can use interface to make use of it as you can implement more than one interface.</li>
+</ol>
+<div class="bb-nav"><a class="pretut" href="/java/poly">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/encap">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

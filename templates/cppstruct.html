@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Structures in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Structure is a compound data type that contains different variables of different types. For example, you want to store Student details like student name, student roll num, student age. You have two ways to do it, one way is to create different variables for each data, but the downfall of this approach is that if you want to store the details of multiple students, in that case it is not feasible to create separate set of variables for each student.<br />
+The second and best way of doing it by creating a structure like this:</p>
+<pre>struct Student
+{
+    char stuName[30];
+    int stuRollNo;
+    int stuAge;
+};</pre>
+<p>Now these three members combined will act like a separate variable and you can create structure variable like this:</p>
+<pre>structure_name variable_name</pre>
+<p>So if you want to hold the information of two students using this structure then you can do it like this:</p>
+<pre>Student s1, s2;</pre>
+<p>Then I can access the members of Student structure like this:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>//Assigning name to first student
+s1.stuName = "Ajeet";
+//Assigning age to the second student
+s2.stuAddr = 22;</pre>
+<p>Similarly I can set and get the values of other data members of the structure for every student. Lets see a complete example to put this up all together:</p>
+<h2>Structure Example in C++</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+struct Student{
+   char stuName[30];
+   int stuRollNo;
+   int stuAge;
+};
+int main(){
+   Student s;
+   cout&lt;&lt;"Enter Student Name: ";
+   cin.getline(s.stuName, 30);
+   cout&lt;&lt;"ENter Student Roll No: ";
+   cin&gt;&gt;s.stuRollNo;
+   cout&lt;&lt;"Enter Student Age: ";
+   cin&gt;&gt;s.stuAge;
+   cout&lt;&lt;"Student Record:"&lt;&lt;endl;
+   cout&lt;&lt;"Name: "&lt;&lt;s.stuName&lt;&lt;endl;
+   cout&lt;&lt;"Roll No: "&lt;&lt;s.stuRollNo&lt;&lt;endl;
+   cout&lt;&lt;"Age: "&lt;&lt;s.stuAge;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+Enter Student Name: Negan
+ENter Student Roll No: 4101003
+Enter Student Age: 22
+Student Record:
+Name: Negan
+Roll No: 4101003
+Age: 22</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/dest">❮ Previous</a>&nbsp;&nbsp;<a class="nexttut" href="/c++/funcpass">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+
+

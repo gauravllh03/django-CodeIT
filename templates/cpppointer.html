@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Pointers in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Pointer is a variable in C++ that holds the address of another variable. They have data type just like variables, for example an integer type pointer can hold the address of an integer variable and an character type pointer can hold the address of char variable.</p>
+<h4>Syntax of pointer</h4>
+<pre>data_type *pointer_name;</pre>
+<p><strong>How to declare a pointer?</strong></p>
+<pre>/* This pointer p can hold the address of an integer 
+ * variable, here p is a pointer and var is just a
+ * simple integer variable
+ */
+int *p, var</pre>
+<p><strong>Assignment</strong><br />
+As I mentioned above, an integer type pointer can hold the address of another int variable. Here we have an integer variable var and pointer p holds the address of var. To assign the address of variable to pointer we use <strong>ampersand symbol</strong> (&amp;).</p>
+<pre>/* This is how you assign the address of another variable
+ * to the pointer
+ */
+p = &amp;var;</pre>
+<p><strong>How to use it?</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>// This will print the address of variable var
+cout&lt;&lt;&amp;var;    
+
+/* This will also print the address of variable
+ * var because the pointer p holds the address of var
+ */
+cout&lt;&lt;p;    
+
+/* This will print the value of var, This is 
+ * important, this is how we access the value of
+ * variable through pointer
+*/
+cout&lt;&lt;*p; 
+</pre>
+<h2>Example of Pointer</h2>
+<p>Lets take a simple example to understand what we discussed above.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   //Pointer declaration
+   int *p, var=101;
+ 
+   //Assignment
+   p = &amp;var;
+
+   cout&lt;&lt;"Address of var: "&lt;&lt;&amp;var&lt;&lt;endl;
+   cout&lt;&lt;"Address of var: "&lt;&lt;p&lt;&lt;endl;
+   cout&lt;&lt;"Address of p: "&lt;&lt;&amp;p&lt;&lt;endl;
+   cout&lt;&lt;"Value of var: "&lt;&lt;*p;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Address of var: 0x7fff5dfffc0c
+Address of var: 0x7fff5dfffc0c
+Address of p: 0x7fff5dfffc10
+Value of var: 101</pre>
+<h2>Pointer and arrays</h2>
+<p>While handling arrays with pointers you need to take care few things. First and very important point to note regarding arrays is that the array name alone represents the base address of array so while assigning the address of array to pointer don&#8217;t use ampersand sign(&amp;). Do it like this:<br />
+<strong>Correct:</strong> Because arr represent the address of array.</p>
+<pre>p = arr;</pre>
+<p><strong>Incorrect:</strong></p>
+<pre>p = &amp;arr;</pre>
+<h3>Example: Traversing the array using Pointers</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   //Pointer declaration
+   int *p;
+   //Array declaration
+   int arr[]={1, 2, 3, 4, 5, 6};
+   //Assignment
+   p = arr;
+   for(int i=0; i&lt;6;i++){
+     cout&lt;&lt;*p&lt;&lt;endl;
+     //++ moves the pointer to next int position
+     p++;
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+1
+2
+3
+4
+5
+6
+</pre>
+<h2>How to increment pointer address and pointer&#8217;s value?</h2>
+<p>When we are accessing the value of a variable through pointer, sometimes we just need to increment or decrement the value of variable though it or we may need to move the pointer to next int position(just like we did above while working with arrays). The <a href="https://beginnersbook.com/2017/08/cpp-operators/">++ operator</a> is used for this purpose. One of the example of ++ operator we have seen above where we traversed the array using pointer by incrementing the pointer value using ++ operator. Lets see few more cases.</p>
+<pre>
+// Pointer moves to the next int position (as if it was an array)
+p++; 
+// Pointer moves to the next int position (as if it was an array)   
+++p;   
+
+/* All the following three cases are same they increment the value 
+ * of variable that the pointer p points.
+ */
+++*p;   
+++(*p); 
+++*(p); 
+</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/string">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/this">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

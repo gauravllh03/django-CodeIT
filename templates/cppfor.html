@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">For loop  in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>A loop is used for executing a block of statements repeatedly until a particular condition is satisfied. For example, when you are displaying number from 1 to 100 you may want set the value of a variable to 1 and display it 100 times, increasing its value by 1 on each loop iteration.</p>
+<p>In C++ we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &#8220;for loop&#8221; in C++.</p>
+<h4>Syntax of for loop</h4>
+<pre>for(initialization; condition ; increment/decrement)
+{
+   C++ statement(s);
+}</pre>
+<h2>Flow of Execution of the for Loop</h2>
+<p>As a program executes, the interpreter always keeps track of which statement is about to be executed. We call this the control flow, or the flow of execution of the program.<br />
+<img class="aligncenter size-full wp-image-6662" src="https://beginnersbook.com/wp-content/uploads/2017/08/for_loop_cpp.jpg" alt="C++ for loop flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/for_loop_cpp.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/for_loop_cpp-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/for_loop_cpp-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p><strong>First step:</strong> In for loop, initialization happens first and only once, which means that the initialization part of for loop only executes once.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Second step:</strong> Condition in for loop is evaluated on each loop iteration, if the condition is true then the statements inside for for loop body gets executed. Once the condition returns false, the statements in for loop does not execute and the control gets transferred to the next statement in the program after for loop.</p>
+<p><strong>Third step:</strong> After every execution of for loop’s body, the increment/decrement part of for loop executes that updates the loop counter.</p>
+<p><strong>Fourth step:</strong> After third step, the control jumps to second step and condition is re-evaluated.</p>
+<blockquote><p>The steps from second to fourth repeats until the loop condition returns false.</p></blockquote>
+<h2>Example of a Simple For loop in C++</h2>
+<p>Here in the loop initialization part I have set the value of variable i to 1, condition is i&lt;=6 and on each loop iteration the value of i increments by 1.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   for(int i=1; i&lt;=6; i++){
+      /* This statement would be executed
+       * repeatedly until the condition
+       * i&lt;=6 returns false.
+       */
+      cout&lt;&lt;"Value of variable i is: "&lt;&lt;i&lt;&lt;endl;
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of variable i is: 1
+Value of variable i is: 2
+Value of variable i is: 3
+Value of variable i is: 4
+Value of variable i is: 5
+Value of variable i is: 6
+</pre>
+<h2>Infinite for loop in C++</h2>
+<p>A loop is said to be infinite when it executes repeatedly and never stops. This usually happens by mistake. When you set the condition in for loop in such a way that it never return false, it becomes infinite loop.</p>
+<p><strong>For example:</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   for(int i=1; i&gt;=1; i++){
+      cout&lt;&lt;"Value of variable i is: "&lt;&lt;i&lt;&lt;endl;
+   }
+   return 0;
+}</pre>
+<p>This is an infinite loop as we are incrementing the value of i so it would always satisfy the condition i&gt;=1, the condition would never return false.</p>
+<p>Here is another example of infinite for loop:</p>
+<pre>// infinite loop
+for ( ; ; ) {
+   // statement(s)
+}</pre>
+<h2>Example: display elements of array using for loop</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int arr[]={21,9,56,99, 202};
+   /* We have set the value of variable i
+    * to 0 as the array index starts with 0
+    * which means the first element of array 
+    * starts with zero index.
+    */
+   for(int i=0; i&lt;5; i++){
+      cout&lt;&lt;arr[i]&lt;&lt;endl;
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+21
+9
+56
+99
+202
+</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/switch">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/while">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

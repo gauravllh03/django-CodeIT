@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Data Types in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Data types define the type of data a <a href="https://beginnersbook.com/2017/08/cpp-variables/">variable</a> can hold, for example an integer variable can hold integer data, a character type variable can hold character data etc.</p>
+<p>Data types in C++ are categorised in three groups: <strong>Built-in</strong>, <strong>user-defined</strong> and <strong>Derived</strong>.<br />
+<img class="aligncenter size-full wp-image-6660" src="https://beginnersbook.com/wp-content/uploads/2017/08/data_types_cpp.jpg" alt="data types in c++" width="600" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/data_types_cpp.jpg 600w, https://beginnersbook.com/wp-content/uploads/2017/08/data_types_cpp-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></p>
+<h2>Built in data types</h2>
+<p><strong>char</strong>: For characters. Size 1 byte.</p>
+<pre>char ch = 'A';</pre>
+<p><strong>int</strong>: For integers. Size 2 bytes.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>int num = 100;</pre>
+<p><strong>float</strong>: For single precision floating point. Size 4 bytes.</p>
+<pre>float num = 123.78987;</pre>
+<p><strong>double</strong>: For double precision floating point. Size 8 bytes.</p>
+<pre>double num = 10098.98899;</pre>
+<p><strong>bool</strong>: For booleans, true or false.</p>
+<pre>bool b = true;</pre>
+<p><strong>wchar_t</strong>: Wide Character. This should be avoided because its size is implementation defined and not reliable.</p>
+<h2>User-defined data types</h2>
+<p>We have three types of user-defined data types in C++<br />
+1. struct<br />
+2. union<br />
+3. enum</p>
+<p>I have covered them in detail in separate tutorials. For now just remember that these comes under user-defined data types.</p>
+<h2>Derived data types in C++</h2>
+<p>We have three types of derived-defined data types in C++<br />
+1. Array<br />
+2. Function<br />
+3. Pointer</p>
+<p>They are wide topics of C++ and I have covered them in separate tutorials. Just follow the tutorials in given sequence and you would be fine.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/var">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/operators">Next ❯</a></div>
+</div>
+
+{% endblock %}
+

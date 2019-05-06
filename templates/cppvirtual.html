@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Virtual functions in C++: Runtime Polymorphism</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>In this guide, we will see <strong>what are virtual functions and why we use them</strong>. When we declare a function as virtual in a class, all the sub classes that override this function have their function implementation as virtual by default (whether they mark them virtual or not). <strong>Why we declare a function virtual?</strong> To let compiler know that the call to this function needs to be resolved at runtime (also known as <strong>late binding</strong> and dynamic linking) so that the object type is determined and the correct version of the function is called.</p>
+<p>Lets take an example to understand what happens when we don&#8217;t mark a overridden function as virtual.</p>
+<h2>Example 1: Overriding a non-virtual function</h2>
+<p>See the problem here. Even though we have the parent class pointer pointing to the instance (object) of child class, the parent class version of the function is invoked.</p>
+<p>You may be thinking why I have created the pointer, I could have simply created the object of child class like this: Dog obj; and assigned the Dog instance to it. Well, in this example I have only one child class but when we a big project having several child classes, creating the object of child class separately is not recommended as it increases the complexity and the code become error prone. More clarity to this after this example.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include&lt;iostream&gt;
+using namespace std;
+//Parent class or super class or base class
+class Animal{
+public:
+   void animalSound(){
+      cout&lt;&lt;"This is a generic Function";
+   }
+};
+//child class or sub class or derived class
+class Dog : public Animal{
+public:
+   void animalSound(){ 
+      cout&lt;&lt;"Woof";
+   }
+};
+int main(){
+   Animal *obj;
+   obj = new Dog();
+   obj-&gt;animalSound();
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>This is a generic Function</pre>
+<h2>Example 2: Using Virtual Function</h2>
+<p>See in this case the output is Woof, which is what we expect. What happens in this case? Since we marked the function animalSound() as virtual, the call to the function is resolved at runtime, compiler determines the type of the object at runtime and calls the appropriate function.</p>
+<pre>#include&lt;iostream&gt;
+using namespace std;
+//Parent class or super class or base class
+class Animal{
+public:
+   virtual void animalSound(){
+      cout&lt;&lt;"This is a generic Function";
+   }
+};
+//child class or sub class or derived class
+class Dog : public Animal{
+public:
+   void animalSound(){ 
+      cout&lt;&lt;"Woof";
+   }
+};
+int main(){
+   Animal *obj;
+   obj = new Dog();
+   obj-&gt;animalSound();
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>Woof</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/override">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/encap">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

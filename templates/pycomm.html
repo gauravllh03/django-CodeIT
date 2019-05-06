@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Comments in Python Programming</h1>
+        <div class="entry-content" itemprop="text"><p>Although comments do not change the outcome of a program, they still play an important role in any programming and not just Python. <strong>Comments</strong> are the way to improve the readability of a code, by explaining what we have done in code in simple english. In this guide, we will learn about comments in Python and their types.</p>
+        <h2>Python comments</h2>
+        <p>Before we go through an example of <strong>comments in Python</strong>. Lets first understand the need of comments in Python or in any programming language.</p>
+        <p>A comment is text that doesn&#8217;t affect the outcome of a code, it is just a <strong>piece of text</strong> to let someone know what you have done in a program or what is being done in a block of code. This is especially helpful when someone else has written a code and you are analysing it for bug fixing or making a change in logic, <strong>by reading a comment you can understand the purpose of code much faster then by just going through the actual code</strong>.</p>
+        <p>Lets see how a comment looks like in Python.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <pre># This is just a text, it won't be executed.
+        
+        print("Python comment example")</pre>
+        <p><strong>Output:</strong><br />
+        <img class="aligncenter size-full wp-image-9905" src="https://beginnersbook.com/wp-content/uploads/2018/01/Python_comments_example.jpg" alt="Python comments example" width="690" height="190" srcset="https://beginnersbook.com/wp-content/uploads/2018/01/Python_comments_example.jpg 690w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_comments_example-300x83.jpg 300w" sizes="(max-width: 690px) 100vw, 690px" /></p>
+        <h2>Types of Comments in Python</h2>
+        <p>There are two types of comments in Python.<br />
+        1. Single line comment<br />
+        2. Multiple line comment</p>
+        <h2>Single line comment</h2>
+        <p>In python we use # special character to start the comment. Lets take few examples to understand the usage.</p>
+        <pre># This is just a comment. Anything written here is ignored by Python</pre>
+        <h2>Multi-line comment:</h2>
+        <p>To have a multi-line comment in Python, we use triple single quotes at the beginning and at the end of the comment, as shown below.</p>
+        <pre>'''
+        This is a 
+        multi-line
+        comment
+        '''
+        </pre>
+        <h2>Python Comments Example</h2>
+        <p>In this Python program we are seeing three types of comments. Single line comment, multi-line comment and the comment that is starting in the same line after the code.</p>
+        <pre>'''
+        We are writing a simple program here
+        First print statement.
+        This is a multiple line comment.
+        '''
+        print("Hello Guys")
+        
+        # Second print statement
+        print("How are You all?")
+        
+        print("Welcome to BeginnersBook") # Third print statement</pre>
+        <p><strong>Output:</strong><br />
+        <img class="aligncenter size-full wp-image-9906" src="https://beginnersbook.com/wp-content/uploads/2018/01/Python_single_multiple_line_comments.jpg" alt="Python single line and multiple line comments" width="736" height="262" srcset="https://beginnersbook.com/wp-content/uploads/2018/01/Python_single_multiple_line_comments.jpg 736w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_single_multiple_line_comments-300x107.jpg 300w" sizes="(max-width: 736px) 100vw, 736px" /></p>
+        <h2># character inside quotes</h2>
+        <p>When # character is encountered inside quotes, it is not considered as comment. For example:</p>
+        <pre>print("#this is not a comment")</pre>
+        <p>Output:</p>
+        <pre>#this is not a comment</pre>
+        <div class="bb-nav"><a class="pretut" href="/python/ide">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/if">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>	
+        
+</div>
+
+{% endblock %}

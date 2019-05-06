@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Python Tuple with example</h1>
+        <div class="entry-content" itemprop="text"><p>In Python, a tuple is similar to List except that the objects in tuple are immutable which means we cannot change the elements of a tuple once assigned. On the other hand, we can change the elements of a list.</p>
+        <h2>1. Tuple vs List</h2>
+        <p>1. The elements of a <strong>list</strong> are mutable whereas the elements of a <strong>tuple</strong> are immutable.<br />
+        2. When we do not want to change the data over time, the <strong>tuple</strong> is a preferred data type whereas when we need to change the data in future, <strong>list</strong> would be a wise option.<br />
+        3. Iterating over the elements of a <strong>tuple</strong> is faster compared to iterating over a <strong>list</strong>.<br />
+        4. Elements of a <strong>tuple</strong> are enclosed in parenthesis whereas the elements of <strong>list</strong> are enclosed in square bracket.</p>
+        <h2>2. How to create a tuple in Python</h2>
+        <p>To create a tuple in Python, place all the elements in a () parenthesis, separated by commas. A tuple can have heterogeneous data items, a tuple can have string and list as data items as well.</p>
+        <h3>2.1 Example &#8211; Creating tuple</h3>
+        <p>In this example, we are creating few tuples. We can have tuple of same type of data items as well as mixed type of data items. This example also shows nested tuple (tuples as data items in another tuple).</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <pre>
+        # tuple of strings
+        my_data = ("hi", "hello", "bye")
+        print(my_data)
+        
+        # tuple of int, float, string
+        my_data2 = (1, 2.8, "Hello World")
+        print(my_data2)
+        
+        # tuple of string and list
+        my_data3 = ("Book", [1, 2, 3])
+        print(my_data3)
+        
+        # tuples inside another tuple
+        # nested tuple
+        my_data4 = ((2, 3, 4), (1, 2, "hi"))
+        print(my_data4)</pre>
+        <p>Output:</p>
+        <pre>
+        ('hi', 'hello', 'bye')
+        (1, 2.8, 'Hello World')
+        ('Book', [1, 2, 3])
+        ((2, 3, 4), (1, 2, 'hi'))</pre>
+        <h3>2.2 Empty tuple:</h3>
+        <pre>
+        # empty tuple
+        my_data = ()</pre>
+        <h3>2.3 Tuple with only single element:</h3>
+        <p>Note: When a tuple has only one element, we must put a comma after the element, otherwise Python will not treat it as a tuple.</p>
+        <pre>
+        # a tuple with single data item
+        my_data = (99,)</pre>
+        <blockquote><p>If we do not put comma after 99 in the above example then python will treat my_data as an int variable rather than a tuple.</p></blockquote>
+        <h2>3. How to access tuple elements</h2>
+        <p>We use indexes to access the elements of a tuple. Lets take few example to understand the working.</p>
+        <h3>3.1 Accessing tuple elements using positive indexes</h3>
+        <p>We can also have negative indexes in tuple, we have discussed that in the next section. Indexes starts with 0 that is why we use 0 to access the first element of tuple, 1 to access second element and so on.</p>
+        <pre>
+        # tuple of strings
+        my_data = ("hi", "hello", "bye")
+        
+        # displaying all elements
+        print(my_data)
+        
+        # accessing first element
+        # prints "hi"
+        print(my_data[0])
+        
+        # accessing third element
+        # prints "bye"
+        print(my_data[2])</pre>
+        <p>Output:</p>
+        <pre>
+        ('hi', 'hello', 'bye')
+        hi
+        bye</pre>
+        <p><strong>Note:</strong><br />
+        1. <strong>TypeError</strong>: If you do not use integer indexes in the tuple. For example my_data[2.0] will raise this error. The index must always be an integer.<br />
+        2. <strong>IndexError</strong>: Index out of range. This error occurs when we mention the index which is not in the range. For example, if a tuple has 5 elements and we try to access the 7th element then this error would occurr.</p>
+        <h3>3.2 Negative indexes in tuples</h3>
+        <p>Similar to list and strings we can use negative indexes to access the tuple elements from the end.<br />
+        -1 to access last element, -2 to access second last and so on.</p>
+        <pre>
+        my_data = (1, 2, "Kevin", 8.9)
+        
+        # accessing last element
+        # prints 8.9
+        print(my_data[-1])
+        
+        # prints 2
+        print(my_data[-3])</pre>
+        <p>Output:</p>
+        <pre>
+        8.9
+        2</pre>
+        <h3>3.3 Accessing elements from nested tuples</h3>
+        <p>Lets understand how the double indexes are used to access the elements of nested tuple. The first index represents the element of main tuple and the second index represent the element of the nested tuple.</p>
+        <p>In the following example, when I used my_data[2][1], it accessed the second element of the nested tuple. Because 2 represented the third element of main tuple which is a tuple and the 1 represented the second element of that tuple.</p>
+        <pre>
+        my_data = (1, "Steve", (11, 22, 33))
+        
+        # prints 'v'
+        print(my_data[1][3])
+        
+        # prints 22
+        print(my_data[2][1])</pre>
+        <p>Output:</p>
+        <pre>
+        v
+        22</pre>
+        <h2>4. Operations that can be performed on tuple in Python</h2>
+        <p>Lets see the operations that can be performed on the tuples in Python.</p>
+        <h3>4.1 Changing the elements of a tuple</h3>
+        <p>We cannot change the elements of a tuple because elements of tuple are immutable. However we can change the elements of nested items that are mutable. For example, in the following code, we are changing the element of the list which is present inside the tuple. List items are mutable that&#8217;s why it is allowed.</p>
+        <pre>
+        my_data = (1, [9, 8, 7], "World")
+        print(my_data)
+        
+        # changing the element of the list
+        # this is valid because list is mutable
+        my_data[1][2] = 99
+        print(my_data)
+        
+        # changing the element of tuple
+        # This is not valid since tuple elements are immutable
+        # TypeError: 'tuple' object does not support item assignment
+        # my_data[0] = 101
+        # print(my_data)</pre>
+        <p>Output:</p>
+        <pre>
+        (1, [9, 8, 7], 'World')
+        (1, [9, 8, 99], 'World')</pre>
+        <h3>4.2 Delete operation on tuple</h3>
+        <p>We already discussed above that tuple elements are immutable which also means that we cannot delete the elements of a tuple. However deleting entire tuple is possible.</p>
+        <pre>
+        my_data = (1, 2, 3, 4, 5, 6)
+        print(my_data)
+        
+        # not possible
+        # error
+        # del my_data[2]
+        
+        # deleting entire tuple is possible
+        del my_data
+        
+        # not possible
+        # error
+        # because my_data is deleted
+        # print(my_data)</pre>
+        <p>Output:</p>
+        <pre>
+        (1, 2, 3, 4, 5, 6)</pre>
+        <h3>4.3 Slicing operation in tuples</h3>
+        <pre>
+        my_data = (11, 22, 33, 44, 55, 66, 77, 88, 99)
+        print(my_data)
+        
+        # elements from 3rd to 5th
+        # prints (33, 44, 55)
+        print(my_data[2:5])
+        
+        # elements from start to 4th
+        # prints (11, 22, 33, 44)
+        print(my_data[:4])
+        
+        # elements from 5th to end
+        # prints (55, 66, 77, 88, 99)
+        print(my_data[4:])
+        
+        # elements from 5th to second last
+        # prints (55, 66, 77, 88)
+        print(my_data[4:-1])
+        
+        # displaying entire tuple
+        print(my_data[:])</pre>
+        <p>Output:</p>
+        <pre>
+        (11, 22, 33, 44, 55, 66, 77, 88, 99)
+        (33, 44, 55)
+        (11, 22, 33, 44)
+        (55, 66, 77, 88, 99)
+        (55, 66, 77, 88)
+        (11, 22, 33, 44, 55, 66, 77, 88, 99)</pre>
+        <h3>4.4 Membership Test in Tuples</h3>
+        <p><strong>in</strong>: Checks whether an element exists in the specified tuple.<br />
+        <strong>not in</strong>: Checks whether an element does not exist in the specified tuple.</p>
+        <pre>
+        my_data = (11, 22, 33, 44, 55, 66, 77, 88, 99)
+        print(my_data)
+        
+        # true
+        print(22 in my_data)
+        
+        # false
+        print(2 in my_data)
+        
+        # false
+        print(88 not in my_data)
+        
+        # true
+        print(101 not in my_data)</pre>
+        <p>Output:</p>
+        <pre>
+        (11, 22, 33, 44, 55, 66, 77, 88, 99)
+        True
+        False
+        False
+        True</pre>
+        <h3>4.5 Iterating a tuple</h3>
+        <pre>
+        # tuple of fruits
+        my_tuple = ("Apple", "Orange", "Grapes", "Banana")
+        
+        # iterating over tuple elements
+        for fruit in my_tuple:
+             print(fruit)</pre>
+        <p>Output:</p>
+        <pre>
+        Apple
+        Orange
+        Grapes
+        Banana</pre>
+        <div class="bb-nav"><a class="pretut" href="/python/string">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/func">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>
+        
+</div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python While Loop</h1>
+    <div class="entry-content" itemprop="text"><p><strong>While loop</strong> is used to iterate over a block of code repeatedly until a given condition returns false.  The main difference is that we use <strong>while loop</strong> when we are <strong>not</strong> certain of the number of times the loop requires execution, on the other hand when we exactly know how many times we need to run the loop, we use for loop.</p>
+    <h2>Syntax of while loop</h2>
+    <pre>while condition:
+        #body_of_while
+    </pre>
+    <p>The body_of_while is set of Python statements which requires repeated execution. These set of statements execute repeatedly until the given condition returns false.</p>
+    <h2>Flow of while loop</h2>
+    <p>1. First the given condition is checked, if the condition returns false, the loop is terminated and the control jumps to the next statement in the program after the loop.<br />
+    2. If the condition returns true, the set of statements inside loop are executed and then the control jumps to the beginning of the loop for next iteration.</p>
+    <p>These two steps happen repeatedly as long as the condition specified in while loop remains true.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <h2>Python &#8211; While loop example</h2>
+    <p>Here is an example of while loop. In this example, we have a variable <code>num</code> and we are displaying the value of <code>num</code> in a loop, the loop has a increment operation where we are increasing the value of <code>num</code>. This is very important step, the while loop must have a increment or decrement operation, else the loop will run indefinitely, we will cover this later in infinite while loop.</p>
+    <pre>
+    num = 1
+    # loop will repeat itself as long as
+    # num &lt; 10 remains true
+    while num &lt; 10:
+        print(num)
+        #incrementing the value of num
+        num = num + 3
+    </pre>
+    <p>Output:</p>
+    <pre>
+    1
+    4
+    7</pre>
+    <h2>Infinite while loop</h2>
+    <p><strong>Example 1:</strong><br />
+    This will print the word &#8216;hello&#8217; indefinitely because the condition will always be true.</p>
+    <pre>while True:
+       print("hello")</pre>
+    <p>Example 2:</p>
+    <pre>
+    num = 1
+    while num&lt;5:
+       print(num)</pre>
+    <p>This will print &#8216;1&#8217; indefinitely because inside loop we are not updating the value of num, so the value of num will always remain 1 and the condition num &lt; 5 will always return true.</p>
+    <h2>Nested while loop in Python</h2>
+    <p>When a while loop is present inside another while loop then it is called nested while loop. Lets take an example to understand this concept.</p>
+    <pre>
+    i = 1
+    j = 5
+    while i &lt; 4:
+        while j &lt; 8:
+            print(i, ",", j)
+            j = j + 1
+            i = i + 1</pre>
+    <p>Output:</p>
+    <pre>
+    1 , 5
+    2 , 6
+    3 , 7
+    </pre>
+    <h2>Python &#8211; while loop with else block</h2>
+    <p>We can have a &#8216;else&#8217; block associated with while loop. The &#8216;else&#8217; block is optional. It executes only after the loop finished execution.</p>
+    <pre>
+    num = 10
+    while num &gt; 6:
+       print(num)
+       num = num-1
+    else:
+       print("loop is finished")</pre>
+    <p>Output:</p>
+    <pre>
+    10
+    9
+    8
+    7
+    loop is finished</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/for">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/break">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+        
+</div>
+
+{% endblock %}

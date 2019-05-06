@@ -1,0 +1,52 @@
+{% load staticfiles %}
+{% load i18n %}
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+        <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'gaurav1.jpeg' %}"></img></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'home' %}" style="font-size: 18px;">{% trans 'Home' %} <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}" style="font-size: 18px;">{% trans 'About' %}</a>
+            </li>
+            
+            {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
+                  {% trans 'Tutorials' %}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/c++" style="font-size: 18px;">C++</a>
+                  <a class="dropdown-item" href="/java" style="font-size: 18px;">Java</a>
+                  <a class="dropdown-item" href="/python" style="font-size: 18px;">Python</a>
+                </div>
+              </li>
+            {% endif %}
+          </ul>
+         
+          {% if not request.user.is_authenticated and not '/accounts/login' in request.get_full_path %} 
+          <form class="form-inline mt-2 mt-md-0" method="POST" action="{% url 'auth_login' %}">
+            {% csrf_token %}
+              <input class="form-control mr-sm-2" type="text" name="username" placeholder="username" aria-label="Username">
+              <input class="form-control mr-sm-2" type="password" name="password" placeholder="password" aria-label="Password">
+              <button class="btn btn-info my-2 my-sm-0" type="submit" style="font-size: 18px;">{% trans 'Login' %}</button>
+          </form>
+          {% endif %}
+          &nbsp;
+          <ul class="nav navbar-nav navbar-right">
+              <!--Creating a custom login in navbar itself-->
+              
+              {% if request.user.is_authenticated %}
+              <li class="nav-item"><a class="nav-link " href="{% url 'auth_logout' %}"style="font-size: 18px;">{% trans 'Logout' %}</a></li>
+              {% else %}
+              <li class="nav-item"><a class="nav-link " href="{% url 'registration_register' %}" style="font-size: 18px;">{% trans 'Register' %}</a></li>
+              {% endif %}
+            </ul>
+          
+        </div>
+      </nav>
+      

@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Java Finally block &#8211; Exception handling</h1>
+</header><div class="entry-content" itemprop="text"><p>In the previous tutorials I have covered try-catch block and nested try block. In this guide, we will see finally block which is used along with try-catch.<br />
+A <strong>finally block</strong> contains all the crucial statements that must be executed whether exception occurs or not. The statements present in this block will always execute regardless of whether exception occurs in try block or not such as closing a connection, stream etc.</p>
+<h2>Syntax of Finally block</h2>
+<pre>try {
+    //Statements that may cause an exception
+}
+catch {
+   //Handling exception
+}
+finally {
+   //Statements to be executed
+}</pre>
+<h2>A Simple Example of finally block</h2>
+<p>Here you can see that the exception occurred in try block which has been handled in catch block, after that finally block got executed.</p>
+<pre>class Example
+{
+   public static void main(String args[]) {
+      try{  
+   int num=121/0;  
+   System.out.println(num);  
+      }  
+      catch(ArithmeticException e){
+         System.out.println("Number should not be divided by zero");
+      }  
+      /* Finally block will always execute
+       * even if there is no exception in try block
+       */
+      finally{
+   System.out.println("This is finally block");
+      }  
+      System.out.println("Out of try-catch-finally");  
+   }   
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Number should not be divided by zero
+This is finally block
+Out of try-catch-finally</pre>
+<h2>Few Important points regarding finally block</h2>
+<p>1. A finally block must be associated with a try block, you cannot use finally without a try block. You should place those statements in this block that must be executed always.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p>2. Finally block is optional, as we have seen in previous tutorials that a try-catch block is sufficient for exception handling, however if you place a finally block then it will always run after the execution of try block.</p>
+<p>3. In normal case when there is no exception in try block then the finally block is executed after try block. However if an exception occurs then the catch block is executed before finally block.</p>
+<p>4. An exception in the finally block, behaves exactly like any other exception.</p>
+<p>5. The statements present in the <strong>finally block</strong> execute even if the try block contains control transfer statements like return, break or continue.<br />
+Lets see an example to see how finally works when return statement is present in try block:</p>
+<h3>Another example of finally block and return statement</h3>
+<p>You can see that even though we have return statement in the method, the finally block still runs.</p>
+<pre>class JavaFinally
+{
+   public static void main(String args[])
+   {
+      System.out.println(JavaFinally.myMethod());  
+   }
+   public static int myMethod()
+   {
+      try {
+        return 112;
+      }
+      finally {
+        System.out.println("This is Finally block");
+        System.out.println("Finally block ran even after return statement");
+      }
+   }
+}</pre>
+<p><strong>Output of above program:</strong></p>
+<pre>This is Finally block
+Finally block ran even after return statement
+112</pre>
+<br />
+</p>
+<h2>Cases when the finally block doesn&#8217;t execute</h2>
+<p>The circumstances that prevent execution of the code in a finally block are:<br />
+– The death of a Thread<br />
+– Using of the System. exit() method.<br />
+– Due to an exception arising in the finally block.</p>
+<h2>Finally and Close()</h2>
+<p><strong>close()</strong> statement is used to close all the open streams in a program. Its a good practice to use close() inside finally block. Since finally block executes even if exception occurs so you can be sure that all input and output streams are closed properly regardless of whether the exception occurs or not.</p>
+<p>For example:</p>
+<pre>....
+try{ 
+    OutputStream osf = new FileOutputStream( "filename" );
+    OutputStream osb = new BufferedOutputStream(opf);
+    ObjectOutput op = new ObjectOutputStream(osb);
+    try{
+       output.writeObject(writableObject);
+    }
+    finally{
+       op.close();
+    }
+}
+catch(IOException e1){
+     System.out.println(e1);
+}
+...</pre>
+<h2>Finally block without catch</h2>
+<p>A try-finally block is possible without catch block. Which means a try block can be used with finally without having a catch block.</p>
+<pre>...
+InputStream input = null;
+try {
+    input = new FileInputStream("inputfile.txt");
+} 
+finally {
+    if (input != null) {
+       try {
+         in.close();
+       }catch (IOException exp) {
+           System.out.println(exp);
+        }
+    }
+}
+...</pre>
+<h2>Finally block and System.exit()</h2>
+<p><strong>System.exit()</strong> statement behaves differently than<strong> return statement</strong>. Unlike return statement whenever System.exit() gets called in try block then <strong>Finally block</strong> doesn&#8217;t execute. Here is a code snippet that demonstrate the same:</p>
+<pre>....
+try {
+   //try block
+   System.out.println("Inside try block");
+   System.exit(0)
+}
+catch (Exception exp) {
+   System.out.println(exp);
+}
+finally {
+   System.out.println("Java finally block");
+}
+....</pre>
+<p>In the above example if the<strong> System.exit(0)</strong> gets called without any exception then finally won&#8217;t execute. However if any exception occurs while calling <strong>System.exit(0)</strong> then finally block will be executed.</p>
+<h2>try-catch-finally block</h2>
+<ul>
+<li>Either a try statement should be associated with a catch block or with finally.</li>
+<li>Since catch performs exception handling and finally performs the cleanup, the best approach is to use both of them.</li>
+</ul>
+<p><strong>Syntax:</strong></p>
+<pre>try {
+     //statements that may cause an exception
+}
+catch (…)‏ {
+     //error handling code
+}
+finally {
+    //statements to be executed
+}</pre>
+<h3>Examples of Try catch finally blocks</h3>
+<p><strong>Example 1:</strong> The following example demonstrate the working of finally block when no exception occurs in try block</p>
+<pre>class Example1{
+  public static void main(String args[]){
+    try{
+       System.out.println("First statement of try block");
+       int num=45/3;
+       System.out.println(num);
+    }
+    catch(ArrayIndexOutOfBoundsException e){
+       System.out.println("ArrayIndexOutOfBoundsException");
+    }
+    finally{
+       System.out.println("finally block");
+    }
+    System.out.println("Out of try-catch-finally block");
+  }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+15
+finally block
+Out of try-catch-finally block</pre>
+<p><strong>Example 2:</strong> This example shows the working of finally block when an exception occurs in try block but is not handled in the catch block:</p>
+<pre>class Example2{
+   public static void main(String args[]){
+     try{
+        System.out.println("First statement of try block");
+        int num=45/0;
+        System.out.println(num);
+     }
+     catch(ArrayIndexOutOfBoundsException e){
+        System.out.println("ArrayIndexOutOfBoundsException");
+     }
+     finally{
+        System.out.println("finally block");
+     }
+     System.out.println("Out of try-catch-finally block");
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+finally block
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at beginnersbook.com.Example2.main(Details.java:6)</pre>
+<p>As you can see that the system generated exception message is shown but before that the finally block successfully executed.</p>
+<p><strong>Example 3</strong>: When exception occurs in try block and handled properly in catch block</p>
+<pre>class Example3{
+   public static void main(String args[]){
+      try{
+         System.out.println("First statement of try block");
+         int num=45/0;
+         System.out.println(num);
+      }
+      catch(ArithmeticException e){
+         System.out.println("ArithmeticException");
+      }
+      finally{
+         System.out.println("finally block");
+      }
+      System.out.println("Out of try-catch-finally block");
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>First statement of try block
+ArithmeticException
+finally block
+Out of try-catch-finally block</pre>
+<div class="bb-nav"><a class="pretut" href="/java/try">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/throw">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

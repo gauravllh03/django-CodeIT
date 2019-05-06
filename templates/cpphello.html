@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+    <h1 class="entry-title" itemprop="headline">Hello World &#8211; First C++ Program</h1>
+<div class="entry-content" itemprop="text"><p>In this guide we will write and understand the <strong>first program in C++</strong> programming. We are writing a simple C++ program that prints &#8220;Hello World!&#8221; message. Lets see the program first and then we will discuss each and every part of it in detail.</p>
+<h2>Hello World Program in C++</h2>
+<pre>/*
+* Multiple line
+* comment
+*/
+#include&lt;iostream&gt;
+
+//Single line comment
+using namespace std;
+
+//This is where the execution of program begins
+int main()
+{
+   // displays Hello World! on screen
+   cout&lt;&lt;"Hello World!";
+
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Hello World!</pre>
+<p>Let&#8217;s discuss each and every part of the above program.</p>
+<p><strong>1. Comments</strong> &#8211; You can see two types of comments in the above program</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>// This is a single line comment
+/* This is a multiple line comment
+* suitable for long comments
+*/</pre>
+<p>Comments as the names suggests are just a text written by programmer during code development. Comment doesn&#8217;t affect your program logic in any way, you can write whatever you want in comments but it should be related to the code and have some meaning so that when someone else look into your code, the person should understand what you did in the code by just reading your comment.</p>
+<p>For example:</p>
+<pre>/* This function adds two integer numbers 
+ * and returns the result as an integer value
+ */
+int sum(int num1, int num2) {
+   return num1+num2;
+}</pre>
+<p>Now if someone reads my comment he or she can understand what I did there just by reading my comment. This improves readability of your code and when you are working on a project with your team mates, this becomes essential aspect.</p>
+<p><strong>2. #include&lt;iostream&gt;</strong> &#8211; This statements tells the compiler to include iostream file. This file contains pre defined input/output functions that we can use in our program.</p>
+<p><strong>3. using namespace std;</strong> &#8211; A namespace is like a region, where we have functions, variables etc and their scope is limited to that particular region. Here std is a namespace name, this tells the compiler to look into that particular region for all the variables, functions, etc. I will not discuss this in detail here as it may confuse you. I have covered this topic in a separate tutorial with examples. Just follow the tutorial in the given sequence and you would be fine.</p>
+<p><strong>4. int main()</strong> &#8211; As the name suggests this is the main function of our program and the execution of program begins with this function, the int here is the return type which indicates to the compiler that this function will return a integer value. That is the main reason we have a return 0 statement at the end of main function.</p>
+<p><strong>5. cout &lt;&lt; &#8220;Hello World!&#8221;;</strong> &#8211; The <code>cout</code> object belongs to the iostream file and the purpose of this object is to display the content between double quotes as it is on the screen. This object can also display the value of variables on screen(don&#8217;t worry, we will see that in the coming tutorials).</p>
+<p><strong>6. return 0;</strong> &#8211; This statement returns value 0 from the main() function which indicates that the execution of main function is successful. The value 1 represents failed execution.</p>
+<div class="bb-nav"><a class="pretut" href="/c++">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/var">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

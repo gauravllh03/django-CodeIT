@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Polymorphism in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Polymorphism is a feature of OOPs that allows the object to behave differently in different conditions. In C++ we have two types of polymorphism:<br />
+1) Compile time Polymorphism &#8211; This is also known as static (or early) binding.<br />
+2) Runtime Polymorphism &#8211; This is also known as dynamic (or late) binding.</p>
+<h2>1) Compile time Polymorphism</h2>
+<p>Function overloading and Operator overloading are perfect example of Compile time polymorphism.</p>
+<h3>Compile time Polymorphism Example</h3>
+<p>In this example, we have two functions with same name but different number of arguments. Based on how many parameters we pass during function call determines which function is to be called, this is why it is considered as an example of polymorphism because in different conditions the output is different. Since, the call is determined during compile time thats why it is called compile time polymorphism.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Add {
+public:
+  int sum(int num1, int num2){
+     return num1+num2;
+  }
+  int sum(int num1, int num2, int num3){
+     return num1+num2+num3;
+  }
+};
+int main() {
+  Add obj;
+  //This will call the first function
+  cout&lt;&lt;"Output: "&lt;&lt;obj.sum(10, 20)&lt;&lt;endl;
+  //This will call the second function
+  cout&lt;&lt;"Output: "&lt;&lt;obj.sum(11, 22, 33);
+  return 0;
+}
+
+<strong>Output:</strong></pre>
+<pre>Output: 30
+Output: 66</pre>
+<h2>2) Runtime Polymorphism</h2>
+<p>Function overriding is an example of Runtime polymorphism.<br />
+<strong>Function Overriding</strong>: When child class declares a method, which is already present in the parent class then this is called function overriding, here child class overrides the parent class.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p>In case of function overriding we have two definitions of the same function, one is parent class and one in child class. The call to the function is determined at <strong>runtime </strong>to decide which definition of the function is to be called, thats the reason it is called runtime polymorphism.</p>
+<h3>Example of Runtime Polymorphism</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class A {
+public:
+  void disp(){
+     cout&lt;&lt;"Super Class Function"&lt;&lt;endl;
+  }
+};
+class B: public A{
+public:
+  void disp(){
+     cout&lt;&lt;"Sub Class Function";
+  }
+};
+int main() {
+  //Parent class object
+  A obj;
+  obj.disp();
+  //Child class object
+  B obj2;
+  obj2.disp();
+  return 0;
+}</pre>
+<p>Output:</p>
+<pre>
+Super Class Function
+Sub Class Function</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/inherit">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/over">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+   
+        <h1 class="entry-title" itemprop="headline">How to create Class and Objects in Python</h1>
+        <div class="entry-content" itemprop="text"><p>In the previous guide, we discussed Object-oriented programming in Python. In this tutorial, we will see how to create classes and objects in Python.</p>
+        <h2>Define class in Python</h2>
+        <p>A class is defined using the keyword <code>class</code>.</p>
+        <h3>Example</h3>
+        <p>In this example, we are creating an empty class <code>DemoClass</code>. This class has no attributes and methods.</p>
+        <p>The string that we mention in the triple quotes is a docstring which is an optional string that briefly explains the purpose of the class.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <pre>
+            class DemoClass:
+            """This is my docstring, this explains brief about the class"""
+        
+        # this prints the docstring of the class
+        print(DemoClass.__doc__)</pre>
+        <p>Output:</p>
+        <pre>This is my docstring, this explains brief about the class</pre>
+        <h2>Creating Objects of class</h2>
+        <p>In this example, we have a class <code>MyNewClass</code> that has an attribute <code>num</code> and a function <code>hello()</code>. We are creating an object <code>obj</code> of the class and accessing the attribute value of object and calling the method hello() using the object.</p>
+        <pre>
+            class MyNewClass:
+            """This class demonstrates the creation of objects"""
+        
+            # instance attribute
+            num = 100
+        
+            # instance method
+            def hello(self):
+                print("Hello World!")
+        
+        
+        # creating object of MyNewClass
+        obj = MyNewClass()
+        
+        # prints attribute value
+        print(obj.num)
+        
+        # calling method hello()
+        obj.hello()
+        
+        # prints docstring
+        print(MyNewClass.__doc__)</pre>
+        <p>Output:</p>
+        <pre>
+        100
+        Hello World!
+        This class demonstrates the creation of objects</pre>
+        <div class="bb-nav"><a class="pretut" href="/python/oops">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/constructor">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>	
+</div>
+
+{% endblock %}

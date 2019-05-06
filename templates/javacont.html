@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Continue Statement in Java with example</h1>
+</header><div class="entry-content" itemprop="text"><p><strong>Continue statement</strong> is mostly used inside loops. Whenever it is encountered inside a loop, control directly jumps to the beginning of the loop for next iteration, skipping the execution of statements inside loop’s body for the current iteration. This is particularly useful when you want to continue the loop but do not want the rest of the statements(after continue statement) in loop body to execute for that particular iteration.</p>
+<p><strong>Syntax:</strong><br />
+continue word followed by semi colon.</p>
+<pre>continue;</pre>
+<h2>Example: continue statement inside for loop</h2>
+<pre>public class ContinueExample {
+
+   public static void main(String args[]){
+  for (int j=0; j&lt;=6; j++)
+  {
+           if (j==4)
+           {
+        continue;
+     }
+
+           System.out.print(j+" ");
+  }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>0 1 2 3 5 6</pre>
+<blockquote><p>As you may have noticed, the value 4 is missing in the output, why? because when the value of variable j is 4, the program encountered a <strong>continue statement</strong>, which makes it to jump at the beginning of for loop for next iteration, skipping the statements for current iteration (that&#8217;s the reason <code>println</code> didn&#8217;t execute when the value of j was 4).</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div></blockquote>
+<h2>Flow Diagram of Continue Statement</h2>
+<p><img class="aligncenter size-full wp-image-6540" src="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg" alt="Continue Statement" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Example: Use of continue in While loop</h2>
+<p>Same thing you can see here. We are iterating this loop from 10 to 0 for <code>counter</code> value and when the counter value is 7 the loop skipped the print statement and started next iteration of the while loop.</p>
+<pre>public class ContinueExample2 {
+
+   public static void main(String args[]){
+  int counter=10;
+  while (counter &gt;=0)
+  {
+           if (counter==7)
+           {
+         counter--;
+         continue;
+           }
+           System.out.print(counter+" ");
+           counter--;
+  }
+   }
+}
+
+</pre>
+<p><strong>Output:</strong></p>
+<pre>10 9 8 6 5 4 3 2 1 0</pre>
+<h2>Example of continue in do-While loop</h2>
+<pre>public class ContinueExample3 {
+
+   public static void main(String args[]){
+  int j=0;
+        do
+  {
+     if (j==7)
+     {
+     j++;
+     continue;
+     }
+     System.out.print(j+ " ");
+     j++;
+       }while(j&lt;10);
+      
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>0 1 2 3 4 5 6 8 9 
+</pre>
+<div class="bb-nav"><a class="pretut" href="/java/dowhile">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/break">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>  
+</div>
+
+{% endblock %}

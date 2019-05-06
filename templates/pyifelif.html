@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python If elif else statement example</h1>
+    <div class="entry-content" itemprop="text"> In this tutorial, we will learn <strong>if elif else statement in Python</strong>. The if..elif..else statement is used when we need to check multiple conditions.</p>
+    <h2>Syntax of if elif else statement in Python</h2>
+    <p>This way we are checking multiple conditions.</p>
+    <pre>if condition:
+       block_of_code_1
+    elif condition_2:
+       block_of_code_2
+    elif condition_3:
+       block_of_code_3
+    ..
+    ..
+    ..
+    else:
+      block_of_code_n</pre>
+    <p><strong>Notes:</strong><br />
+    1. There can be multiple &#8216;elif&#8217; blocks, however there is only &#8216;else&#8217; block is allowed.<br />
+    2. Out of all these blocks only one block_of_code gets executed. If the condition is true then the code inside &#8216;if&#8217; gets executed, if condition is false then the next condition(associated with elif) is evaluated and so on. If none of the conditions is true then the code inside &#8216;else&#8217; gets executed.</p>
+    <h2>Python &#8211; if..elif..else statement example</h2>
+    <p>In this example, we are <strong>checking multiple conditions</strong> using if..elif..else statement.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <pre>num = 1122
+    if 9 &lt; num &lt; 99:
+        print("Two digit number")
+    elif 99 &lt; num &lt; 999:
+        print("Three digit number")
+    elif 999 &lt; num &lt; 9999:
+        print("Four digit number")
+    else:
+        print("number is &lt;= 9 or &gt;= 9999")</pre>
+    <p><strong>Output:</strong><br />
+    <img class="aligncenter size-large wp-image-8324" src="https://beginnersbook.com/wp-content/uploads/2018/01/Python_if_elif_else-1024x590.jpg" alt="Python if elif else statement" width="1024" height="590" srcset="https://beginnersbook.com/wp-content/uploads/2018/01/Python_if_elif_else-1024x590.jpg 1024w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_if_elif_else-300x173.jpg 300w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_if_elif_else-768x443.jpg 768w, https://beginnersbook.com/wp-content/uploads/2018/01/Python_if_elif_else.jpg 1246w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+    <div class="bb-nav"><a class="pretut" href="/python/ifelse">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/nestedif">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>	
+        
+</div>
+
+{% endblock %}

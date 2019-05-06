@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+ 		  <h1 class="entry-title" itemprop="headline">For loop in Java with example</h1>
+<div class="entry-content" itemprop="text"><p>Loops are used to execute a set of statements repeatedly until a particular condition is satisfied. In Java we have three types of basic loops: for, while and do-while. In this tutorial we will learn how to use &#8220;<strong>for loop</strong>&#8221; in Java.</p>
+<h4>Syntax of for loop:</h4>
+<pre>for(initialization; condition ; increment/decrement)
+{
+   statement(s);
+}</pre>
+<h2>Flow of Execution of the for Loop</h2>
+<p>As a program executes, the interpreter always keeps track of which statement is about to be executed. We call this the control flow, or the flow of execution of the program.<br />
+<img class="aligncenter size-full wp-image-6550" src="https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java.jpg" alt="for loop Java" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java.jpg 400w, https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2015/03/for_loop_Java-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<p><strong>First step</strong>: In for loop, initialization happens first and only one time, which means that the initialization part of for loop only executes once.</p>
+<p><strong>Second step</strong>: Condition in for loop is evaluated on each iteration, if the condition is true then the statements inside for loop body gets executed. Once the condition returns false, the statements in for loop does not execute and the control gets transferred to the next statement in the program after for loop.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Third step</strong>: After every execution of for loop’s body, the increment/decrement part of for loop executes that updates the <strong>loop counter</strong>.</p>
+<p><strong>Fourth step</strong>: After third step, the control jumps to second step and condition is re-evaluated.</p>
+<h2>Example of Simple For loop</h2>
+<pre>class ForLoopExample {
+    public static void main(String args[]){
+         for(int i=10; i&gt;1; i--){
+              System.out.println("The value of i is: "+i);
+         }
+    }
+}</pre>
+<p>The output of this program is:</p>
+<pre>The value of i is: 10
+The value of i is: 9
+The value of i is: 8
+The value of i is: 7
+The value of i is: 6
+The value of i is: 5
+The value of i is: 4
+The value of i is: 3
+The value of i is: 2</pre>
+<p>In the above program:<br />
+int i=1 is initialization expression<br />
+i&gt;1 is condition(Boolean expression)<br />
+i&#8211; Decrement operation</p>
+<h2>Infinite for loop</h2>
+<p>The importance of Boolean expression and increment/decrement operation co-ordination:</p>
+<pre>class ForLoopExample2 {
+    public static void main(String args[]){
+         for(int i=1; i&gt;=1; i++){
+              System.out.println("The value of i is: "+i);
+         }
+    }
+}</pre>
+<p>This is an infinite loop as the condition would never return false. The initialization step is setting up the value of variable i to 1, since we are incrementing the value of i, it would always be greater than 1 (the Boolean expression: i&gt;1) so it would never return false. This would eventually lead to the infinite loop condition. Thus it is important to see the co-ordination between Boolean expression and increment/decrement operation to determine whether the loop would terminate at some point of time or not.</p>
+<p>Here is another example of infinite for loop:</p>
+<pre>// infinite loop
+for ( ; ; ) {
+    // statement(s)
+}</pre>
+<h2>For loop example to iterate an array:</h2>
+<p>Here we are iterating and displaying array elements using the for loop.</p>
+<pre>class ForLoopExample3 {
+    public static void main(String args[]){
+         int arr[]={2,11,45,9};
+         //i starts with 0 as array index starts with 0 too
+         for(int i=0; i&lt;arr.length; i++){
+              System.out.println(arr[i]);
+         }
+    }
+}</pre>
+<p>Output:</p>
+<pre>2
+11
+45
+9</pre>
+<h3>Enhanced For loop</h3>
+<p>Enhanced for loop is useful when you want to iterate Array/Collections, it is easy to write and understand.</p>
+<p>Let&#8217;s take the same example that we have written above and rewrite it using <strong>enhanced for loop</strong>.</p>
+<pre>class ForLoopExample3 {
+   public static void main(String args[]){
+      int arr[]={2,11,45,9};
+      for (int num : arr) {
+         System.out.println(num);
+      }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>2
+11
+45
+9</pre>
+<p><strong>Note:</strong> In the above example, I have declared the num as int in the enhanced for loop. This will change depending on the data type of array. For example, the enhanced for loop for string type would look like this:</p>
+<pre>String arr[]={"hi","hello","bye"};
+for (String str : arr) {
+         System.out.println(str);
+}</pre>
+
+<div class="bb-nav"><a class="pretut" href="/java/switch">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/while">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>   
+</div>
+
+{% endblock %}
+

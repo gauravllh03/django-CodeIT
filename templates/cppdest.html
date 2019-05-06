@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Destructors in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>A destructor is a special member function that works just opposite to constructor, unlike <a href="/c++/const">constructors</a> that are used for initializing an object, destructors destroy (or delete) the object.</p>
+<p><strong>Syntax of Destructor</strong></p>
+<pre>~class_name()    
+{   
+   //Some code   
+}</pre>
+<p>Similar to constructor, the destructor name should exactly match with the class name. A destructor declaration should always begin with the tilde(~) symbol as shown in the syntax above.</p>
+<h2>When does the destructor get called?</h2>
+<p>A destructor is <strong>automatically called</strong> when:<br />
+1) The program finished execution.<br />
+2) When a scope (the { } parenthesis) containing local variable ends.<br />
+3) When you call the delete operator.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Destructor Example</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class HelloWorld{
+public:
+  //Constructor
+  HelloWorld(){
+    cout&lt;&lt;"Constructor is called"&lt;&lt;endl;
+  }
+  //Destructor
+  ~HelloWorld(){
+    cout&lt;&lt;"Destructor is called"&lt;&lt;endl;
+   }
+   //Member function
+   void display(){
+     cout&lt;&lt;"Hello World!"&lt;&lt;endl;
+   }
+};
+int main(){
+   //Object created
+   HelloWorld obj;
+   //Member function called
+   obj.display();
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Constructor is called
+Hello World!
+Destructor is called
+</pre>
+<h2>Destructor rules</h2>
+<p>1) Name should begin with tilde sign(~) and must match class name.<br />
+2) There cannot be more than one destructor in a class.<br />
+3) Unlike constructors that can have parameters, destructors do not allow any parameter.<br />
+4) They do not have any return type, just like constructors.<br />
+5) When you do not specify any destructor in a class, compiler generates a default destructor and inserts it into your code.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/const">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/struct">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

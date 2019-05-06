@@ -1,0 +1,335 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+		<h1 class="entry-title" itemprop="headline">Operators in Java</h1>
+</header><div class="entry-content" itemprop="text"><p>An operator is a character that <strong>represents an action</strong>, for example + is an arithmetic operator that represents addition.</p>
+<h2>Types of Operator in Java</h2>
+<p>1) Basic Arithmetic Operators<br />
+2) Assignment Operators<br />
+3) Auto-increment and Auto-decrement Operators<br />
+4) Logical Operators<br />
+5) Comparison (relational) operators<br />
+6) Bitwise Operators<br />
+7) Ternary Operator</p>
+<h2>1) Basic Arithmetic Operators</h2>
+<p>Basic arithmetic operators are: +, -, *, /, %<br />
+<strong>+</strong> is for addition.</p>
+<p><strong>–</strong> is for subtraction.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>*</strong> is for multiplication.</p>
+<p><strong>/</strong> is for division.</p>
+<p><strong>%</strong> is for modulo.<br />
+Note: Modulo operator returns remainder, for example 10 % 5 would return 0</p>
+<h3>Example of Arithmetic Operators</h3>
+<pre>public class ArithmeticOperatorDemo {
+   public static void main(String args[]) {
+      int num1 = 100;
+      int num2 = 20;
+
+      System.out.println("num1 + num2: " + (num1 + num2) );
+      System.out.println("num1 - num2: " + (num1 - num2) );
+      System.out.println("num1 * num2: " + (num1 * num2) ); 
+      System.out.println("num1 / num2: " + (num1 / num2) );
+      System.out.println("num1 % num2: " + (num1 % num2) );
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>num1 + num2: 120
+num1 - num2: 80
+num1 * num2: 2000
+num1 / num2: 5
+num1 % num2: 0
+</pre>
+<h2>2) Assignment Operators</h2>
+<p>Assignments operators in java are: =, +=, -=, *=, /=, %=<br />
+<strong>num2 = num1</strong> would assign value of variable num1 to the variable.</p>
+<p><strong>num2+=num1</strong> is equal to num2 = num2+num1</p>
+<p><strong>num2-=num1</strong> is equal to num2 = num2-num1</p>
+<p><strong>num2*=num1</strong> is equal to num2 = num2*num1</p>
+<p><strong>num2/=num1</strong> is equal to num2 = num2/num1</p>
+<p><strong>num2%=num1</strong> is equal to num2 = num2%num1</p>
+<h3>Example of Assignment Operators</h3>
+<pre>public class AssignmentOperatorDemo {
+   public static void main(String args[]) {
+      int num1 = 10;
+      int num2 = 20;
+
+      num2 = num1;
+      System.out.println("= Output: "+num2);
+
+      num2 += num1;
+      System.out.println("+= Output: "+num2);
+        
+      num2 -= num1;
+      System.out.println("-= Output: "+num2);
+        
+      num2 *= num1;
+      System.out.println("*= Output: "+num2);
+        
+      num2 /= num1;
+      System.out.println("/= Output: "+num2);
+        
+      num2 %= num1;
+      System.out.println("%= Output: "+num2);
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>= Output: 10
++= Output: 20
+-= Output: 10
+*= Output: 100
+/= Output: 10
+%= Output: 0
+</pre>
+<h2>3) Auto-increment and Auto-decrement Operators</h2>
+<p>++ and &#8212;<br />
+<strong>num++</strong> is equivalent to <code>num=num+1;</code></p>
+<p><strong>num–-</strong> is equivalent to <code>num=num-1;</code></p>
+<h3>Example of Auto-increment and Auto-decrement Operators</h3>
+<pre>public class AutoOperatorDemo {
+   public static void main(String args[]){
+      int num1=100;
+      int num2=200;
+      num1++;
+      num2--;
+      System.out.println("num1++ is: "+num1);
+      System.out.println("num2-- is: "+num2);
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>num1++ is: 101
+num2-- is: 199</pre>
+<h2>4) Logical Operators</h2>
+<p>Logical Operators are used with binary variables. They are mainly used in conditional statements and loops for evaluating a condition.</p>
+<p>Logical operators in java are: &amp;&amp;, ||, !</p>
+<p>Let’s say we have two boolean variables b1 and b2.</p>
+<p><strong>b1&amp;&amp;b2</strong> will return true if both b1 and b2 are true else it would return false.</p>
+<p><strong>b1||b2</strong> will return false if both b1 and b2 are false else it would return true.</p>
+<p><strong>!b1</strong> would return the opposite of b1, that means it would be true if b1 is false and it would return false if b1 is true.</p>
+<h3>Example of Logical Operators</h3>
+<pre>public class LogicalOperatorDemo {
+   public static void main(String args[]) {
+      boolean b1 = true;
+      boolean b2 = false;
+
+      System.out.println("b1 &amp;&amp; b2: " + (b1&amp;&amp;b2));
+      System.out.println("b1 || b2: " + (b1||b2));
+      System.out.println("!(b1 &amp;&amp; b2): " + !(b1&amp;&amp;b2));
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>b1 &amp;&amp; b2: false
+b1 || b2: true
+!(b1 &amp;&amp; b2): true
+</pre>
+<h2>5) Comparison(Relational) operators</h2>
+<p>We have six relational operators in Java: ==, !=, &gt;, &lt;, &gt;=, &lt;=</p>
+<p><strong>==</strong> returns true if both the left side and right side are equal</p>
+<p><strong>!=</strong> returns true if left side is not equal to the right side of operator.</p>
+<p><strong>&gt;</strong> returns true if left side is greater than right.</p>
+<p><strong>&lt;</strong> returns true if left side is less than right side.</p>
+<p><strong>&gt;=</strong> returns true if left side is greater than or equal to right side.</p>
+<p><strong>&lt;=</strong> returns true if left side is less than or equal to right side.</p>
+<h3>Example of Relational operators</h3>
+<p><strong>Note:</strong> This example is using if-else statement which is our next tutorial.
+<pre>public class RelationalOperatorDemo {
+   public static void main(String args[]) {
+      int num1 = 10;
+      int num2 = 50;
+      if (num1==num2) {
+   System.out.println("num1 and num2 are equal");
+      }
+      else{
+   System.out.println("num1 and num2 are not equal");
+      }
+
+      if( num1 != num2 ){
+   System.out.println("num1 and num2 are not equal");
+      }
+      else{
+   System.out.println("num1 and num2 are equal");
+      }
+
+      if( num1 &gt; num2 ){
+   System.out.println("num1 is greater than num2");
+      }
+      else{
+   System.out.println("num1 is not greater than num2");
+      }
+
+      if( num1 &gt;= num2 ){
+   System.out.println("num1 is greater than or equal to num2");
+      }
+      else{
+   System.out.println("num1 is less than num2");
+      }
+
+      if( num1 &lt; num2 ){
+   System.out.println("num1 is less than num2");
+      }
+      else{
+   System.out.println("num1 is not less than num2");
+      }
+
+      if( num1 &lt;= num2){
+   System.out.println("num1 is less than or equal to num2");
+      }
+      else{
+   System.out.println("num1 is greater than num2");
+      }
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>num1 and num2 are not equal
+num1 and num2 are not equal
+num1 is not greater than num2
+num1 is less than num2
+num1 is less than num2
+num1 is less than or equal to num2
+</pre>
+<h2>6) Bitwise Operators</h2>
+<p>There are six bitwise Operators: &amp;, |, ^, ~, &lt;&lt;, &gt;&gt;</p>
+<p>num1 = 11; /* equal to 00001011*/<br />
+num2 = 22; /* equal to 00010110 */</p>
+<p>Bitwise operator performs bit by bit processing.<br />
+<strong>num1 &amp; num2</strong> compares corresponding bits of num1 and num2 and generates 1 if both bits are equal, else it returns 0. In our case it would return: 2 which is 00000010 because in the binary form of num1 and num2 only second last bits are matching.</p>
+<p><strong>num1 | num2</strong> compares corresponding bits of num1 and num2 and generates 1 if either bit is 1, else it returns 0. In our case it would return 31 which is 00011111</p>
+<p><strong>num1 ^ num2</strong> compares corresponding bits of num1 and num2 and generates 1 if they are not equal, else it returns 0. In our example it would return 29 which is equivalent to 00011101</p>
+<p><strong>~num1</strong> is a complement operator that just changes the bit from 0 to 1 and 1 to 0. In our example it would return -12 which is signed 8 bit equivalent to 11110100</p>
+<p><strong>num1 &lt;&lt; 2</strong> is left shift operator that moves the bits to the left, discards the far left bit, and assigns the rightmost bit a value of 0. In our case output is 44 which is equivalent to 00101100</p>
+<blockquote><p>Note: In the example below we are providing 2 at the right side of this shift operator that is the reason bits are moving two places to the left side. We can change this number and bits would be moved by the number of bits specified on the right side of the operator. Same applies to the right side operator.</p></blockquote>
+<p><strong>num1 &gt;&gt; 2</strong> is right shift operator that moves the bits to the right, discards the far right bit, and assigns the leftmost bit a value of 0. In our case output is 2 which is equivalent to 00000010</p>
+<h3>Example of Bitwise Operators</h3>
+<pre>public class BitwiseOperatorDemo {
+  public static void main(String args[]) {
+
+     int num1 = 11;  /* 11 = 00001011 */
+     int num2 = 22;  /* 22 = 00010110 */
+     int result = 0;
+
+     result = num1 &amp; num2;   
+     System.out.println("num1 &amp; num2: "+result);
+
+     result = num1 | num2;   
+     System.out.println("num1 | num2: "+result);
+    
+     result = num1 ^ num2;   
+     System.out.println("num1 ^ num2: "+result);
+    
+     result = ~num1;   
+     System.out.println("~num1: "+result);
+    
+     result = num1 &lt;&lt; 2;   
+     System.out.println("num1 &lt;&lt; 2: "+result); result = num1 &gt;&gt; 2;   
+     System.out.println("num1 &gt;&gt; 2: "+result);
+  }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>num1 &amp; num2: 2
+num1 | num2: 31
+num1 ^ num2: 29
+~num1: -12
+num1 &lt;&lt; 2: 44 num1 &gt;&gt; 2: 2
+</pre>
+<h2>7) Ternary Operator</h2>
+<p>This operator evaluates a boolean expression and assign the value based on the result.<br />
+<strong>Syntax:</strong></p>
+<pre>variable num1 = (expression) ? value if true : value if false</pre>
+<p>If the expression results true then the first value before the colon (:) is assigned to the variable num1 else the second value is assigned to the num1.</p>
+<h3>Example of Ternary Operator</h3>
+<pre>public class TernaryOperatorDemo {
+
+   public static void main(String args[]) {
+        int num1, num2;
+        num1 = 25;
+        /* num1 is not equal to 10 that's why
+   * the second value after colon is assigned
+   * to the variable num2
+   */
+  num2 = (num1 == 10) ? 100: 200;
+  System.out.println( "num2: "+num2);
+
+  /* num1 is equal to 25 that's why
+   * the first value is assigned
+   * to the variable num2
+   */
+  num2 = (num1 == 25) ? 100: 200;
+  System.out.println( "num2: "+num2);
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>num2: 200
+num2: 100
+</pre>
+<h2>Operator Precedence in Java</h2>
+<p>This determines which operator needs to be evaluated first if an expression has more than one operator. Operator with higher precedence at the top and lower precedence at the bottom.<br />
+Unary Operators<br />
+<strong>++  &#8211; &#8211;  !  ~</strong></p>
+<p>Multiplicative<br />
+<strong>*  / %</strong></p>
+<p>Additive<br />
+<strong>+  &#8211;</strong></p>
+<p>Shift<br />
+<strong>&lt;&lt;  &gt;&gt;  &gt;&gt;&gt;</strong></p>
+<p>Relational<br />
+<strong>&gt;  &gt;=  &lt;  &lt;=</strong></p>
+<p>Equality<br />
+<strong>==  !=</strong></p>
+<p>Bitwise AND<br />
+<strong>&amp;</strong></p>
+<p>Bitwise XOR<br />
+<strong>^</strong></p>
+<p>Bitwise OR<br />
+<strong>|</strong></p>
+<p>Logical AND<br />
+<strong>&amp;&amp;</strong></p>
+<p>Logical OR<br />
+<strong>||</strong></p>
+<p>Ternary<br />
+<strong>?:</strong></p>
+<p>Assignment<br />
+<strong>=  +=  -=  *=  /=  %=  &gt;  &gt;=  &lt;  &lt;=  &amp;=  ^=  |=</strong></p>
+<div class="bb-nav"><a class="pretut" href="/java/datatype">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/if">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>      
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,170 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">LinkedList in Java with Example</h1>
+<div class="entry-content" itemprop="text"><p>LinkedList is a doubly-linked list implementation of the <code>List</code> and <code>Deque</code> interfaces. LinkedList allows for constant-time insertions or removals using iterators, but only sequential access of elements. In other words, LinkedList can be searched forward and backward but the time it takes to traverse the list is directly proportional to the size of the list.</p>
+<blockquote><p>At the end of this guide, I have linked all the tutorials that I have shared on LinkedList, refer them in the given order to understand this topic fully.</p></blockquote>
+<h2>Example of LinkedList in Java</h2>
+<pre>import java.util.*;
+public class LinkedListExample {
+     public static void main(String args[]) {
+
+       /* Linked List Declaration */
+       LinkedList&lt;String&gt; linkedlist = new LinkedList&lt;String&gt;();
+
+       /*add(String Element) is used for adding 
+        * the elements to the linked list*/
+       linkedlist.add("Item1");
+       linkedlist.add("Item5");
+       linkedlist.add("Item3");
+       linkedlist.add("Item6");
+       linkedlist.add("Item2");
+
+       /*Display Linked List Content*/
+       System.out.println("Linked List Content: " +linkedlist);
+
+       /*Add First and Last Element*/
+       linkedlist.addFirst("First Item");
+       linkedlist.addLast("Last Item");
+       System.out.println("LinkedList Content after addition: " +linkedlist);
+
+       /*This is how to get and set Values*/
+       Object firstvar = linkedlist.get(0);
+       System.out.println("First element: " +firstvar);
+       linkedlist.set(0, "Changed first item");
+       Object firstvar2 = linkedlist.get(0);
+       System.out.println("First element after update by set method: " +firstvar2);
+
+       /*Remove first and last element*/
+       linkedlist.removeFirst();
+       linkedlist.removeLast();
+       System.out.println("LinkedList after deletion of first and last element: " +linkedlist);
+
+       /* Add to a Position and remove from a position*/
+       linkedlist.add(0, "Newly added item");
+       linkedlist.remove(2);
+       System.out.println("Final Content: " +linkedlist); 
+     }
+}</pre>
+<p>Output:</p>
+<pre>Linked List Content: [Item1, Item5, Item3, Item6, Item2]
+LinkedList Content after addition: [First Item, Item1, Item5, Item3, Item6, Item2, Last Item]
+First element: First Item
+First element after update by set method: Changed first item
+LinkedList after deletion of first and last element: [Item1, Item5, Item3, Item6, Item2]
+Final Content: [Newly added item, Item1, Item3, Item6, Item2]</pre>
+<h2>Methods of LinkedList class:</h2>
+<p>For all the examples in the below methods, consider<code> llistobj</code> as a reference for <code>LinkedList&lt;String&gt;</code>.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><code>LinkedList&lt;String&gt; llistobj  = new LinkedList&lt;String&gt;();</code></p>
+<p>1) <strong>boolean add(Object item)</strong>: It adds the item at the end of the list.</p>
+<pre>llistobj.add("Hello");</pre>
+<p>It would add the string &#8220;Hello&#8221; at the end of the linked list.</p>
+<p>2) <strong>void add(int index, Object item)</strong>: It adds an item at the given index of the the list.</p>
+<pre>llistobj.add(2, "bye");</pre>
+<p>This will add the string &#8220;bye&#8221; at the 3rd position( 2 index is 3rd position as index starts with 0).</p>
+<p>3) <strong>boolean addAll(Collection c)</strong>: It adds all the elements of the specified collection c to the list. It throws NullPointerException if the specified collection is null. Consider the below example &#8211;</p>
+<pre>LinkedList&lt;String&gt; llistobj = new LinkedList&lt;String&gt;();
+ArrayList&lt;String&gt; arraylist= new ArrayList&lt;String&gt;();
+arraylist.add("String1");
+arraylist.add("String2");
+llistobj.addAll(arraylist);</pre>
+<p>This piece of code would add all the elements of ArrayList to the LinkedList.</p>
+<p>4) <strong>boolean addAll(int index, Collection c)</strong>: It adds all the elements of collection c to the list starting from a give index in the list. It throws NullPointerException if the collection c is null and IndexOutOfBoundsException when the specified index is out of the range.</p>
+<pre>llistobj.add(5, arraylist);</pre>
+<p>It would add all the elements of the ArrayList to the LinkedList starting from position 6 (index 5).</p>
+<p>5) <strong>void addFirst(Object item)</strong>: It adds the item (or element) at the first position in the list.</p>
+<pre>llistobj.addFirst("text");</pre>
+<p>It would add the string &#8220;text&#8221; at the beginning of the list.</p>
+<p>6) <strong>void addLast(Object item)</strong>: It inserts the specified item at the end of the list.</p>
+<pre>llistobj.addLast("Chaitanya");</pre>
+<p>This statement will add a string &#8220;Chaitanya&#8221; at the end position of the linked list.</p>
+<p>7) <strong>void clear()</strong>: It removes all the elements of a list.</p>
+<pre>llistobj.clear();</pre>
+<p>8) <strong>Object clone()</strong>: It returns the copy of the list.</p>
+<p>For e.g. My linkedList has four items: text1, text2, text3 and text4.</p>
+<pre>Object str= llistobj.clone();
+ System.out.println(str);</pre>
+<p>Output: The output of above code would be:</p>
+<p>[text1, text2, text3, text4]</p>
+<p>9) <strong>boolean contains(Object item)</strong>: It checks whether the given item is present in the list or not. If the item is present then it returns true else false.</p>
+<pre>boolean var = llistobj.contains("TestString");</pre>
+<p>It will check whether the string &#8220;TestString&#8221; exist in the list or not.</p>
+<p>10) <strong>Object get(int index)</strong>: It returns the item of the specified index from the list.</p>
+<pre>Object var = llistobj.get(2);</pre>
+<p>It will fetch the 3rd item from the list.</p>
+<p>11) <strong>Object getFirst()</strong>: It fetches the first item from the list.</p>
+<pre>Object var = llistobj.getFirst();</pre>
+<p>12) <strong>Object getLast()</strong>: It fetches the last item from the list.</p>
+<pre>Object var= llistobj.getLast();</pre>
+<p>13) <strong>int indexOf(Object item)</strong>: It returns the index of the specified item.</p>
+<pre>llistobj.indexOf("bye");</pre>
+<p>14) <strong>int lastIndexOf(Object item)</strong>: It returns the index of last occurrence of the specified element.</p>
+<pre>int pos = llistobj.lastIndexOf("hello);</pre>
+<p>integer variable pos will be having the index of last occurrence of string &#8220;hello&#8221;.</p>
+<p>15) <strong>Object poll()</strong>: It returns and removes the first item of the list.</p>
+<pre>Object o = llistobj.poll();</pre>
+<p>16) <strong>Object pollFirst()</strong>: same as poll() method. Removes the first item of the list.</p>
+<pre>Object o = llistobj.pollFirst();</pre>
+<p>17) <strong>Object pollLast()</strong>: It returns and removes the last element of the list.</p>
+<pre>Object o = llistobj.pollLast();</pre>
+<p>18) <strong>Object remove()</strong>: It removes the first element of the list.</p>
+<pre>llistobj.remove();</pre>
+<p>19) <strong>Object remove(int index)</strong>: It removes the item from the list which is present at the specified index.</p>
+<pre>llistobj.remove(4);</pre>
+<p>It will remove the 5th element from the list.</p>
+<p>20) <strong>Object remove(Object obj)</strong>: It removes the specified object from the list.</p>
+<pre>llistobj.remove("Test Item");</pre>
+<p>21) <strong>Object removeFirst()</strong>: It removes the first item from the list.</p>
+<pre>llistobj.removeFirst();</pre>
+<p>22) <strong>Object removeLast()</strong>: It removes the last item of the list.</p>
+<pre>llistobj.removeLast();</pre>
+<p>23) <strong>Object removeFirstOccurrence(Object item)</strong>: It removes the first occurrence of the specified item.</p>
+<pre>llistobj.removeFirstOccurrence("text");</pre>
+<p>It will remove the first occurrence of the string &#8220;text&#8221; from the list.</p>
+<p>24) <strong>Object removeLastOccurrence(Object item)</strong>: It removes the last occurrence of the given element.</p>
+<pre>llistobj.removeLastOccurrence("String1);</pre>
+<p>It will remove the last occurrence of string &#8220;String1&#8221;.</p>
+<p>25) <strong>Object set(int index, Object item)</strong>: It updates the item of specified index with the give value.</p>
+<pre>llistobj.set(2, "Test");</pre>
+<p>It will update the 3rd element with the string &#8220;Test&#8221;.</p>
+<p>26)<strong> int size()</strong>: It returns the number of elements of the list.</p>
+<pre>llistobj.size();</pre>
+<div class="bb-nav"><a class="pretut" href="/java/array">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/vect">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,37 @@
+{% load staticfiles %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>CodeIT</title>
+    <link rel = "icon" href =  "{% static 'gaurav1.jpeg' %}" type = "image/x-icon"> 
+    {% include 'headcss.html'%}
+    <style>
+        .navbar-dark .navbar-nav .nav-link {
+          color:#ffff;
+        }
+        .navbar-dark .navbar-nav .nav-link:hover {
+          color:gray;
+        }
+        h1
+        {
+            font-size: 200%;
+        }
+        {% block style %}
+        
+        {% endblock %}
+    </style>
+
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    {% block gaurav %}
+    {% endblock %}
+<main role="main" class="container">
+  
+  {% block content %}
+  {% endblock %}
+</main>
+{% include 'javascript.html' %}
+</body>
+</html>

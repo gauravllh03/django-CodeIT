@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Continue Statement in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Continue statement is used inside loops. Whenever a continue statement is encountered inside a loop, control directly jumps to the beginning of the loop for next iteration, skipping the execution of statements inside loop’s body for the current iteration.</p>
+<h4>Syntax of continue statement</h4>
+<pre>continue;</pre>
+<h2>Example: continue statement inside for loop</h2>
+<p>As you can see that the output is missing the value 3, however the for loop iterate though the num value 0 to 6. This is because we have set a condition inside loop in such a way, that the continue statement is encountered when the num value is equal to 3. So for this iteration the loop skipped the cout statement and started the next iteration of loop.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   for (int num=0; num&lt;=6; num++) {
+      /* This means that when the value of
+       * num is equal to 3 this continue statement
+       * would be encountered, which would make the
+       * control to jump to the beginning of loop for
+       * next iteration, skipping the current iteration
+       */ 
+     
+      if (num==3) {
+          continue;
+      }
+      cout&lt;&lt;num&lt;&lt;" ";
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>0 1 2 4 5 6</pre>
+<h2>Flow Diagram of Continue Statement</h2>
+<p><img class="aligncenter size-full wp-image-6540" src="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg" alt="C++ continue statement" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Example: Use of continue in While loop</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int j=6;
+   while (j &gt;=0) {
+      if (j==4) {
+         j--;
+         continue;
+      }
+      cout&lt;&lt;"Value of j: "&lt;&lt;j&lt;&lt;endl;
+      j--;
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of j: 6
+Value of j: 5
+Value of j: 3
+Value of j: 2
+Value of j: 1
+Value of j: 0</pre>
+<h2>Example of continue in do-While loop</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int j=4;
+   do {
+      if (j==7) {
+         j++;
+         continue;
+      }
+      cout&lt;&lt;"j is: "&lt;&lt;j&lt;&lt;endl;
+      j++;
+   }while(j&lt;10);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>j is: 4
+j is: 5
+j is: 6
+j is: 8
+j is: 9</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/dowhile">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/break">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

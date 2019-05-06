@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">goto statement in C++  with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>The goto statement is used for transferring the control of a program to a given label. The syntax of goto statement looks like this:</p>
+<pre>goto label_name;</pre>
+<p><strong>Program structure:</strong></p>
+<pre>label1:
+...
+...
+goto label2;
+...
+..
+label2:
+...</pre>
+<p>In a program we have any number of goto and label statements, the goto statement is followed by a label name, whenever goto statement is encountered, the control of the program jumps to the label specified in the goto statement.</p>
+<blockquote><p>goto statements are almost never used in any development as they are complex and makes your program much less readable and more error prone. In place of goto, you can use continue and break statement.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div></blockquote>
+<h2>Example of goto statement in C++</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num; cout&lt;&lt;"Enter a number: "; cin&gt;&gt;num;
+   if (num % 2==0){
+      goto print;
+   }
+   else {
+      cout&lt;&lt;"Odd Number";
+   }
+
+   print:
+   cout&lt;&lt;"Even Number";
+   return 0;
+}</pre>
+<p><strong><br />
+Output:</strong></p>
+<pre>Enter a number: 42
+Even Number</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/break">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/func">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}

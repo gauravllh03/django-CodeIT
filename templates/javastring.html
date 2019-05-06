@@ -1,0 +1,83 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Java &#8211; String Class and its methods explained with examples</h1>
+<div class="entry-content" itemprop="text"><p><strong>String</strong> is a sequence of characters, for e.g. &#8220;Hello&#8221; is a string of 5 characters. In java, string is an immutable object which means it is constant and can cannot be changed once it has been created. In this tutorial we will learn about String class and String methods in detail along with many other Java String tutorials.</p>
+<h2 id="CreateString">Creating a String</h2>
+<p>There are two ways to create a String in Java</p>
+<ol>
+<li>String literal</li>
+<li>Using new keyword</li>
+</ol>
+<h3>String literal</h3>
+<p>In java, Strings can be created like this: Assigning a String literal to a String instance:</p>
+<pre>String str1 = "Welcome";
+String str2 = "Welcome";</pre>
+<p><strong>The problem with this approach</strong>: As I stated in the beginning that String is an object in Java. However we have not created any string object using new keyword above. The compiler does that task for us it creates a string object having the string literal (that we have provided , in this case it is &#8220;Welcome&#8221;) and assigns it to the provided string instances.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>But</strong> if the object already exist in the memory it does not create a new Object rather it assigns the same old object to the new instance, that means even though we have two string instances above(str1 and str2) compiler only created on string object (having the value &#8220;Welcome&#8221;) and assigned the same to both the instances. For example there are 10 string instances that have same value, it means that in memory there is only one object having the value and all the 10 string instances would be pointing to the same object.</p>
+<p>What if we want to have two different object with the same string? For that we would need to create strings using <strong>new keyword</strong>.</p>
+<h3>Using New Keyword</h3>
+<p>As we saw above that when we tried to assign the same string object to two different literals, compiler only created one object and made both of the literals to point the same object. To overcome that approach we can create strings like this:</p>
+<pre>String str1 = new String("Welcome");
+String str2 = new String("Welcome");</pre>
+<p>In this case compiler would create two different object in memory having the same string.</p>
+<h2>A Simple Java String Example</h2>
+<pre>public class Example{  
+   public static void main(String args[]){  
+   //creating a string by java string literal 
+   String str = "Beginnersbook"; 
+   char arrch[]={'h','e','l','l','o'}; 
+   //converting char array arrch[] to string str2
+   String str2 = new String(arrch); 
+      
+   //creating another java string str3 by using new keyword 
+   String str3 = new String("Java String Example"); 
+      
+   //Displaying all the three strings
+   System.out.println(str);  
+   System.out.println(str2);  
+   System.out.println(str3);  
+   }
+}</pre>
+<p>Output:</p>
+<pre>Beginnersbook
+hello
+Java String Example</pre>
+<div class="bb-nav"><a class="pretut" href="/java/linkhash">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/multi">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

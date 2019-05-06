@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Inheritance in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Inheritance is one of the feature of Object Oriented Programming System(OOPs), it allows the child class to acquire the properties (the data members) and functionality (the member functions) of parent class.</p>
+<p><strong>What is child class?</strong><br />
+A class that inherits another class is known as child class, it is also known as derived class or subclass.<br />
+<strong>What is parent class?</strong><br />
+The class that is being inherited by other class is known as parent class, super class or base class.</p>
+<h4>Syntax of Inheritance</h4>
+<pre>class parent_class
+{
+    //Body of parent class
+};
+class child_class : access_modifier parent_class
+{
+   //Body of child class
+};
+</pre>
+<h2>What are the advantages of using inheritance in C++ Programming</h2>
+<p>The main advantages of inheritance are <strong>code reusability</strong> and <strong>readability</strong>. When child class inherits the properties and functionality of parent class, we need not to write the same code again in child class. This makes it easier to reuse the code, makes us write the less code and the code becomes much more readable.</p>
+<p>Lets take a <strong>real life example</strong> to understand this: Lets assume that <code>Human</code> is a class that has properties such as height, weight, colour etc and functionality such as eating(), sleeping(), dreaming(), working() etc.<br />
+Now we want to create <code>Male</code> and <code>Female</code> class, these classes are different but since both Male and Female are humans they share some common properties and behaviours (functionality) so they can inherit those properties and functionality from Human class and rest can be written in their class separately.<br />
+This approach makes us write less code as both the classes inherited several properties and functions from base class thus we didn&#8217;t need to re-write them. Also, this makes it easier to read the code.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Inheritance Example</h2>
+<p>Before we discuss the types of inheritance, lets take an example:<br />
+Here we have two classes <code>Teacher</code> and <code>MathTeacher</code>, the MathTeacher class inherits the Teacher class which means <code>Teacher</code> is a parent class and <code>MathTeacher</code> is a child class. The child class can use the property <code>collegeName</code> of parent class.</p>
+<blockquote><p>Another important point to note is that when we create the object of child class it calls the constructor of child class and child class constructor automatically calls the constructor of base class.</p></blockquote>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Teacher {
+public:
+  Teacher(){
+    cout&lt;&lt;"Hey Guys, I am a teacher"&lt;&lt;endl;
+  }
+  string collegeName = "Beginnersbook";
+};
+//This class inherits Teacher class
+class MathTeacher: public Teacher {
+public:
+  MathTeacher(){
+    cout&lt;&lt;"I am a Math Teacher"&lt;&lt;endl;
+  }
+  string mainSub = "Math";
+  string name = "Negan";
+};
+int main() {
+  MathTeacher obj;
+  cout&lt;&lt;"Name: "&lt;&lt;obj.name&lt;&lt;endl;
+  cout&lt;&lt;"College Name: "&lt;&lt;obj.collegeName&lt;&lt;endl;
+  cout&lt;&lt;"Main Subject: "&lt;&lt;obj.mainSub&lt;&lt;endl;
+  return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Hey Guys, I am a teacher
+I am a Math Teacher
+Name: Negan
+College Name: Beginnersbook
+Main Subject: Math</pre>
+<h2>Types of Inheritance in C++</h2>
+<p>1) Single inheritance<br />
+2) Multilevel inheritance<br />
+3) Multiple inheritance<br />
+4) Hierarchical inheritance<br />
+5) Hybrid inheritance</p>
+<h3>Single inheritance</h3>
+<p>In Single inheritance one class inherits one class exactly.<br />
+For example: Lets say we have class A and B</p>
+<pre>B inherits A</pre>
+<p><strong>Example of Single inheritance:</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class A {
+public:
+  A(){
+     cout&lt;&lt;"Constructor of A class"&lt;&lt;endl;
+  }
+};
+class B: public A {
+public:
+  B(){
+     cout&lt;&lt;"Constructor of B class";
+  }
+};
+int main() {
+   //Creating object of class B
+   B obj;
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>Constructor of A class
+Constructor of B class</pre>
+<h3>2)Multilevel Inheritance</h3>
+<p>In this type of inheritance one class inherits another child class.</p>
+<pre>C inherits B and B inherits A</pre>
+<p><strong>Example of Multilevel inheritance:</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class A {
+public:
+  A(){
+     cout&lt;&lt;"Constructor of A class"&lt;&lt;endl;
+  }
+};
+class B: public A {
+public:
+  B(){
+     cout&lt;&lt;"Constructor of B class"&lt;&lt;endl;
+  }
+};
+class C: public B {
+public:
+  C(){
+     cout&lt;&lt;"Constructor of C class"&lt;&lt;endl;
+  }
+};
+int main() {
+  //Creating object of class C
+  C obj;
+  return 0;
+}</pre>
+<p>Output:</p>
+<pre>Constructor of A class
+Constructor of B class
+Constructor of C class</pre>
+<h3>Multiple Inheritance</h3>
+<p>In multiple inheritance, a class can inherit more than one class. This means that in this type of inheritance a single child class can have multiple parent classes.<br />
+For example:</p>
+<pre>C inherits A and B both</pre>
+<p><strong>Example of Multiple Inheritance:</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class A {
+public:
+  A(){
+     cout&lt;&lt;"Constructor of A class"&lt;&lt;endl;
+  }
+};
+class B {
+public:
+  B(){
+     cout&lt;&lt;"Constructor of B class"&lt;&lt;endl;
+  }
+};
+class C: public A, public B {
+public:
+  C(){
+     cout&lt;&lt;"Constructor of C class"&lt;&lt;endl;
+  }
+};
+int main() {
+   //Creating object of class C
+   C obj;
+   return 0;
+}</pre>
+<pre>Constructor of A class
+Constructor of B class
+Constructor of C class</pre>
+<h3>4)Hierarchical Inheritance</h3>
+<p>In this type of inheritance, one parent class has more than one child class. For example:</p>
+<pre>Class B and C inherits class A</pre>
+<p><strong>Example of Hierarchical inheritance:</strong></p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class A {
+public:
+  A(){
+     cout&lt;&lt;"Constructor of A class"&lt;&lt;endl;
+  }
+};
+class B: public A {
+public:
+  B(){ 
+     cout&lt;&lt;"Constructor of B class"&lt;&lt;endl;
+  }
+};
+class C: public A{
+public:
+  C(){
+     cout&lt;&lt;"Constructor of C class"&lt;&lt;endl;
+  }
+};
+int main() {
+   //Creating object of class C
+   C obj;
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>
+Constructor of A class
+Constructor of C class</pre>
+<h3>5) Hybrid Inheritance</h3>
+<p>Hybrid inheritance is a combination of more than one type of inheritance. For example, A child and parent class relationship that follows multiple and hierarchical inheritance both can be called hybrid inheritance.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/enum">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/poly">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python Numbers</h1>
+    <div class="entry-content" itemprop="text"><p>In this guide, we will see how to work with <strong>numbers in Python</strong>. Python supports integers, floats and complex numbers.</p>
+    <p>An <strong>integer</strong> is a number without decimal point for example 5, 6, 10 etc.</p>
+    <p>A <strong>float</strong> is a number with decimal point for example 6.7, 6.0, 10.99 etc.</p>
+    <p>A <strong>complex number</strong> has a real and imaginary part for example 7+8j, 8+11j etc.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <h2>Example: Numbers in Python</h2>
+    <pre># Python program to display numbers of
+    # different data types
+    
+    # int
+    num1 = 10
+    num2 = 100
+    print(num1+num2)
+    
+    # float
+    a = 10.5
+    b = 8.9
+    print(a-b)
+    
+    # complex numbers
+    x = 3 + 4j
+    y = 9 + 8j
+    print(y-x)</pre>
+    <p>Output:</p>
+    <pre>110
+    1.5999999999999996
+    (6+4j)</pre>
+    <h2>Python example to find the class(data type) of a number</h2>
+    <p>We can use the <code>type()</code> function to find out the class of a number. An integer number belongs to <code>int</code> class, a float number belongs to <code>float</code> class and a complex number belongs to <code>complex</code> class.</p>
+    <pre># program to find the class of a number
+    
+    # int
+    num = 100
+    print("type of num: ",type(num))
+    
+    # float
+    num2 = 10.99
+    print("type of num2: ",type(num2))
+    
+    # complex numbers
+    num3 = 3 + 4j
+    print("type of num3: ",type(num3))</pre>
+    <p>Output:<br />
+    <img class="aligncenter size-large wp-image-8378" src="https://beginnersbook.com/wp-content/uploads/2018/02/Python_numbers_data_type-1024x655.jpg" alt="Python numbers data type" width="1024" height="655" srcset="https://beginnersbook.com/wp-content/uploads/2018/02/Python_numbers_data_type-1024x655.jpg 1024w, https://beginnersbook.com/wp-content/uploads/2018/02/Python_numbers_data_type-300x192.jpg 300w, https://beginnersbook.com/wp-content/uploads/2018/02/Python_numbers_data_type-768x491.jpg 768w, https://beginnersbook.com/wp-content/uploads/2018/02/Python_numbers_data_type.jpg 1326w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+    <h2>The isinstance() function</h2>
+    <p>The isinstance() functions checks whether a number belongs to a particular class and returns true or false based on the result.<br />
+    For example:<br />
+    <code>isinstance(num, int)</code> will return true if the number <code>num</code> is an integer number.<br />
+    <code>isinstance(num, int)</code> will return false if the number <code>num</code> is not an integer number.</p>
+    <h3>Example of isinstance() function</h3>
+    <pre>num = 100
+    # true because num is an integer
+    print(isinstance(num, int))
+    
+    # false because num is not a float
+    print(isinstance(num, float))
+    
+    # false because num is not a complex number
+    print(isinstance(num, complex))</pre>
+    <p>Output:</p>
+    <pre>True
+    False
+    False</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/cont">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/list">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+        
+</div>
+
+{% endblock %}

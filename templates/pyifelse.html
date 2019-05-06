@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python If else Statement Example</h1>
+    <div class="entry-content" itemprop="text"> In this guide, we will learn another control statement &#8216;if..else&#8217;.</p>
+<p>We use if statements when we need to execute a certain block of Python code when a particular condition is true. <strong>If..else statements</strong> are like extension of &#8216;if&#8217; statements, with the help of if..else we can execute certain statements if condition is true and a different set of statements if condition is false. For example, you want to print &#8216;even number&#8217; if the number is even and &#8216;odd number&#8217; if the number is not even, we can accomplish this with the help of if..else statement.</p>
+<h2>Python &#8211; Syntax of if..else statement</h2>
+<pre>if condition:
+   block_of_code_1
+else:
+   block_of_code_2
+</pre>
+<p>block_of_code_1: This would execute if the given condition is true<br />
+block_of_code_2: This would execute if the given condition is false</p>
+<h2>If..else flow control</h2>
+<p><img class="aligncenter size-full wp-image-6664" src="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1.jpg" alt="If else flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>If-else example in Python</h2>
+<pre>num = 22
+if num % 2 == 0:
+    print("Even Number")
+else:
+    print("Odd Number")</pre>
+<p>Output:</p>
+<pre>Even Number</pre>
+<div class="bb-nav"><a class="pretut" href="/python/if">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/ifelif">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+        
+</div>
+
+{% endblock %}

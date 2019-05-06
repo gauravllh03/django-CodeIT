@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+    <h1 class="entry-title" itemprop="headline">Variables in C++</h1>
+<!--<p class="entry-meta"><span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name"></span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>A variable is a name which is associated with a value that can be changed. For example when I write <code>int num=20;</code> here variable name is num which is associated with value 20, int is a data type that represents that this variable can hold integer values. We will cover the data types in the next tutorial. In this tutorial, we will discuss about variables.</p>
+<h2>Syntax of declaring a variable in C++</h2>
+<pre>data_type variable1_name = value1, variable2_name = value2;</pre>
+<p><strong>For example:</strong></p>
+<pre>int num1=20, num2=100;</pre>
+<p>We can also write it like this:</p>
+<pre>int num1,num2;
+num1=20;
+num2=100;</pre>
+<h2>Types of variables</h2>
+<p>Variables can be categorised based on their data type. For example, in the above example we have seen integer types variables. Following are the types of variables available in C++.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>int</strong>: These type of of variables holds integer value.</p>
+<p><strong>char</strong>: holds character value like &#8216;c&#8217;, &#8216;F&#8217;, &#8216;B&#8217;, &#8216;p&#8217;, &#8216;q&#8217; etc.</p>
+<p><strong>bool</strong>: holds boolean value true or false.</p>
+<p><strong>double</strong>: double-precision floating point value.</p>
+<p><strong>float</strong>: Single-precision floating point value.</p>
+<h2>Types of variables based on their scope</h2>
+<p>Before going further lets discuss what is scope first. When we discussed the Hello World Program, we have seen the curly braces in the program like this:</p>
+<pre>int main {
+
+//Some code
+
+}</pre>
+<p>Any variable declared inside these curly braces have scope limited within these curly braces, if you declare a variable in main() function and try to use that variable outside main() function then you will get compilation error.</p>
+<p>Now that we have understood what is scope. Lets move on to the types of variables based on the scope.</p>
+<p>1. Global variable<br />
+2. Local variable</p>
+<h3>Global Variable</h3>
+<p>A variable declared outside of any function (including main as well) is called global variable. Global variables have their scope throughout the program, they can be accessed anywhere in the program, in the main, in the user defined function, anywhere.</p>
+<p>Lets take an example to understand it:</p>
+<h4>Global variable example</h4>
+<p>Here we have a global variable <code>myVar</code>, that is declared outside of main. We have accessed the variable twice in the main() function without any issues.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+// This is a global variable
+char myVar = 'A';
+int main()
+{
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+   myVar='Z';
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of myVar: A
+Value of myVar: Z</pre>
+<h3>Local variable</h3>
+<p>Local variables are declared inside the braces of any user defined function, main function, loops or any control statements(if, if-else etc) and have their scope limited inside those braces.</p>
+<h4>Local variable example</h4>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+char myFuncn() {
+// This is a local variable
+char myVar = 'A';
+}
+int main()
+{
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+   myVar='Z';
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar;
+   return 0;
+}</pre>
+<p><strong>Output:</strong><br />
+Compile time error, because we are trying to access the variable <code>myVar</code> outside of its scope. The scope of <code>myVar</code> is limited to the body of function <code>myFuncn()</code>, inside those braces.</p>
+<h2>Can global and local variable have same name in C++?</h2>
+<p>Lets see an example having same name global and local variable.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+// This is a global variable
+char myVar = 'A';
+char myFuncn() {
+   // This is a local variable
+   char myVar = 'B';
+   return myVar;
+}
+int main()
+{
+   cout &lt;&lt;"Funcn call: "&lt;&lt; myFuncn()&lt;&lt;endl;
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+   myVar='Z';
+   cout &lt;&lt;"Funcn call: "&lt;&lt; myFuncn()&lt;&lt;endl;
+   cout &lt;&lt;"Value of myVar: "&lt;&lt; myVar&lt;&lt;endl;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Funcn call: B
+Value of myVar: A
+Funcn call: B
+Value of myVar: Z</pre>
+<p>As you can see that when I changed the value of <code>myVar</code> in the main function, it only changed the value of global variable <code>myVar</code> because local variable <code>myVar</code> scope is limited to the function <code>myFuncn()</code>.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/hello">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/datatypes">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,276 @@
+
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Multithreading in java with examples</h1>
+<div class="entry-content" itemprop="text"><p>Before we talk about <strong>multithreading</strong>, let&#8217;s discuss threads. A thread is a light-weight smallest part of a process that can run concurrently with the other parts(other threads) of the same process. Threads are independent because they all have separate path of execution that&#8217;s the reason if an exception occurs in one thread, it doesn&#8217;t affect the execution of other threads. All threads of a process share the common memory. <strong>The process of executing multiple threads simultaneously is known as multithreading.</strong></p>
+<p>Let&#8217;s summarize the discussion in points:<br />
+1. The main purpose of multithreading is to provide simultaneous execution of two or more parts of a program to maximum utilize the CPU time. A multithreaded program contains two or more parts that can run concurrently. Each such part of a program called thread.</p>
+<p>2. Threads are lightweight sub-processes, they share the common memory space. In Multithreaded environment, programs that are benefited from multithreading, utilize the maximum CPU time so that the idle time can be kept to minimum.</p>
+<p>3. A thread can be in one of the following states:<br />
+NEW &#8211; A thread that has not yet started is in this state.<br />
+RUNNABLE &#8211; A thread executing in the Java virtual machine is in this state.<br />
+BLOCKED &#8211; A thread that is blocked waiting for a monitor lock is in this state.<br />
+WAITING &#8211; A thread that is waiting indefinitely for another thread to perform a particular action is in this state.<br />
+TIMED_WAITING &#8211; A thread that is waiting for another thread to perform an action for up to a specified waiting time is in this state.<br />
+TERMINATED &#8211; A thread that has exited is in this state.<br />
+A thread can be in only one state at a given point in time.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Multitasking vs Multithreading vs Multiprocessing vs parallel processing</h2>
+<p>If you are new to java you may get confused among these terms as they are used quite frequently when we discuss multithreading. Let&#8217;s talk about them in brief.</p>
+<p><strong>Multitasking: </strong>Ability to execute more than one task at the same time is known as multitasking.</p>
+<p><strong>Multithreading: </strong>We already discussed about it. It is a process of executing multiple threads simultaneously. Multithreading is also known as Thread-based Multitasking.</p>
+<p><strong>Multiprocessing:</strong> It is same as multitasking, however in multiprocessing more than one CPUs are involved. On the other hand one CPU is involved in multitasking.</p>
+<p><strong>Parallel Processing:</strong> It refers to the utilization of multiple CPUs in a single computer system.</p>
+<h2>Creating a thread in Java</h2>
+<p>There are two ways to create a thread in Java:<br />
+1) By extending Thread class.<br />
+2) By implementing Runnable interface.</p>
+<p>Before we begin with the programs(code) of creating threads, let&#8217;s have a look at these methods of Thread class. We have used few of these methods in the example below.</p>
+<ul>
+<li><code>getName()</code>: It is used for Obtaining a thread’s name</li>
+<li><code>getPriority()</code>: Obtain a thread’s priority</li>
+<li><code>isAlive()</code>: Determine if a thread is still running</li>
+<li><code>join()</code>: Wait for a thread to terminate</li>
+<li><code>run()</code>: Entry point for the thread</li>
+<li><code>sleep()</code>: suspend a thread for a period of time</li>
+<li><code>start()</code>: start a thread by calling its run() method</li>
+</ul>
+<h3>Method 1: Thread creation by extending Thread class</h3>
+<p><strong>Example 1:</strong></p>
+<pre>class MultithreadingDemo extends Thread{  
+  public void run(){  
+    System.out.println("My thread is in running state.");  
+  }   
+  public static void main(String args[]){  
+     MultithreadingDemo obj=new MultithreadingDemo();   
+     obj.start();  
+  }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>My thread is in running state.</pre>
+<p><strong>Example 2:</strong></p>
+<pre>class Count extends Thread
+{
+   Count()
+   {
+     super("my extending thread");
+     System.out.println("my thread created" + this);
+     start();
+   }
+   public void run()
+   {
+     try
+     {
+        for (int i=0 ;i&lt;10;i++)
+        {
+           System.out.println("Printing the count " + i);
+           Thread.sleep(1000);
+        }
+     }
+     catch(InterruptedException e)
+     {
+        System.out.println("my thread interrupted");
+     }
+     System.out.println("My thread run is over" );
+   }
+}
+class ExtendingExample
+{
+   public static void main(String args[])
+   {
+      Count cnt = new Count();
+      try
+      {
+         while(cnt.isAlive())
+         {
+           System.out.println("Main thread will be alive till the child thread is live");
+           Thread.sleep(1500);
+         }
+      }
+      catch(InterruptedException e)
+      {
+        System.out.println("Main thread interrupted");
+      }
+      System.out.println("Main thread's run is over" );
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>my thread createdThread[my runnable thread,5,main]
+Main thread will be alive till the child thread is live
+Printing the count 0
+Printing the count 1
+Main thread will be alive till the child thread is live
+Printing the count 2
+Main thread will be alive till the child thread is live
+Printing the count 3
+Printing the count 4
+Main thread will be alive till the child thread is live
+Printing the count 5
+Main thread will be alive till the child thread is live
+Printing the count 6
+Printing the count 7
+Main thread will be alive till the child thread is live
+Printing the count 8
+Main thread will be alive till the child thread is live
+Printing the count 9
+mythread run is over
+Main thread run is over</pre>
+<h3>Method 2: Thread creation by implementing Runnable Interface</h3>
+<p><b>A Simple Example</b></p>
+<pre>class MultithreadingDemo implements Runnable{  
+  public void run(){  
+    System.out.println("My thread is in running state.");  
+  }   
+  public static void main(String args[]){  
+     MultithreadingDemo obj=new MultithreadingDemo();  
+     Thread tobj =new Thread(obj);  
+     tobj.start();  
+ }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>My thread is in running state.</pre>
+<p><b>Example Program 2:</b><br />
+Observe the output of this program and try to understand what is happening in this program. If you have understood the usage of each thread method then you should not face any issue, understanding this example.</p>
+<pre>class Count implements Runnable
+{
+   Thread mythread ;
+   Count()
+   { 
+      mythread = new Thread(this, "my runnable thread");
+      System.out.println("my thread created" + mythread);
+      mythread.start();
+   }
+   public void run()
+   {
+      try
+      {
+        for (int i=0 ;i&lt;10;i++)
+        {
+          System.out.println("Printing the count " + i);
+          Thread.sleep(1000);
+        }
+     }
+     catch(InterruptedException e)
+     {
+        System.out.println("my thread interrupted");
+     }
+     System.out.println("mythread run is over" );
+   }
+}
+class RunnableExample
+{
+    public static void main(String args[])
+    {
+       Count cnt = new Count();
+       try
+       {
+          while(cnt.mythread.isAlive())
+          {
+            System.out.println("Main thread will be alive till the child thread is live"); 
+            Thread.sleep(1500);
+          }
+       }
+       catch(InterruptedException e)
+       {
+          System.out.println("Main thread interrupted");
+       }
+       System.out.println("Main thread run is over" );
+    }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>my thread createdThread[my runnable thread,5,main]
+Main thread will be alive till the child thread is live
+Printing the count 0
+Printing the count 1
+Main thread will be alive till the child thread is live
+Printing the count 2
+Main thread will be alive till the child thread is live
+Printing the count 3
+Printing the count 4
+Main thread will be alive till the child thread is live
+Printing the count 5
+Main thread will be alive till the child thread is live
+Printing the count 6
+Printing the count 7
+Main thread will be alive till the child thread is live
+Printing the count 8
+Main thread will be alive till the child thread is live
+Printing the count 9
+mythread run is over
+Main thread run is over</pre>
+<h2>Thread priorities</h2>
+<ul>
+<li>Thread priorities are the integers which decide how one thread should be treated with respect to the others.</li>
+<li>Thread priority decides when to switch from one running thread to another, process is called context switching</li>
+<li>A thread can voluntarily release control and the highest priority thread that is ready to run is given the CPU.</li>
+<li>A thread can be preempted by a higher priority thread no matter what the lower priority thread is doing. Whenever a higher priority thread wants to run it does.</li>
+<li>To set the priority of the thread <code>setPriority()</code> method is used which is a method of the class <code>Thread</code> Class.</li>
+<li>In place of defining the priority in integers, we can use <code>MIN_PRIORITY</code>, <code>NORM_PRIORITY</code> or <code>MAX_PRIORITY</code>.</li>
+</ul>
+<h2>Methods: isAlive() and join()</h2>
+<ul>
+<li>In all the practical situations main thread should finish last else other threads which have spawned from the main thread will also finish.</li>
+<li>To know whether the thread has finished we can call <code>isAlive()</code> on the thread which returns true if the thread is not finished.</li>
+<li>Another way to achieve this by using <code>join()</code> method, this method when called from the parent thread makes parent thread wait till child thread terminates.</li>
+<li>These methods are defined in the <code>Thread</code> class.</li>
+<li>We have used isAlive() method in the above examples too.</li>
+</ul>
+<h2>Synchronization</h2>
+<ul>
+<li>Multithreading introduces asynchronous behavior to the programs. If a thread is writing some data another thread may be reading the same data at that time. This may bring inconsistency.</li>
+<li>When two or more threads need access to a shared resource there should be some way that the resource will be used only by one resource at a time. The process to achieve this is called synchronization.</li>
+<li>To implement the synchronous behavior java has synchronous method. Once a thread is inside a synchronized method, no other thread can call any other synchronized method on the same object. All the other threads then wait until the first thread come out of the synchronized block.</li>
+<li>When we want to synchronize access to objects of a class which was not designed for the multithreaded access and the code of the method which needs to be accessed synchronously is not available with us, in this case we cannot add the synchronized to the appropriate methods. In java we have the solution for this, put the calls to the methods (which needs to be synchronized) defined by this class inside a synchronized block in following manner.</li>
+</ul>
+<pre>Synchronized(object)
+{
+    // statement to be synchronized
+}</pre>
+<h2>Inter-thread Communication</h2>
+<p>We have few methods through which java threads can communicate with each other. These methods are <code>wait()</code>, <code>notify()</code>, <code>notifyAll()</code>. All these methods can only be called from within a synchronized method.<br />
+1) To understand synchronization java has a concept of monitor. Monitor can be thought of as a box which can hold only one thread. Once a thread enters the monitor all the other threads have to wait until that thread exits the monitor.<br />
+2) <code>wait()</code>  tells the calling thread to give up the monitor and go to sleep until some other thread enters the same monitor and calls <code>notify()</code>.<br />
+3) <code>notify()</code> wakes up the first thread that called <code>wait()</code> on the same object.<br />
+<code>notifyAll()</code> wakes up all the threads that called wait() on the same object. The highest priority thread will run first.</p>
+<p><b>References</b></p>
+<ul>
+<li>The Complete Reference Java 2 by Herbert Schildt</li>
+</ul>
+<div class="bb-nav"><a class="pretut" href="/java/string">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/serial">Next ❯</a></div>
+<footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

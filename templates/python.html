@@ -1,0 +1,289 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>C++ Tutorial</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+-->
+{% extends 'base.html' %}
+{% load staticfiles %}
+<style>
+    {% block style %}
+    
+    body{
+    font-size:100%;
+	background-color: #e9ecef
+    } 
+    h1
+        {
+            font-size: 200%;
+        }  
+    .jumbotron
+    {
+        margin-top:25px;
+        margin-bottom:25px;
+        box-shadow: 10px 5px 5px  #aaaaaa;
+    }
+    .border{
+        border: 1px ridge black;
+        padding: 30px;
+        background-color: white;
+    }
+
+    .logo{
+        font-style: italic;
+        font-size: 30px;
+        text-align: center;
+        color:#2471A3;
+    }
+
+    #main-header{
+        color:#FF7F50;
+    }
+
+    .line{
+        border-top: 1px dotted black;
+    }
+
+    h2,h3{
+        color:#FF7F50;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a:link {
+        color:#2471A3  ;
+        text-decoration: none;
+    }
+
+    a:visited {
+    color: green;
+    }
+
+    a:hover {
+    color: gold;
+    text-decoration: underline;
+    }
+
+    a:active {
+    color: red;
+    }
+    .margin
+    {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    iframe {
+        width: 90%;
+        height: 250px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        
+        }
+    {% endblock %}
+</style>
+{% block content %}
+
+    <div class="border">
+            <div class="logo">
+                    
+                <p style="color:#FF7F50;font-size:54px;">
+                        
+                    <b style="font-family: 'Diplomata', cursive;font-size: 40px;text-shadow:#000000 0px 3px;">Gaurav's Coding Classes</b>
+                </p>
+            </div>
+            <div class="content" id="Heading">
+                <div class="jumbotron">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="line">
+                                <h1 id="main-header" style="margin-top: 30px;margin-bottom: 20px;">
+                                    Python Tutorials For Beginners
+                                </h1>
+                                <p style="margin-top: 35px;">
+                                    <b>Python</b> is a very simple yet very powerful object oriented programming language. The syntax of Python is very simple so a beginner can learn Python with ease. I have covered Python language in several separate python tutorials, this is the main Python tutorial page that has links to all the tutorials I have shared on Python. This tutorial is for both beginners and advanced Python learners.
+    
+                                    I recommend you to read and practice the tutorials in the given order.
+                                </p>
+                            </div>
+                           
+                        </div>
+                        <div class="col-sm-4" style="margin-top: 45px;margin-bottom: 20px;">
+                                <iframe width="300" height="300" style="margin-left: 30px;margin-right: 30px" src="https://www.youtube.com/embed/XmPnprocojM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="line">
+                    <h3>
+                        <b>Basics</b>
+                    </h3>
+                    <div class="jumbotron">
+                        <p > 
+                            1)<a href="/python/intro" target="_blank">
+                               Introduction to Python Programming
+                            </a>
+                        </p>
+                        <p>
+                            2)<a href="/python/install" target="_blank">
+                                 How to install Python on your system
+                            </a>
+                        </p>
+                        <p>
+                            3)<a href="/python/ide" target="_blank">
+                                 Creating your first Python Project in PyCharm IDE
+                            </a>
+                        </p>
+                        <p>
+                            4)<a href="/python/comments" target="_blank">
+                                Python Comments
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="line">
+                    <h3>
+                        <b>Control Statements</b>
+                    </h3>
+                    <div class="jumbotron">
+                    <p>
+                        5)<a href="/python/if" target="_blank">
+                             if statement
+                        </a>
+                    </p>
+                    <p>
+                        6)<a href="/python/ifelse" target="_blank">
+                             if..else statement
+                        </a>
+                    </p>
+                    <p>
+                        7)<a href="/python/ifelif" target="_blank">
+                             if..elif..else statement
+                        </a>
+                    </p>
+                    <p>
+                        8)<a href="/python/nestedif" target="_blank">
+                            Nested if..else statement
+                        </a>
+                    </p>
+                    <p>
+                        9)<a href="/python/for" target="_blank">
+                            for loop
+                        </a>
+                    </p>
+                    <p>
+                        10)<a href="/python/while" target="_blank">
+                             while loop
+                        </a>
+                    </p>
+                    <p>
+                        11)<a href="/python/break" target="_blank">
+                            Break statement
+                        </a>
+                    </p>
+                    <p>
+                        12)<a href="/python/cont" target="_blank">
+                            Continue Statement
+                        </a>
+                    </p>
+                    </div>	
+                </div>
+                <div class="line">
+                    <h3>
+                        <b>Data Types</b>
+                    </h3>
+                    <div class="jumbotron">
+                    <p>
+                        13)<a href="/python/num" target="_blank">
+                             Python numbers
+                        </a>
+                    </p>
+                    <p>
+                        14)<a href="/python/list" target="_blank">
+                             Python List
+                        </a>
+                    </p>
+                    <p>
+                        15)<a href="/python/string" target="_blank">
+                             Python String
+                        </a>
+                    </p>
+                    <p>
+                        16)<a href="/python/tuple" target="_blank">
+                             Python Tuple
+                        </a>
+                    </p>
+                    
+                    </div>
+                </div>
+                <div class="line">
+                    <h3>
+                        <b>Functions</b>
+                    </h3>
+                    <div class="jumbotron">
+                    <p>
+                        17)<a href="/python/func" target="_blank">
+                             Functions in Python with example
+                        </a>
+                    </p>
+                    <p>
+                        18)<a href="/python/rec" target="_blank">
+                             Recursion with example
+                        </a>
+                    </p>
+                    
+                    </div>
+                </div>
+                <div class="line">
+                    <h3>
+                        <b>Python OOPs</b>
+                    </h3>
+                    <div class="jumbotron">
+                    <p>
+                        19)<a href="/python/oops" target="_blank">
+                            Python OOPs
+                        </a>
+                    </p>
+                    <p>
+                        20)<a href="/python/class" target="_blank">
+                            Python class and object
+                        </a>
+                    </p>
+                    <p>
+                        21)<a href="/python/constructor" target="_blank">
+                             Constructors in Python
+                        </a>
+                    </p>
+                    
+                    </div>
+                </div>
+                
+                <div class="line">
+                    <h3 class="margin">
+                        <b>Features of Python</b>
+                    </h3>
+                    <div class="jumbotron">
+                    <p class="margin">
+                        1) <b>Easy to Learn and Use</b> - Python is easy to learn and use. It is developer-friendly and high level programming language.
+                    </p>
+                    <p class="margin">
+                        2) <b>Object Oriented</b> - Python supports object oriented language and concepts of classes and objects come into existence.
+                    </p>
+                    <p class="margin">
+                        3) <b>Expressive Language</b> -Python language is more expressive means that it is more understandable and readable.
+                    </p>
+                    <p class="margin">
+                        4) <b> Interpreted Language</b> - Python is an interpreted language i.e. interpreter executes the code line by line at a time. This makes debugging easy and thus suitable for beginners.
+                    <p class="margin">
+                        5) <b>Cross-platform Language</b> -  Python can run equally on different platforms such as Windows, Linux, Unix and Macintosh etc. So, we can say that Python is a portable language.
+                    </p>
+                    <p class="margin">
+                        6) <b>Free and Open Source</b> - Python language is freely available at offical web address.The source-code is also available. Therefore it is open source.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+{% endblock %}

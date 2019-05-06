@@ -1,0 +1,376 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>C++ Tutorial</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+-->
+{% extends 'base.html' %}
+{% load staticfiles %}
+<style>
+    {% block style %}
+
+    body{
+	background-color: #e9ecef;
+    font-size:100%;
+    }   
+	h1
+        {
+            font-size: 200%;
+        }
+    .jumbotron
+    {
+        margin-top:25px;
+        margin-bottom:25px;
+        box-shadow: 10px 5px 5px  #aaaaaa;
+    }
+    .border{
+        border: 1px ridge black;
+        padding: 30px;
+        background-color: white;
+    }
+
+    .logo{
+        font-style: italic;
+        font-size: 30px;
+        text-align: center;
+        color:#2471A3;
+    }
+
+    #main-header{
+        color:#FF7F50;
+    }
+
+    .line{
+        border-top: 1px dotted black;
+    }
+
+    h2,h3{
+        color:#FF7F50;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a:link {
+        color:#2471A3  ;
+        text-decoration: none;
+    }
+
+    a:visited {
+    color: green;
+    }
+
+    a:hover {
+    color: gold;
+    text-decoration: underline;
+    }
+
+    a:active {
+    color: red;
+    }
+    .margin
+    {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+	iframe {
+        width: 90%;
+        height: 250px;
+		margin-left: auto !important;
+        margin-right: auto !important;
+        
+        }
+    {% endblock %}
+</style>
+{% block content %}
+	<div class="border">
+		<div class="logo">
+			<p style="color:#FF7F50;font-size:54px;">
+                    
+				<b style="font-family: 'Diplomata', cursive;font-size: 40px;text-shadow:#000000 0px 3px;">Gaurav's Coding Classes</b>
+            </p>
+		</div>
+		<div class="content" id="Heading">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="line">
+                            <h1 id="main-header" style="margin-top: 30px;margin-bottom: 20px;">
+                                C++ Tutorials For Beginners
+                            </h1>
+                            <p>
+                                C++ is a general programming language and widely used now a days for competitive programming.It was developed by <b>Bjarne Stroustrap</b> as an extension of C language or "C with Classes".It has imperative, object-oriented and generic programming features.
+                            </p>
+                        </div>
+                        <div class="line">
+                            <h2 style="margin-top: 30px;margin-bottom: 20px;">
+                                C++ Tutorial
+                            </h2>
+                            <p>
+                                To learn C++ programming,refer these tutorials in the given order.These tutorials are made for the beginners,so even if you don't have any prior knowledge of C++,you won't face any difficulty understanding these tutorials.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" style="margin-top: 45px;margin-bottom: 20px;">
+                            <iframe width="300" height="300" src="https://www.youtube.com/embed/986JPlPmxJI" style="margin-left: 30px;margin-right: 30px" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+			<div class="line">
+				<h3>
+					<b>Basics</b>
+                </h3>
+                <div class="jumbotron">
+                    <p > 
+                        1)<a href="/c++/hello" target="_blank">
+                            First C++ Program - Hello World!
+                        </a>
+                    </p>
+                    <p>
+                        2)<a href="/c++/var" target="_blank">
+                            Variables and their types
+                        </a>
+                    </p>
+                    <p>
+                        3)<a href="/c++/datatypes" target="_blank">
+                            Data Types
+                        </a>
+                    </p>
+                    <p>
+                        4)<a href="/c++/operators" target="_blank">
+                            Operators in C++
+                        </a>
+                    </p>
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>Control Statements</b>
+                </h3>
+                <div class="jumbotron">
+				<p>
+					5)<a href="/c++/if" target="_blank">
+						If,if..else-if statement
+					</a>
+				</p>
+				<p>
+					6)<a href="/c++/switch" target="_blank">
+						Switch Case in C++
+					</a>
+				</p>
+				<p>
+					7)<a href="/c++/for" target="_blank">
+						For loop
+					</a>
+				</p>
+				<p>
+					8)<a href="/c++/while" target="_blank">
+						While loop
+					</a>
+				</p>
+				<p>
+					9)<a href="/c++/dowhile" target="_blank">
+						do while loop
+					</a>
+				</p>
+				<p>
+					10)<a href="/c++/cont" target="_blank">
+						Continue Statement
+					</a>
+				</p>
+				<p>
+					11)<a href="/c++/break" target="_blank">
+						Break statement
+					</a>
+				</p>
+				<p>
+					12)<a href="/c++/goto" target="_blank">
+						Goto Statement
+					</a>
+                </p>
+                </div>	
+			</div>
+			<div class="line">
+				<h3>
+					<b>Functions</b>
+                </h3>
+                <div class="jumbotron">
+				<p>
+					13)<a href="/c++/func" target="_blank">
+						Functions in C++
+					</a>
+				</p>
+				<p>
+					14)<a href="/c++/def" target="_blank">
+						Default Arguments in C++
+					</a>
+				</p>
+				<p>
+					15)<a href="/c++/rec" target="_blank">
+						C++ Recursion
+					</a>
+                </p>
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>Arrays</b>
+                </h3>
+                <div class="jumbotron">
+				<p>
+					16)<a href="/c++/array" target="_blank">
+						Arrays
+					</a>
+				</p>
+				<p>
+					17)<a href="/c++/multi" target="_blank">
+						Multidimensional arrays
+					</a>
+				</p>
+				<p>
+					18)<a href="/c++/pass" target="_blank">
+						Passing Array to function
+					</a>
+				</p>
+				<p>
+					19)<a href="/c++/string" target="_blank">
+						C++ Strings
+					</a>
+                </p>
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>Pointers</b>
+                </h3>
+                <div class="jumbotron">
+				<p>
+					20)<a href="/c++/pointer" target="_blank">
+						Pointers in C++
+					</a>
+				</p>
+				<p>
+					21)<a href="/c++/this" target="_blank">
+						this pointer
+					</a>
+                </p>
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>OOPs</b>
+                </h3>
+                <div class="jumbotron">
+				<p>
+					22)<a href="/c++/oops" target="_blank">
+						OOPs Concepts
+					</a>
+				</p>
+				<p>
+					23)<a href="/c++/const" target="_blank">
+						Constructors
+					</a>
+				</p>
+				<p>
+					24)<a href="/c++/dest" target="_blank">
+						Destructors
+					</a>
+				</p>
+				<p>
+					25)<a href="/c++/struct" target="_blank">
+						Structure
+					</a>
+				</p>
+				<p>
+					26)<a href="/c++/funcpass" target="_blank">
+						How to pass and return struct from function
+					</a>
+				</p>
+				<p>
+					27)<a href="/c++/enum" target="_blank">
+						Enumeration
+					</a>
+				</p>
+				<p>
+					28)<a href="/c++/inherit" target="_blank">
+						Inheritance
+					</a>
+				</p>
+				<p>
+					29)<a href="/c++/poly" target="_blank">
+						Polymorphism
+					</a>
+				</p>
+				<p>
+					30)<a href="/c++/over" target="_blank">
+						Function Overloading
+					</a>
+				</p>
+				<p>
+					31)<a href="/c++/override" target="_blank">
+						Function Overiding
+					</a>
+				</p>
+				<p>
+					32)<a href="/c++/virtual" target="_blank">
+						Virtual Function:Run time Polymorphism
+					</a>
+				</p>
+				<p>
+					33)<a href="/c++/encap" target="_blank">
+						Encapsulation
+					</a>
+				</p>
+				<p>
+					34)<a href="/c++/abstract" target="_blank">
+						Abstraction
+					</a>
+				</p>
+				<p>
+					35)<a href="/c++/inter" target="_blank">
+						Interfaces-Abstract class
+					</a>
+				</p>
+				<p>
+					36)<a href="/c++/passobj" target="_blank">
+						Pass and return object from function
+					</a>
+				</p>
+				<p>
+					37)<a href="/c++/friend" target="_blank">
+						Friend class and friend function
+					</a>
+                </p>
+                </div>
+			</div>
+			<div class="line">
+				<h3 class="margin">
+					<b>Features of C++</b>
+                </h3>
+                <div class="jumbotron">
+				<p class="margin">
+					1) <b>Better Memory Management</b> - You can dynamically allocate memory during runtime using new and delete operator in C++ to have better memory management.
+				</p>
+				<p class="margin">
+					2) <b>Object Oriented</b> - C++ supports object oriented programming features, which means we can use the popular OOPs concepts such as Abstraction, Inheritance, Encapsulation and Inheritance in C++ programs, these features make writing code in C++ a lot easier. We will cover them in detail in this tutorial series.
+				</p>
+				<p class="margin">
+					3) <b>Portable</b> - Most of C++ compilers supports ANSI standards that makes C++ portable because the code you write on one operating system can be run on other Operating system without making any change. We cannot say C++ a fully platform independent language as certain things in C++ are not portable, such as drawing graphics on a screen, since standard C++ has no graphics or GUI API.
+				</p>
+				<p class="margin">
+					4) <b>Structured Programming Language</b> - We have functions in C++, which makes easier to break a problem into small blocks of code and structure the program in such a way so that it improves readability and reusability.
+				</p>
+				<p class="margin">
+					5) <b>Ecxeption Handling</b> -  Just like Java we can do exception handling in C++ which makes it easier to identify and handle the exceptions.
+				</p>
+				<p class="margin">
+					6) <b>Simple</b> - Last but not least, just like C, it is easier to write a program in C++. Once you get familiar with the syntax of C++ programming language, it becomes a lot easier to code in C++.
+                </p>
+                </div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

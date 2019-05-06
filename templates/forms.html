@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+        <div class="row">
+                <div class="col-sm-6 offset-sm-5">
+                       <h1 style="color:#2471A3  ;"> {{title}} </h1>
+                </div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-6 offset-sm-3">
+                        
+                        <form method="POST" action=''>
+                                {%csrf_token%}
+                                {{form|crispy}}
+                                <br>
+                                <input class="btn btn-info" type="submit" value="Submit">
+                        </form>
+                </div>  
+        </div>
+
+{% endblock %}

@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+    <h1 class="entry-title" itemprop="headline">Switch Case statement in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Switch case statement is used when we have multiple conditions and we need to perform different action based on the condition. When we have multiple conditions and we need to execute a block of statements when a particular condition is satisfied. In such case either we can use lengthy if..else-if statement or switch case. The problem with lengthy if..else-if is that it becomes complex when we have several conditions. The switch case is a clean and efficient method of handling such scenarios.</p>
+<p>The <strong>syntax of Switch case</strong> statement:</p>
+<pre>switch (variable or an integer expression)
+{
+     case constant:
+     //C++ code
+     ;
+     case constant:
+     //C++ code
+     ;
+     default:
+     //C++ code
+     ;
+}</pre>
+<p>Switch Case statement is mostly used with break statement even though the break statement is optional. We will first see an example without break statement and then we will discuss switch case with break</p>
+<h2>Example of Switch Case</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num=5;
+   switch(num+2) {
+      case 1: 
+        cout&lt;&lt;"Case1: Value is: "&lt;&lt;num&lt;&lt;endl;
+      case 2: 
+        cout&lt;&lt;"Case2: Value is: "&lt;&lt;num&lt;&lt;endl;
+      case 3: 
+        cout&lt;&lt;"Case3: Value is: "&lt;&lt;num&lt;&lt;endl;
+      default: 
+        cout&lt;&lt;"Default: Value is: "&lt;&lt;num&lt;&lt;endl;
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>Default: Value is: 5</pre>
+<p><strong>Explanation</strong>: In switch I gave an expression, you can give variable as well. I gave the expression num+2, where num value is 5 and after addition the expression resulted 7. Since there is no case defined with value 4 the default case got executed.</p>
+<h2>Switch Case Flow Diagram</h2>
+<p>It evaluates the value of expression or variable (based on whatever is given inside switch braces), then based on the outcome it executes the corresponding case.<br />
+<img class="aligncenter size-full wp-image-6535" src="https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram.jpg" alt="switch case flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Break statement in Switch Case</h2>
+<p>Before we discuss about break statement, Let’s see what happens when we don&#8217;t use break statement in switch case. See the example below:</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int i=2;
+   switch(i) {
+      case 1: cout&lt;&lt;"Case1 "&lt;&lt;endl;
+      case 2: cout&lt;&lt;"Case2 "&lt;&lt;endl;
+      case 3: cout&lt;&lt;"Case3 "&lt;&lt;endl;
+      case 4: cout&lt;&lt;"Case4 "&lt;&lt;endl;
+      default: cout&lt;&lt;"Default "&lt;&lt;endl; 
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Case2 
+Case3 
+Case4 
+Default 
+</pre>
+<p>In the above program, we have the variable i inside switch braces, which means whatever the value of variable i is, the corresponding case block gets executed. We have passed integer value 2 to the switch, so the control switched to the case 2, however we don’t have break statement after the case 2 that caused the flow to continue to the subsequent cases till the end. However this is not what we wanted, we wanted to execute the right case block and ignore rest blocks. The solution to this issue is to use the break statement in after every case block.</p>
+<p>Break statements are used when you want your program-flow to come out of the switch body. Whenever a break statement is encountered in the switch body, the execution flow would directly come out of the switch, ignoring rest of the cases. This is why you must end each case block with the break statement.</p>
+<p>Let’s take the same example but this time with break statement.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int i=2;
+   switch(i) {
+      case 1:
+        cout&lt;&lt;"Case1 "&lt;&lt;endl;
+        break;
+      case 2:
+        cout&lt;&lt;"Case2 "&lt;&lt;endl;
+        break;
+      case 3:
+        cout&lt;&lt;"Case3 "&lt;&lt;endl;
+        break;
+      case 4:
+        cout&lt;&lt;"Case4 "&lt;&lt;endl;
+        break;
+      default:
+        cout&lt;&lt;"Default "&lt;&lt;endl;
+    }
+    return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Case2</pre>
+<p>Now you can see that only case 2 got executed, rest of the subsequent cases were ignored.</p>
+<p><strong>Why didn&#8217;t I use break statement after default?</strong><br />
+The control would itself come out of the switch after default so I didn&#8217;t use break statement after it, however if you want you can use it, there is no harm in doing that.</p>
+<h2>Important Notes</h2>
+<p>1) Case doesn&#8217;t always need to have order 1, 2, 3 and so on. It can have any integer value after case keyword. Also, case doesn’t need to be in an ascending order always, you can specify them in any order based on the requirement.</p>
+<p>2) You can also use characters in switch case. for example –</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   char ch='b';
+   switch(ch) {
+      case 'd': cout&lt;&lt;"Case1 ";
+      break;
+      case 'b': cout&lt;&lt;"Case2 ";
+      break;
+      case 'x': cout&lt;&lt;"Case3 ";
+      break;
+      case 'y': cout&lt;&lt;"Case4 ";
+      break;
+      default: cout&lt;&lt;"Default ";
+   }
+   return 0;
+}</pre>
+<p>3) Nesting of switch statements are allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes program more complex and less readable.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/if">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/for">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+

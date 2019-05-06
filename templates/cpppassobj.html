@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+        <h1 class="entry-title" itemprop="headline">Pass and return Object from a function in C++</h1>
+        <div class="entry-content" itemprop="text"><p>In this tutorial we will see how to pass an object to a function as an argument and how to return an object from a function.</p>
+        <h2>Pass object to a function</h2>
+        <p>An object can be passed to a function just like we pass structure to a function. Here in class A we have a function <code>disp()</code> in which we are passing the object of class <code>A</code>. Similarly we can pass the object of another class to a function of different class.</p>
+        <pre>
+        #include &lt;iostream&gt;
+        using namespace std;
+        class A {
+        public:
+           int n=100;
+           char ch='A';
+           void disp(A a){
+              cout&lt;&lt;a.n&lt;&lt;endl;
+              cout&lt;&lt;a.ch&lt;&lt;endl;
+           }
+        };
+        int main() {
+           A obj;
+           obj.disp(obj);
+           return 0;
+        }</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        100
+        A</pre>
+        <h2>Return object from a function</h2>
+        <p>In this example we have two functions, the function <code>input()</code> returns the <code>Student</code> object and <code>disp()</code> takes <code>Student</code> object as an argument.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <pre>
+        #include &lt;iostream&gt;
+        using namespace std;
+        class Student {
+        public:
+           int stuId;
+           int stuAge;
+           string stuName;
+           /* In this function we are returning the
+            * Student object.
+            */
+           Student input(int n, int a, string s){
+              Student obj;
+              obj.stuId = n;
+              obj.stuAge = a;
+              obj.stuName = s;
+              return obj;
+           }
+           /* In this function we are passing object
+            * as an argument.
+            */
+           void disp(Student obj){
+              cout&lt;&lt;"Name: "&lt;&lt;obj.stuName&lt;&lt;endl;
+              cout&lt;&lt;"Id: "&lt;&lt;obj.stuId&lt;&lt;endl;
+              cout&lt;&lt;"Age: "&lt;&lt;obj.stuAge&lt;&lt;endl;
+           }
+        };
+        int main() {
+           Student s;
+           s = s.input(1001, 29, "Negan");
+           s.disp(s);
+           return 0;
+        }</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        Name: Negan
+        Id: 1001
+        Age: 29</pre>
+        <div class="bb-nav"><a class="pretut" href="/c++/inter">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/friend">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>	
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <h1 class="entry-title" itemprop="headline">Python Strings</h1>
+        <div class="entry-content" itemprop="text"><p>A string is usually a bit of text (sequence of characters). In Python we use &#8221; (double quotes) or &#8216; (single quotes) to represent a string. In this guide we will see how to create, access, use and manipulate strings in Python programming language.</p>
+        <h2>1. How to create a String in Python</h2>
+        <p>There are several ways to create strings in Python.<br />
+        1. We can use &#8216; (single quotes), see the string <code>str</code> in the following code.<br />
+        2. We can use &#8221; (double quotes), see the string <code>str2</code> in the source code below.<br />
+        3. Triple double quotes &#8220;&#8221;&#8221; and triple single quotes &#8221;&#8217; are used for creating multi-line strings in Python. See the strings str3 and str4 in the following example.</p>
+        <pre>
+        # lets see the ways to create strings in Python
+        str = 'gauravsbook'
+        print(str)
+        
+        str2 = "Gaurav"
+        print(str2)
+        
+        # multi-line string
+        str3 = """Welcome to 
+           gauravsbook.com"""
+        print(str3)
+        
+        str4 = '''This is a tech 
+           blog'''
+        print(str4)</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        gauravsbook
+        Gaurav
+        Welcome to 
+           Gauravssbook.com
+        This is a tech 
+           blog</pre>
+        <h2>2. How to access strings in Python</h2>
+        <p>A string is nothing but an array of characters so we can use the indexes to access the characters of a it. Just like arrays, the indexes start from 0 to the length-1.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+        <blockquote><p>You will get <strong>IndexError</strong> if you try to access the character which is not in the range. For example,<br />
+        if a string is of length 6 and you try to access the 8th char of it then you will get this error.</p>
+        <p>You will get <strong>TypeError</strong> if you do not use integers as indexes, for example if you use a float as an index then you will get this error.</p></blockquote>
+        <pre>
+        str = "Kevin"
+        
+        # displaying whole string
+        print(str)
+        
+        # displaying first character of string
+        print(str[0])
+        
+        # displaying third character of string
+        print(str[2])
+        
+        # displaying the last character of the string
+        print(str[-1])
+        
+        # displaying the second last char of string
+        print(str[-2])</pre>
+        <p>Output:</p>
+        <pre>
+        Kevin
+        K
+        v
+        n
+        i</pre>
+        <h2>3. Python String Operations</h2>
+        <p>Lets see the operations that can be performed on the strings.</p>
+        <h2>3.1. Getting a substring in Python &#8211; Slicing operation</h2>
+        <p>We can slice a string to get a <strong>substring</strong> out of it. To understand the concept of <strong>slicing</strong> we must understand the positive and negative indexes in Python (see the example above to understand this). Lets take a look at the few examples of slicing.</p>
+        <pre>
+        str = "Beginnersbook"
+        
+        # displaying whole string
+        print("The original string is: ", str)
+        
+        # slicing 10th to the last character
+        print("str[9:]: ", str[9:])
+        
+        # slicing 3rd to 6th character
+        print("str[2:6]: ", str[2:6])
+        
+        # slicing from start to the 9th character
+        print("str[:9]: ", str[:9])
+        
+        # slicing from 10th to second last character
+        print("str[9:-1]: ", str[9:-1])</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        The original string is:  Beginnersbook
+        str[9:]:  book
+        str[2:6]:  ginn
+        str[:9]:  Beginners
+        str[9:-1]:  boo</pre>
+        <h2>3.2 Concatenation of strings in Python</h2>
+        <p>The + operator is used for <strong>string concatenation in Python</strong>. Lets take an example to understand this:</p>
+        <pre>
+        str1 = "One"
+        str2 = "Two"
+        str3 = "Three"
+        
+        # Concatenation of three strings
+        print(str1 + str2 + str3)</pre>
+        <p>Output:</p>
+        <pre>OneTwoThree</pre>
+        <p>Note: When <strong>+ operator</strong> is used on numbers it adds them but when it used on strings it concatenates them. However if you try to use this between string and number then it will throw TypeError.</p>
+        <p>For example:</p>
+        <pre>
+        s = "one"
+        n = 2
+        print(s+n)</pre>
+        <p>Output:</p>
+        <pre>TypeError: must be str, not int</pre>
+        <h2>3.3 Repetition of string &#8211; Replication operator</h2>
+        <p>We can use * operator to repeat a string by specified number of times.</p>
+        <pre>
+        str = "ABC"
+        
+        # repeating the string str by 3 times
+        print(str*3)</pre>
+        <p>Output:</p>
+        <pre>ABCABCABC</pre>
+        <h2>3.4 Python Membership Operators in Strings</h2>
+        <p><strong>in</strong>: This checks whether a string is present in another string or not. It returns true if the entire string is found else it returns false.<br />
+        <strong>not in</strong>: It works just opposite to what &#8220;in&#8221; operator does. It returns true if the string is not found in the specified string else it returns false.</p>
+        <pre>
+        str = "Welcome to beginnersbook.com"
+        str2 = "Welcome"
+        str3 = "Chaitanya"
+        str4 = "XYZ"
+        
+        # str2 is in str? True
+        print(str2 in str)
+        
+        # str3 is in str? False
+        print(str3 in str)
+        
+        # str4 not in str? True
+        print(str4 not in str)</pre>
+        <p><strong>Output:</strong></p>
+        <pre>
+        True
+        False
+        True</pre>
+        <h2>3.5 Python &#8211; Relational Operators on Strings</h2>
+        <p>The <strong>relational operators</strong> works on strings based on the ASCII values of characters.<br />
+        The ASCII value of a is 97, b is 98 and so on.<br />
+        The ASCII value of A is 65, B is 66 and so on.</p>
+        <pre>
+        str = "ABC"
+        str2 = "aBC"
+        str3 = "XYZ"
+        str4 = "XYz"
+        
+        # ASCII value of str2 is &gt; str? True
+        print(str2 &gt; str)
+        
+        # ASCII value of str3 is &gt; str4? False
+        print(str3 &gt; str4)</pre>
+        <p>Output:</p>
+        <pre>
+        True
+        False</pre>
+        <div class="bb-nav"><a class="pretut" href="/python/list">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/tuple">Next ❯</a></div>
+        </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+        </div>
+        
+</div>
+
+{% endblock %}

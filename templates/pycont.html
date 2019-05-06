@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python Continue Statement</h1>
+    <div class="entry-content" itemprop="text"><p>The <strong>continue statement</strong> is used inside a loop to skip the rest of the statements in the body of loop for the current iteration and jump to the beginning of the loop for next iteration. The break and continue statements are used to alter the flow of loop, break terminates the loop when a condition is met and continue skip the current iteration.</p>
+    <h2>Syntax of continue statement in Python</h2>
+    <p>The syntax of continue statement in Python is similar to what we have seen in Java(except the semicolon)</p>
+    <pre>continue
+    </pre>
+    <h2>Flow diagram of continue</h2>
+    <p><img class="aligncenter size-full wp-image-6540" src="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg" alt="Python continue statement" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/Continue_Statement-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+    <h2>Example of continue statement</h2>
+    <p>Lets say we have a list of numbers and we want to print only the odd numbers out of that list. We can do this by using continue statement.<br />
+    We are skipping the print statement inside loop by using continue statement when the number is even, this way all the even numbers are skipped and the print statement executed for all the odd numbers.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <pre># program to display only odd numbers
+    for num in [20, 11, 9, 66, 4, 89, 44]:
+        # Skipping the iteration when number is even
+        if num%2 == 0:
+            continue
+        # This statement will be skipped for all even numbers
+        print(num)
+    </pre>
+    <p>Output:</p>
+    <pre>
+    11
+    9
+    89</pre>
+    <div class="bb-nav"><a class="pretut" href="/python/break">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/num">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+        
+</div>
+
+{% endblock %}

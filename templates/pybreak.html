@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            img {
+            width: 60%;
+            height: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+            margin-top:25px;
+            margin-bottom: 25px;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Python break Statement</h1>
+<div class="entry-content" itemprop="text"><p>The <strong>break statement</strong> is used to terminate the loop when a certain condition is met. We already learned in previous tutorials (for loop and while loop) that a loop is used to iterate a set of statements repeatedly as long as the <strong>loop condition</strong> returns true. The break statement is generally used inside a loop along with a if statement so that when a particular condition (defined in if statement) returns true, the break statement is encountered and the loop terminates.</p>
+<p>For example, lets say we are searching an element in a list, so for that we are running a loop starting from the first element of the list to the last element of the list. Using break statement, we can terminate the loop as soon as the element is found because why run the loop unnecessary till the end of list when our element is found. We can achieve this with the help of break statement (we will see this example programmatically in the example section below).</p>
+<h2>Syntax of break statement in Python</h2>
+<p>The syntax of <strong>break statement in Python</strong> is similar to what we have seen in Java.</p>
+<pre>break
+</pre>
+<h2>Flow diagram of break</h2>
+<p><img class="aligncenter size-full wp-image-8345" src="https://beginnersbook.com/wp-content/uploads/2018/01/break_statement.jpg" alt="Python Break statement" width="450" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2018/01/break_statement.jpg 450w, https://beginnersbook.com/wp-content/uploads/2018/01/break_statement-300x267.jpg 300w" sizes="(max-width: 450px) 100vw, 450px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Example of break statement</h2>
+<p>In this example, we are searching a number &#8217;88&#8217; in the given list of numbers. The requirement is to display all the numbers till the number &#8217;88&#8217; is found and when it is found, terminate the loop and do not display the rest of the numbers.</p>
+<pre># program to display all the elements before number 88
+for num in [11, 9, 88, 10, 90, 3, 19]:
+   print(num)
+   if(num==88):
+	   print("The number 88 is found")
+	   print("Terminating the loop")
+	   break
+</pre>
+<p>Output:</p>
+<pre>11
+9
+88
+The number 88 is found
+Terminating the loop</pre>
+<blockquote><p><strong>Note:</strong> You would always want to use the break statement with a if statement so that only when the condition associated with &#8216;if&#8217; is true then only break is encountered. If you do not use it with &#8216;if&#8217; statement then the break statement would be encountered in the first iteration of loop and the loop would always terminate on the first iteration.</p></blockquote>
+<div class="bb-nav"><a class="pretut" href="/python/while">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/python/cont">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+        
+</div>
+
+{% endblock %}

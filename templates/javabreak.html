@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Break statement in Java with example</h1>
+<div class="entry-content" itemprop="text"><p>The <strong>break statement</strong> is usually used in following two scenarios:</p>
+<p>a) Use break statement to come out of the loop instantly. Whenever a break statement is encountered inside a loop, the control directly comes out of loop and the loop gets terminated for rest of the iterations. It is used along with if statement, whenever used inside loop so that the loop gets terminated for a particular condition.</p>
+<p>The important point to note here is that when a break statement is used inside a nested loop, then only the inner loop gets terminated.</p>
+<p>b) It is also used in switch case control. Generally all cases in switch case are followed by a break statement so that whenever the program control jumps to a case, it doesn&#8217;t execute subsequent cases (see the example below). As soon as a break is encountered in switch-case block, the control comes out of the switch-case body.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Syntax of break statement:</strong><br />
+&#8220;break&#8221; word followed by semi colon</p>
+<pre>break;</pre>
+<h2>Example – Use of break in a while loop</h2>
+<p>In the example below, we have a while loop running from o to 100 but since we have a break statement that only occurs when the loop value reaches 2, the loop gets terminated and the control gets passed to the next statement in program after the loop body.</p>
+<pre>public class BreakExample1 {
+   public static void main(String args[]){
+      int num =0;
+      while(num&lt;=100)
+      {
+          System.out.println("Value of variable is: "+num);
+          if (num==2)
+          {
+             break;
+          }
+          num++;
+      }
+      System.out.println("Out of while-loop");
+  }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of variable is: 0
+Value of variable is: 1
+Value of variable is: 2
+Out of while-loop</pre>
+<h2>Example – Use of break in a for loop</h2>
+<p>The same thing you can see here. As soon as the <code>var</code> value hits 99, the for loop gets terminated.</p>
+<pre>public class BreakExample2 {
+
+   public static void main(String args[]){
+  int var;
+  for (var =100; var&gt;=10; var --)
+  {
+      System.out.println("var: "+var);
+      if (var==99)
+      {
+           break;
+      }
+   }
+   System.out.println("Out of for-loop");
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>var: 100
+var: 99
+Out of for-loop
+</pre>
+<h2>Example – Use of break statement in switch-case</h2>
+<pre>public class BreakExample3 {
+
+   public static void main(String args[]){
+  int num=2;
+        
+  switch (num)
+  {
+      case 1:
+         System.out.println("Case 1 ");
+         break;
+      case 2:
+         System.out.println("Case 2 ");
+         break;
+      case 3:
+         System.out.println("Case 3 ");
+         break;
+      default:
+         System.out.println("Default ");
+  }
+   }
+}
+
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Case 2
+</pre>
+<p>In this example, we have break statement after each Case block, this is because if we don&#8217;t have it then the subsequent case block would also execute. The output of the same program without break would be <code>Case 2 Case 3 Default</code>.</p>
+<div class="bb-nav"><a class="pretut" href="/java/cont">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/const">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>  
+</div>
+
+{% endblock %}
+
+

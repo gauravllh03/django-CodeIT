@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">C++ Recursion with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>The process in which a function calls itself is known as recursion and the corresponding function is called the <strong>recursive function</strong>. The popular example to understand the recursion is factorial function.</p>
+<p><strong>Factorial function:</strong> f(n) = n*f(n-1), base condition: if n&lt;=1 then f(n) = 1. Don&#8217;t worry we wil discuss what is base condition and why it is important.</p>
+<p>In the following diagram. I have shown that how the factorial function is calling itself until the function reaches to the base condition.</p>
+<p><img class="aligncenter size-full wp-image-6667" src="https://beginnersbook.com/wp-content/uploads/2017/08/Recursion_in_Cpp.jpg" alt="C++ recursion" width="600" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/Recursion_in_Cpp.jpg 600w, https://beginnersbook.com/wp-content/uploads/2017/08/Recursion_in_Cpp-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p>Lets solve the problem using C++ program.</p>
+<h2>C++ recursion example: Factorial</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+//Factorial function
+int f(int n){
+   /* This is called the base condition, it is
+    * very important to specify the base condition
+    * in recursion, otherwise your program will throw
+    * stack overflow error.
+    */
+   if (n &lt;= 1)
+        return 1;
+   else 
+       return n*f(n-1);
+}
+int main(){
+   int num;
+   cout&lt;&lt;"Enter a number: ";
+   cin&gt;&gt;num;
+   cout&lt;&lt;"Factorial of entered number: "&lt;&lt;f(num);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Enter a number: 5
+Factorial of entered number: 120</pre>
+<h3>Base condition</h3>
+<p>In the above program, you can see that I have provided a base condition in the recursive function. The condition is:</p>
+<pre>if (n &lt;= 1)
+        return 1;</pre>
+<p>The purpose of recursion is to divide the problem into smaller problems till the base condition is reached. For example in the above factorial program I am solving the factorial function f(n) by calling a smaller factorial function f(n-1), this happens repeatedly until the n value reaches base condition(f(1)=1). If you do not define the base condition in the recursive function then you will get stack overflow error.</p>
+<h2>Direct recursion vs indirect recursion</h2>
+<p><strong>Direct recursion:</strong> When function calls itself, it is called direct recursion, the example we have seen above is a direct recursion example.</p>
+<p><strong>Indirect recursion:</strong> When function calls another function and that function calls the calling function, then this is called indirect recursion. For example: function A calls function B and Function B calls function A.</p>
+<h3>Indirect Recursion Example in C++</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int fa(int);
+int fb(int);
+int fa(int n){
+   if(n&lt;=1)
+      return 1;
+   else
+      return n*fb(n-1);
+}
+int fb(int n){
+   if(n&lt;=1)
+      return 1;
+   else
+      return n*fa(n-1);
+}
+int main(){
+   int num=5;
+   cout&lt;&lt;fa(num);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>120</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/def">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/array">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+

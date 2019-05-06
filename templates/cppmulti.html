@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Multidimensional Arrays in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Multidimensional arrays are also known as <strong>array of arrays</strong>. The data in multidimensional array is stored in a tabular form as shown in the diagram below:<br />
+<img class="aligncenter size-full wp-image-6826" src="https://beginnersbook.com/wp-content/uploads/2017/08/cpp_Multidimensional_Array.png" alt="Multidimensional Array in C++" width="500" height="250" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/cpp_Multidimensional_Array.png 500w, https://beginnersbook.com/wp-content/uploads/2017/08/cpp_Multidimensional_Array-300x150.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p><strong>A two dimensional array:</strong></p>
+<pre>int arr[2][3];</pre>
+<p>This array has total 2*3 = 6 elements.</p>
+<p><strong>A three dimensional array:</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>int arr[2][2][2];</pre>
+<p>This array has total 2*2*2 = 8 elements.</p>
+<h2>Two dimensional array</h2>
+<p>Lets see how to declare, initialize and access Two Dimensional Array elements.</p>
+<p><strong>How to declare a two dimensional array?</strong></p>
+<pre>int myarray[2][3];</pre>
+<p><strong>Initialization:</strong><br />
+We can initialize the array in many ways:<br />
+<strong>Method 1:</strong></p>
+<pre>int arr[2][3] =[10, 11 ,12 ,20 ,21 , 22];</pre>
+<p><strong>Method 2:</strong><br />
+This way of initializing is preferred as you can visualize the rows and columns here.
+int arr[2][3] = [[10, 11 ,12] , [20 ,21 , 22]];</p>
+<p><strong>Accessing array elements:</strong><br />
+arr[0][0] &#8211; first element<br />
+arr[0][1] &#8211; second element<br />
+arr[0][2] &#8211; third element<br />
+arr[1][0] &#8211; fourth element<br />
+arr[1][1] &#8211; fifth element<br />
+arr[1][2] &#8211; sixth element</p>
+<h3>Example: Two dimensional array in C++</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+   int arr[2][3] = [[11, 22, 33], [44, 55, 66]];
+   for(int i=0; i&lt;2;i++){
+      for(int j=0; j&lt;3; j++){
+        cout&lt;&lt;"arr["&lt;&lt;i&lt;&lt;"]["&lt;&lt;j&lt;&lt;"]: "&lt;&lt;arr[i][j]&lt;&lt;endl;
+      }
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>arr[0][0]: 11
+arr[0][1]: 22
+arr[0][2]: 33
+arr[1][0]: 44
+arr[1][1]: 55
+arr[1][2]: 66
+</pre>
+<h2>Three dimensional array</h2>
+<p>Lets see how to declare, initialize and access Three Dimensional Array elements.</p>
+<p><strong>Declaring a three dimensional array:</strong></p>
+<pre>int myarray[2][3][2];</pre>
+<p><strong>Initialization:</strong><br />
+We can initialize the array in many ways:<br />
+<strong>Method 1:</strong></p>
+<pre>int arr[2][3][2] = {1, -1 ,2 ,-2 , 3 , -3, 4, -4, 5, -5, 6, -6};
+</pre>
+<p><strong>Method 2:</strong><br />
+This way of initializing is preferred as you can visualize the rows and columns here.</p>
+<pre>int arr[2][3][2] = {
+     { {1,-1}, {2, -2}, {3, -3}},
+     { {4, -4}, {5, -5}, {6, -6}}
+}</pre>
+<h2>Three dimensional array example</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+
+int main(){
+   // initializing the array
+   int arr[2][3][2] = {
+      { {1,-1}, {2,-2}, {3,-3} },
+      { {4,-4}, {5,-5}, {6,-6} }
+   };
+   // displaying array values 
+   for (int x = 0; x &lt; 2; x++) {
+     for (int y = 0; y &lt; 3; y++) {
+       for (int z = 0; z &lt; 2; z++) {
+         cout&lt;&lt;arr[x][y][z]&lt;&lt;" ";
+       }
+     }
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>1 -1 2 -2 3 -3 4 -4 5 -5 6 -6</pre>
+
+<div class="bb-nav"><a class="pretut" href="/c++/array">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/pass">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+		<h1 class="entry-title" itemprop="headline">do-while loop in Java with example</h1>
+</header><div class="entry-content" itemprop="text"><p>In the last tutorial, we discussed while loop. In this tutorial we will discuss do-while loop in java. do-while loop is similar to while loop, however there is a difference between them: In while loop, condition is evaluated before the execution of loop’s body but in do-while loop condition is evaluated after the execution of loop’s body.</p>
+<h4>Syntax of do-while loop:</h4>
+<pre>do
+{
+   statement(s);
+} while(condition);</pre>
+<h2>How do-while loop works?</h2>
+<p>First, the statements inside loop execute and then the condition gets evaluated, if the condition returns true then the control gets transferred to the &#8220;do&#8221; else it jumps to the next statement after do-while.<br />
+<img class="aligncenter size-full wp-image-6556" src="https://beginnersbook.com/wp-content/uploads/2015/03/do-while_java.jpg" alt="do while loop java" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2015/03/do-while_java.jpg 400w, https://beginnersbook.com/wp-content/uploads/2015/03/do-while_java-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2015/03/do-while_java-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>do-while loop example</h2>
+<pre>class DoWhileLoopExample {
+    public static void main(String args[]){
+         int i=10;
+         do{
+              System.out.println(i);
+              i--;
+         }while(i&gt;1);
+    }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>10
+9
+8
+7
+6
+5
+4
+3
+2</pre>
+<h2>Example: Iterating array using do-while loop</h2>
+<p>Here we have an integer array and we are iterating the array and displaying each element using do-while loop.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>class DoWhileLoopExample2 {
+    public static void main(String args[]){
+         int arr[]={2,11,45,9};
+         //i starts with 0 as array index starts with 0
+         int i=0;
+         do{
+              System.out.println(arr[i]);
+              i++;
+         }while(i&lt;4);
+    }
+}</pre>
+<p>Output:<br />
+2<br />
+11<br />
+45<br />
+9</p>
+<div class="bb-nav"><a class="pretut" href="/java/while">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/cont">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>      
+</div>
+
+{% endblock %}
+
+
+

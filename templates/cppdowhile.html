@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">do-while loop in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>As discussed in the last tutorial about while loop, a loop is used for repeating a block of statements until the given loop condition returns false. In this tutorial we will see do-while loop. do-while loop is similar to while loop, however there is a difference between them: In while loop, condition is evaluated first and then the statements inside loop body gets executed, on the other hand in do-while loop, statements inside do-while gets executed first and then the condition is evaluated.</p>
+<h4>Syntax of do-while loop</h4>
+<pre>do
+{
+   statement(s);
+} while(condition);</pre>
+<h2>How do-while loop works?</h2>
+<p>First, the statements inside loop execute and then the condition gets evaluated, if the condition returns true then the control jumps to the &#8220;do&#8221; for further repeated execution of it, this happens repeatedly until the condition returns false. Once condition returns false control jumps to the next statement in the program after do-while.<br />
+<img class="aligncenter size-full wp-image-6661" src="https://beginnersbook.com/wp-content/uploads/2017/08/do-while_cpp.jpg" alt="C++ do while loop flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/do-while_cpp.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/do-while_cpp-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/do-while_cpp-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>do-while loop example in C++</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num=1;
+   do{
+      cout&lt;&lt;"Value of num: "&lt;&lt;num&lt;&lt;endl;
+      num++;
+   }while(num&lt;=6);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of num: 1
+Value of num: 2
+Value of num: 3
+Value of num: 4
+Value of num: 5
+Value of num: 6
+</pre>
+<h2>Example: Displaying array elements using do-while loop</h2>
+<p>Here we have an integer array which has four elements. We are displaying the elements of it using do-while loop.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int arr[]={21,99,15,109};
+   /* Array index starts with 0, which
+    * means the first element of array
+    * is at index 0, arr[0]
+    */
+   int i=0;
+   do{
+      cout&lt;&lt;arr[i]&lt;&lt;endl;
+      i++;
+   }while(i&lt;4);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>21
+99
+15
+109</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/while">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/cont">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

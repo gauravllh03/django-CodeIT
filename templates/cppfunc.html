@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1 class="entry-title" itemprop="headline">Functions in C++ with example</h1>
+    <div class="entry-content" itemprop="text"><p>A function is block of code which is used to perform a particular task, for example let&#8217;s say you are writing a large C++ program and in that program you want to do a particular task several number of times, like displaying value from 1 to 10, in order to do that you have to write few lines of code and you need to repeat these lines every time you display values. Another way of doing this is that you write these lines inside a function and call that function every time you want to display values. This would make you code simple, readable and reusable.</p>
+    <h4>Syntax of Function</h4>
+    <pre>return_type function_name (parameter_list)
+    {
+       //C++ Statements
+    }
+    </pre>
+    <p>Let’s take a simple example to understand this concept.</p>
+    <h2>A simple function example</h2>
+    <pre>#include &lt;iostream&gt;
+    using namespace std;
+    /* This function adds two integer values
+     * and returns the result
+     */int
+    sum(int num1, int num2){
+       int num3 = num1+num2; return num3;
+    }
+    
+    int main(){
+       //Calling the function
+       cout&lt;&lt;sum(1,99);
+       return 0;
+    }</pre>
+    <p><strong>Output:</strong></p>
+    <pre>100</pre>
+    <p><strong>The same program can be written like this:</strong> Well, I am writing this program to let you understand an important term regarding functions, which is function declaration. Lets see the program first and then at the end of it we will discuss function declaration, definition and calling of function.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+    <pre>#include &lt;iostream&gt;
+    using namespace std;
+    //Function declaration
+    int sum(int,int);
+    
+    //Main function
+    int main(){
+       //Calling the function
+       cout&lt;&lt;sum(1,99);
+       return 0;
+    }
+    /* Function is defined after the main method 
+     */
+    int sum(int num1, int num2){
+       int num3 = num1+num2;
+       return num3;
+    }</pre>
+    <p><strong>Function Declaration:</strong> You have seen that I have written the same program in two ways, in the first program I didn&#8217;t have any function declaration and in the second program I have function declaration at the beginning of the program. The thing is that when you define the function before the main() function in your program then you don&#8217;t need to do function declaration but if you are writing your function after the main() function like we did in the second program then you need to declare the function first, else you will get compilation error.</p>
+    <p><strong>syntax of function declaration:</strong></p>
+    <pre>return_type function_name(parameter_list);</pre>
+    <p><strong>Note:</strong> While providing parameter_list you can avoid the parameter names, just like I did in the above example. I have given <code>int sum(int,int);</code> instead of <code>int sum(int num1,int num2);</code>.</p>
+    <p><strong>Function definition:</strong> Writing the full body of function is known as defining a function.<br />
+    <strong>syntax of function definition:</strong></p>
+    <pre>return_type function_name(parameter_list) {
+        //Statements inside function
+    }
+    </pre>
+    <p><strong>Calling function:</strong> We can call the function like this:</p>
+    <pre>function_name(parameters);</pre>
+    <p>Now that we understood the <strong>working of function</strong>, lets see the types of function in C++</p>
+    <h2>Types of function</h2>
+    <p>We have two types of function in C++:<br />
+    <img class="aligncenter size-full wp-image-6668" src="https://beginnersbook.com/wp-content/uploads/2017/08/types_of_functions_cpp.jpg" alt="C++ types of functions: built-in and user-defined" width="400" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/types_of_functions_cpp.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/types_of_functions_cpp-300x225.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+    <p>1) Built-in functions<br />
+    2) User-defined functions</p>
+    <h3>1) Build-it functions</h3>
+    <p>Built-in functions are also known as library functions. We need not to declare and define these functions as they are already written in the C++ libraries such as iostream, cmath etc. We can directly call them when we need.</p>
+    <h4>Example: C++ built-in function example</h4>
+    <p>Here we are using built-in function pow(x,y) which is x to the power y. This function is declared in <code>cmath</code> header file so we have included the file in our program using <code>#include</code> directive.</p>
+    <pre>#include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    using namespace std;
+    int main(){
+        /* Calling the built-in function 
+         * pow(x, y) which is x to the power y
+         * We are directly calling this function
+         */
+        cout&lt;&lt;pow(2,5);
+        return 0;
+    }</pre>
+    <p><strong><br />
+    Output:</strong></p>
+    <pre>32</pre>
+    <h3>2) User-defined functions</h3>
+    <p><img class="aligncenter size-full wp-image-6663" src="https://beginnersbook.com/wp-content/uploads/2017/08/functions_cpp.jpg" alt="C++ functions" width="400" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/functions_cpp.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/functions_cpp-300x225.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /><br />
+    We have already seen user-defined functions, the example we have given at the beginning of this tutorial is an example of user-defined function. The functions that we declare and write in our programs are user-defined functions. Lets see another example of user-defined functions.</p>
+    <h4>User-defined functions</h4>
+    <pre>#include &lt;iostream&gt;
+    #include &lt;cmath&gt;
+    using namespace std;
+    //Declaring the function sum
+    int sum(int,int);
+    
+    int main(){
+       int x, y;
+       cout&lt;&lt;"enter first number: ";
+       cin&gt;&gt; x;
+    
+       cout&lt;&lt;"enter second number: ";
+       cin&gt;&gt;y;
+    
+       cout&lt;&lt;"Sum of these two :"&lt;&lt;sum(x,y);
+       return 0;
+    }
+    //Defining the function sum
+    int sum(int a, int b) {
+       int c = a+b;
+       return c;
+    }</pre>
+    <p><strong>Output:</strong></p>
+    <pre>
+    enter first number: 22
+    enter second number: 19
+    Sum of these two :41</pre>
+    <div class="bb-nav"><a class="pretut" href="/c++/goto">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/def">Next ❯</a></div>
+    </p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+    </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,117 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Vector in Java</h1>
+<div class="entry-content" itemprop="text"><p><code>Vector</code> implements List Interface. Like <code>ArrayList</code> it also maintains insertion order but it is rarely used in non-thread environment as it is synchronized and due to which it gives poor performance in searching, adding, delete and update of its elements.</p>
+<h4>Three ways to create vector class object:</h4>
+<p><strong>Method 1:</strong></p>
+<pre>Vector vec = new Vector();</pre>
+<p>It creates an empty Vector with the default initial capacity of 10. It means the Vector will be re-sized when the 11th elements needs to be inserted into the Vector. Note: By default vector doubles its size. i.e. In this case the Vector size would remain 10 till 10 insertions and once we try to insert the 11th element It would become 20 (double of default capacity 10).</p>
+<p><strong>Method 2:</strong><br />
+Syntax: <code>Vector object= new Vector(int initialCapacity)</code></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>Vector vec = new Vector(3);</pre>
+<p>It will create a Vector of initial capacity of 3.</p>
+<p><strong>Method 3:</strong><br />
+Syntax:</p>
+<pre>Vector object= new vector(int initialcapacity, capacityIncrement)</pre>
+<p>Example:</p>
+<pre>Vector vec= new Vector(4, 6)</pre>
+<p>Here we have provided two arguments. The initial capacity is 4 and capacityIncrement is 6. It means upon insertion of 5th element the size would be 10 (4+6) and on 11th insertion it would be 16(10+6).</p>
+<h2>Complete Example of Vector in Java:</h2>
+<pre>import java.util.*;
+
+public class VectorExample {
+
+   public static void main(String args[]) {
+      /* Vector of initial capacity(size) of 2 */
+      Vector&lt;String&gt; vec = new Vector&lt;String&gt;(2);
+
+      /* Adding elements to a vector*/
+      vec.addElement("Apple");
+      vec.addElement("Orange");
+      vec.addElement("Mango");
+      vec.addElement("Fig");
+
+      /* check size and capacityIncrement*/
+      System.out.println("Size is: "+vec.size());
+      System.out.println("Default capacity increment is: "+vec.capacity());
+
+      vec.addElement("fruit1");
+      vec.addElement("fruit2");
+      vec.addElement("fruit3");
+
+      /*size and capacityIncrement after two insertions*/
+      System.out.println("Size after addition: "+vec.size());
+      System.out.println("Capacity after increment is: "+vec.capacity());
+
+      /*Display Vector elements*/
+      Enumeration en = vec.elements();
+      System.out.println("\nElements are:");
+      while(en.hasMoreElements())
+         System.out.print(en.nextElement() + " ");
+   }
+}</pre>
+<p>Output:</p>
+<pre>Size is: 4
+Default capacity increment is: 4
+Size after addition: 7
+Capacity after increment is: 8
+
+Elements are:
+Apple Orange Mango Fig fruit1 fruit2 fruit3</pre>
+<h2>Commonly used methods of Vector Class:</h2>
+<ol>
+<li><strong>void addElement(Object element):</strong> It inserts the element at the end of the Vector.</li>
+<li><strong>int capacity():</strong> This method returns the current capacity of the vector.</li>
+<li><strong>int size():</strong> It returns the current size of the vector.</li>
+<li><strong>void setSize(int size):</strong> It changes the existing size with the specified size.</li>
+<li><strong>boolean contains(Object element):</strong> This method checks whether the specified element is present in the Vector. If the element is been found it returns true else false.</li>
+<li><strong>boolean containsAll(Collection c):</strong> It returns true if all the elements of collection c are present in the Vector.</li>
+<li><strong>Object elementAt(int index):</strong> It returns the element present at the specified location in Vector.</li>
+<li><strong>Object firstElement():</strong> It is used for getting the first element of the vector.</li>
+<li><strong>Object lastElement():</strong> Returns the last element of the array.</li>
+<li><strong>Object get(int index):</strong> Returns the element at the specified index.</li>
+<li><strong>boolean isEmpty():</strong> This method returns true if Vector doesn&#8217;t have any element.</li>
+<li><strong>boolean removeElement(Object element):</strong> Removes the specifed element from vector.</li>
+<li><strong>boolean removeAll(Collection c):</strong> It Removes all those elements from vector which are present in the Collection c.</li>
+<li><strong>void setElementAt(Object element, int index):</strong> It updates the element of specifed index with the given element.</li>
+</ol>
+<div class="bb-nav"><a class="pretut" href="/java/link">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/hash">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}
+

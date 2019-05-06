@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+   		<h1 class="entry-title" itemprop="headline">Variables in Java</h1>
+</header><div class="entry-content" itemprop="text"><p>A variable is a name which is associated with a value that can be changed. For example when I write <code>int i=10;</code> here variable name is <strong>i</strong> which is associated with value 10, int is a data type that represents that this variable can hold integer values. We will cover the data types in the next tutorial. In this tutorial, we will discuss about variables.</p>
+<h2>How to Declare a variable in Java</h2>
+<p>To declare a variable follow this syntax:</p>
+<pre>data_type variable_name = value;</pre>
+<p>here value is optional because in java, you can declare the variable first and then later assign the value to it.</p>
+<p>For example: Here num is a variable and int is a data type. We will discuss the data type in next tutorial so do not worry too much about it, just understand that <code>int</code> data type allows this num variable to hold integer values. </p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>int num;
+</pre>
+<p>Similarly we can assign the values to the variables while declaring them, like this:</p>
+<pre>char ch = 'A';
+int number = 100;
+</pre>
+<p>or we can do it like this:</p>
+<pre>char ch;
+int number;
+...
+ch = 'A';
+number  = 100;
+</pre>
+<h2>Variables naming convention in java</h2>
+<p>1) Variables naming cannot contain white spaces, for example: int num ber = 100; is invalid because the variable name has space in it.<br />
+2) Variable name can begin with special characters such as $ and _<br />
+3) As per the java coding standards the variable name should begin with a lower case letter, for example int number; For lengthy variables names that has more than one words do it like this: int smallNumber; int bigNumber; (start the second word with capital letter).<br />
+4) Variable names are case sensitive in Java.</p>
+<h2>Types of Variables in Java</h2>
+<p>There are <strong>three types of variables</strong> in Java.<br />
+1) Local variable 2) Static (or class) variable 3) Instance variable</p>
+<h2>Static (or class) Variable</h2>
+<p>Static variables are also known as class variable because they are associated with the class and common for all the instances of class. For example, If I create three objects of a class and access this static variable, it would be common for all, the changes made to the variable using one of the object would reflect when you access it through other objects.</p>
+<h3>Example of static variable</h3>
+<pre>public class StaticVarExample {
+   public static String myClassVar="class or static variable";
+  
+   public static void main(String args[]){
+      StaticVarExample obj = new StaticVarExample();
+      StaticVarExample obj2 = new StaticVarExample();
+      StaticVarExample obj3 = new StaticVarExample();
+      
+      //All three will display "class or static variable"
+      System.out.println(obj.myClassVar);
+      System.out.println(obj2.myClassVar);
+      System.out.println(obj3.myClassVar);
+
+      //changing the value of static variable using obj2
+      obj2.myClassVar = "Changed Text";
+
+      //All three will display "Changed Text"
+      System.out.println(obj.myClassVar);
+      System.out.println(obj2.myClassVar);
+      System.out.println(obj3.myClassVar);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>class or static variable
+class or static variable
+class or static variable
+Changed Text
+Changed Text
+Changed Text
+</pre>
+<p>As you can see all three statements displayed the same output irrespective of the instance through which it is being accessed. That’s is why we can access the static variables without using the objects like this:</p>
+<pre>System.out.println(myClassVar);</pre>
+<blockquote><p>Do note that only static variables can be accessed like this. This doesn’t apply for instance and local variables.</p></blockquote>
+<h2>Instance variable</h2>
+<p>Each instance(objects) of class has its own copy of instance variable. Unlike static variable, instance variables have their own separate copy of instance variable. We have changed the instance variable value using object obj2 in the following program and when we displayed the variable using all three objects, only the obj2 value got changed, others remain unchanged. This shows that they have their own copy of instance variable.</p>
+<h3>Example of Instance variable</h3>
+<pre>public class InstanceVarExample {
+   String myInstanceVar="instance variable";
+  
+   public static void main(String args[]){
+  InstanceVarExample obj = new InstanceVarExample();
+  InstanceVarExample obj2 = new InstanceVarExample();
+  InstanceVarExample obj3 = new InstanceVarExample();
+    
+  System.out.println(obj.myInstanceVar);
+  System.out.println(obj2.myInstanceVar);
+  System.out.println(obj3.myInstanceVar);
+
+    
+  obj2.myInstanceVar = "Changed Text";
+
+    
+  System.out.println(obj.myInstanceVar);
+  System.out.println(obj2.myInstanceVar);
+  System.out.println(obj3.myInstanceVar);
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>instance variable
+instance variable
+instance variable
+instance variable
+Changed Text
+instance variable
+</pre>
+<h2>Local Variable</h2>
+<p>These variables are declared inside method of the class. Their scope is limited to the method which means that You can’t change their values and access them outside of the method.</p>
+<p>In this example, I have declared the instance variable with the same name as local variable, this is to demonstrate the scope of local variables.</p>
+<h3>Example of Local variable</h3>
+<pre>public class VariableExample {
+   // instance variable
+   public String myVar="instance variable";
+    
+   public void myMethod(){
+      // local variable
+      String myVar = "Inside Method";
+      System.out.println(myVar);
+   }
+   public static void main(String args[]){
+      // Creating object
+      VariableExample obj = new VariableExample();
+      
+      /* We are calling the method, that changes the 
+       * value of myVar. We are displaying myVar again after 
+       * the method call, to demonstrate that the local 
+       * variable scope is limited to the method itself.
+       */
+      System.out.println("Calling Method");
+      obj.myMethod();
+      System.out.println(obj.myVar);
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Calling Method
+Inside Method
+instance variable
+</pre>
+<blockquote><p>If I hadn’t declared the instance variable and only declared the local variable inside method then the statement System.out.println(obj.myVar); would have thrown compilation error. As you cannot change and access local variables outside the method.</p></blockquote>
+
+<div class="bb-nav"><a class="pretut" href="/java/first">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/datatype">Next ❯</a></div>	
+
+</div>
+
+{% endblock %}
+

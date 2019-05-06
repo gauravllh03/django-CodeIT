@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">LinkedHashSet Class in Java with Example</h1>
+<div class="entry-content" itemprop="text"><p>Earlier we have shared tutorials on HashSet and TreeSet. LinkedHashSet is also an implementation of Set interface, it is similar to the HashSet and TreeSet except the below mentioned differences:</p>
+<ol>
+<li><code>HashSet</code> doesn&#8217;t maintain any kind of order of its elements.</li>
+<li><code>TreeSet</code> sorts the elements in ascending order.</li>
+<li><code>LinkedHashSet</code> maintains the insertion order. Elements gets sorted in the same sequence in which they have been added to the Set.</li>
+</ol>
+<h2>Example of LinkedHashSet:</h2>
+<pre>import java.util.LinkedHashSet;
+public class LinkedHashSetExample {
+     public static void main(String args[]) {
+         // LinkedHashSet of String Type
+         LinkedHashSet&lt;String&gt; lhset = new LinkedHashSet&lt;String&gt;();
+
+         // Adding elements to the LinkedHashSet
+         lhset.add("Z");
+         lhset.add("PQ");
+         lhset.add("N");
+         lhset.add("O");
+         lhset.add("KK");
+         lhset.add("FGH");
+         System.out.println(lhset);
+
+         // LinkedHashSet of Integer Type
+         LinkedHashSet&lt;Integer&gt; lhset2 = new LinkedHashSet&lt;Integer&gt;();
+
+         // Adding elements
+         lhset2.add(99);
+         lhset2.add(7);
+         lhset2.add(0);
+         lhset2.add(67);
+         lhset2.add(89);
+         lhset2.add(66);
+         System.out.println(lhset2);
+    }
+}</pre>
+<p><b>Output:</b></p>
+<pre>[Z, PQ, N, O, KK, FGH]
+[99, 7, 0, 67, 89, 66]</pre>
+<div class="bb-nav"><a class="pretut" href="/java/treeset">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/string">Next ❯</a></div>
+<footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>   
+</div>
+
+{% endblock %}
+
+
+
+

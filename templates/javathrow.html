@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">How to throw exception in java with example</h1>
+</header><div class="entry-content" itemprop="text"><p>In Java we have already defined exception classes such as ArithmeticException, NullPointerException, ArrayIndexOutOfBounds exception etc. These exceptions are set to trigger on different-2 conditions. For example when we divide a number by zero, this triggers ArithmeticException, when we try to access the array element out of its bounds then we get ArrayIndexOutOfBoundsException.</p>
+<p>We can define our own set of conditions or rules and throw an exception explicitly using throw keyword. For example, we can throw ArithmeticException when we divide number by 5, or any other numbers, what we need to do is just set the condition and throw any exception using throw keyword. Throw keyword can also be used for throwing custom exceptions. </p>
+<p><strong>Syntax of throw keyword:</strong></p>
+<pre>throw new exception_class("error message");</pre>
+<p>For example:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>throw new ArithmeticException("dividing a number by 5 is not allowed in this program");</pre>
+<h2>Example of throw keyword</h2>
+<p>Lets say we have a requirement where we we need to only register the students when their age is less than 12 and weight is less than 40, if any of the condition is not met then the user should get an ArithmeticException with the warning message &#8220;Student is not eligible for registration&#8221;. We have implemented the logic by placing the code in the method that checks student eligibility if the entered student age and weight doesn&#8217;t met the criteria then we throw the exception using throw keyword.</p>
+<pre>/* In this program we are checking the Student age
+ * if the student age&lt;12 and weight &lt;40 then our program 
+ * should return that the student is not eligible for registration.
+ */
+public class ThrowExample {
+   static void checkEligibilty(int stuage, int stuweight){ 
+      if(stuage&lt;12 &amp;&amp; stuweight&lt;40) {
+         throw new ArithmeticException("Student is not eligible for registration"); 
+      }
+      else {
+         System.out.println("Student Entry is Valid!!"); 
+      }
+   } 
+
+   public static void main(String args[]){ 
+     System.out.println("Welcome to the Registration process!!");
+     checkEligibilty(10, 39); 
+     System.out.println("Have a nice day.."); 
+ } 
+}</pre>
+<p>Output:</p>
+<pre>Welcome to the Registration process!!Exception in thread "main" 
+java.lang.ArithmeticException: Student is not eligible for registration
+at beginnersbook.com.ThrowExample.checkEligibilty(ThrowExample.java:9)
+at beginnersbook.com.ThrowExample.main(ThrowExample.java:18)</pre>
+<p>In the above example we have throw an unchecked exception, same way we can throw unchecked and user-defined exception as well.</p>
+<div class="bb-nav"><a class="pretut" href="/java/finally">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/array">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}

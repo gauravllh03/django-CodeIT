@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Structure and Function in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>In the previous tutorial we learnt about structures, the compound data type that groups different types of variables. In this tutorial, we will learn how to pass structures as an argument to the function and how to return the structure from the function.</p>
+<h2>How to pass structure as an argument to function</h2>
+<p>Here we have a function <code>printStudentInfo()</code> which takes structure <code>Student</code> as an argument and prints the details of student using structure varaible. The important point to note here is that you should always declare the structure before function declarations, otherwise you will get compilation error.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+struct Student{
+   char stuName[30];
+   int stuRollNo;
+   int stuAge;
+};
+void printStudentInfo(Student);
+int main(){
+   Student s;
+   cout&lt;&lt;"Enter Student Name: ";
+   cin.getline(s.stuName, 30);
+   cout&lt;&lt;"Enter Student Roll No: ";
+   cin&gt;&gt;s.stuRollNo;
+   cout&lt;&lt;"Enter Student Age: ";
+   cin&gt;&gt;s.stuAge;
+   printStudentInfo(s);
+   return 0;
+}
+void printStudentInfo(Student s){
+   cout&lt;&lt;"Student Record:"&lt;&lt;endl;
+   cout&lt;&lt;"Name: "&lt;&lt;s.stuName&lt;&lt;endl;
+   cout&lt;&lt;"Roll No: "&lt;&lt;s.stuRollNo&lt;&lt;endl;
+   cout&lt;&lt;"Age: "&lt;&lt;s.stuAge;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Enter Student Name: Rick
+Enter Student Roll No: 666123
+Enter Student Age: 19
+Student Record:
+Name: Rick
+Roll No: 666123
+Age: 19</pre>
+<h2>How to return the Structure from a Function</h2>
+<p>In this example we have two functions one gets the values from user, assign them to structure members and returns the structure and the other function takes that structure as argument and print the details.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+struct Student{
+   char stuName[30];
+   int stuRollNo;
+   int stuAge;
+};
+Student getStudentInfo();
+void printStudentInfo(Student);
+int main(){
+   Student s;
+   s = getStudentInfo();
+   printStudentInfo(s);
+   return 0;
+}
+/* This function prompt the user to input student
+ * details, stores them in structure members
+ * and returns the structure
+ */
+Student getStudentInfo(){
+   Student s;
+   cout&lt;&lt;"Enter Student Name: ";
+   cin.getline(s.stuName, 30);
+   cout&lt;&lt;"Enter Student Roll No: ";
+   cin&gt;&gt;s.stuRollNo;
+   cout&lt;&lt;"Enter Student Age: ";
+   cin&gt;&gt;s.stuAge;
+   return s;
+}
+void printStudentInfo(Student s){
+   cout&lt;&lt;"Student Record:"&lt;&lt;endl;
+   cout&lt;&lt;"Name: "&lt;&lt;s.stuName&lt;&lt;endl;
+   cout&lt;&lt;"Roll No: "&lt;&lt;s.stuRollNo&lt;&lt;endl;
+   cout&lt;&lt;"Age: "&lt;&lt;s.stuAge;
+}</pre>
+<p>Output:</p>
+<pre>
+Enter Student Name: Tyrion lannister
+Enter Student Roll No: 333901
+Enter Student Age: 39
+Student Record:
+Name: Tyrion lannister
+Roll No: 333901
+Age: 39</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/struct">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/enum">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

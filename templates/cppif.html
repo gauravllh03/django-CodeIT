@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">If else Statement in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Sometimes we need to execute a block of statements only when a particular condition is met or not met. This is called <strong>decision making</strong>, as we are executing a certain code after making a decision in the program logic. For decision making in C++, we have four types of control statements (or control structures), which are as follows:</p>
+<p>a) if statement<br />
+b) nested if statement<br />
+c) if-else statement<br />
+d) if-else-if statement</p>
+<h2>If statement in C++</h2>
+<p>If statement consists a condition, followed by statement or a set of statements as shown below:</p>
+<pre>if(condition){
+  Statement(s);
+}</pre>
+<p>The statements inside <strong>if</strong> parenthesis (usually referred as if body) gets executed only when the given condition is true. If the condition is false then the statements inside if body are completely ignored.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Flow diagram of If statement</strong><br />
+<img class="aligncenter size-full wp-image-6665" src="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-1.jpg" alt="if statement flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-1.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-1-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-1-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h3>Example of if statement</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+  int num=70;
+  if( num &lt; 100 ){
+     /* This cout statement will only execute,
+      * if the above condition is true
+      */ 
+     cout&lt;&lt;"number is less than 100";
+  }
+
+  if(num &gt; 100){
+     /* This cout statement will only execute,
+      * if the above condition is true
+      */ 
+     cout&lt;&lt;"number is greater than 100";
+  }
+  return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>number is less than 100</pre>
+<h2>Nested if statement in C++</h2>
+<p>When there is an if statement inside another if statement then it is called the <strong>nested if statement</strong>.<br />
+The structure of nested if looks like this:</p>
+<pre>if(condition_1) {
+   Statement1(s);
+
+   if(condition_2) {
+      Statement2(s);
+   }
+}</pre>
+<blockquote><p>Statement1 would execute if the condition_1 is true. Statement2 would only execute if both the conditions( condition_1 and condition_2) are true.</p></blockquote>
+<h3>Example of Nested if statement</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num=90;
+   /* Nested if statement. An if statement
+    * inside another if body
+    */
+   if( num &lt; 100 ){
+      cout&lt;&lt;"number is less than 100"&lt;&lt;endl;
+      if(num &gt; 50){
+         cout&lt;&lt;"number is greater than 50";
+      } 
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>number is less than 100
+number is greater than 50</pre>
+<h2>If else statement in C++</h2>
+<p>Sometimes you have a condition and you want to execute a block of code if condition is true and execute another piece of code if the same condition is false. This can be achieved in C++ using if-else statement.</p>
+<p>This is how an if-else statement looks:</p>
+<pre>if(condition) {
+   Statement(s);
+}
+else {
+   Statement(s);
+}</pre>
+<p>The statements inside &#8220;if&#8221; would execute if the condition is true, and the statements inside &#8220;else&#8221; would execute if the condition is false.</p>
+<p><strong>Flow diagram of if-else</strong><br />
+<img class="aligncenter size-full wp-image-6664" src="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1.jpg" alt="If else flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-1-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h3>Example of if-else statement</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num=66;
+   if( num &lt; 50 ){
+      //This would run if above condition is true
+      cout&lt;&lt;"num is less than 50";
+   }
+   else {
+      //This would run if above condition is false
+      cout&lt;&lt;"num is greater than or equal 50";
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>num is greater than or equal 50</pre>
+<h2>if-else-if Statement in C++</h2>
+<p>if-else-if statement is used when we need to check multiple conditions. In this control structure we have only one &#8220;if&#8221; and one &#8220;else&#8221;, however we can have multiple &#8220;else if&#8221; blocks. This is how it looks:</p>
+<pre>if(condition_1) {
+   /*if condition_1 is true execute this*/
+   statement(s);
+}
+else if(condition_2) {
+   /* execute this if condition_1 is not met and
+    * condition_2 is met
+    */
+   statement(s);
+}
+else if(condition_3) {
+   /* execute this if condition_1 &amp; condition_2 are
+    * not met and condition_3 is met
+    */
+   statement(s);
+}
+.
+.
+.
+else {
+   /* if none of the condition is true
+    * then these statements gets executed
+    */
+   statement(s);
+}</pre>
+<p><strong>Note:</strong> The most important point to note here is that in if-else-if, as soon as the condition is met, the corresponding set of statements get executed, rest gets ignored. If none of the condition is met then the statements inside &#8220;else&#8221; gets executed.</p>
+<h3>Example of if-else-if</h3>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num;
+   cout&lt;&lt;"Enter an integer number between 1 &amp; 99999: ";
+   cin&gt;&gt;num;
+   if(num &lt;100 &amp;&amp; num&gt;=1) {
+      cout&lt;&lt;"Its a two digit number";
+   }
+   else if(num &lt;1000 &amp;&amp; num&gt;=100) {
+      cout&lt;&lt;"Its a three digit number";
+   }
+   else if(num &lt;10000 &amp;&amp; num&gt;=1000) {
+      cout&lt;&lt;"Its a four digit number";
+   }
+   else if(num &lt;100000 &amp;&amp; num&gt;=10000) {
+      cout&lt;&lt;"Its a five digit number";
+   }
+   else {
+      cout&lt;&lt;"number is not between 1 &amp; 99999";
+   }
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Enter an integer number between 1 &amp; 99999: 8976
+Its a four digit number</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/operators">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/switch">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+

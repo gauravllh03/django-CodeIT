@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Passing Array to Function in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>You can pass array as an argument to a function just like you pass variables as arguments. In order to pass array to the function you just need to <strong>mention the array name during function call</strong> like this:</p>
+<pre>function_name(array_name);</pre>
+<h2>Example: Passing arrays to a function</h2>
+<p>In this example, we are passing two arrays <code>a</code> &amp; <code>b</code> to the function <code>sum()</code>. This function adds the corresponding elements of both the arrays and display them.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+/* This function adds the corresponding
+ * elements of both the arrays and
+ * displays it.
+ */
+void sum(int arr1[], int arr2[]){
+   int temp[5];
+   for(int i=0; i&lt;5; i++){
+      temp[i] = arr1[i]+arr2[i];
+      cout&lt;&lt;temp[i]&lt;&lt;endl;
+   }
+}
+int main(){
+   int a[5] = {10, 20, 30, 40 ,50};
+   int b[5] = {1, 2, 3, 4, 5};
+   //Passing arrays to function
+   sum(a, b);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>11
+22
+33
+44
+55</pre>
+<h2>Example 2: Passing multidimensional array to function</h2>
+<p>In this example we are passing a multidimensional array to the function <code>square</code> which displays the square of each element.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+/* This method prints the square of each
+ * of the elements of multidimensional array
+ */
+void square(int arr[2][3]){
+   int temp;
+   for(int i=0; i&lt;2; i++){
+      for(int j=0; j&lt;3; j++){
+        temp = arr[i][j];
+        cout&lt;&lt;pow(temp, 2)&lt;&lt;endl;
+      }
+   }
+}
+int main(){
+   int arr[2][3] = { 
+       {1, 2, 3},
+       {4, 5, 6}
+   };
+   square(arr);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+1
+4
+9
+16
+25
+36
+</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/multi">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/string">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,263 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">ArrayList in java with example programs &#8211; Collections Framework</h1>
+<div class="entry-content" itemprop="text"><p><strong>Arraylist</strong> class implements List interface and it is based on an Array data structure. It is widely used because of the functionality and flexibility it offers. Most of the developers <strong>choose Arraylist over Array</strong> as it&#8217;s a very good alternative of traditional java arrays. ArrayList is a resizable-array implementation of the <code>List</code> interface. It implements all optional list operations, and permits all elements, including <code>null</code>.</p>
+<p><img class="aligncenter size-full wp-image-8735" src="https://beginnersbook.com/wp-content/uploads/2013/12/Java_ArrayList_tutorial.png" alt="Java ArrayList" width="650" height="300" srcset="https://beginnersbook.com/wp-content/uploads/2013/12/Java_ArrayList_tutorial.png 650w, https://beginnersbook.com/wp-content/uploads/2013/12/Java_ArrayList_tutorial-300x138.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<h2>Why ArrayList is better than Array?</h2>
+<p>The limitation with array is that it has a fixed length so if it is full you cannot add any more elements to it, likewise if there are number of elements gets removed from it the memory consumption would be the same as it doesn&#8217;t shrink.</p>
+<p>On the other ArrayList can dynamically grow and shrink after addition and removal of elements (See the images below). Apart from these benefits ArrayList class enables us to use predefined methods of it which makes our task easy. Let&#8217;s see the diagrams to understand the addition and removal of elements from ArrayList and then we will see the programs.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Adding Element in ArrayList at specified position:</strong><br />
+<img class="aligncenter size-full wp-image-8736" src="https://beginnersbook.com/wp-content/uploads/2013/12/Adding_Element_ArrayList_diagram.png" alt="Java ArrayList - Adding element" width="650" height="350" srcset="https://beginnersbook.com/wp-content/uploads/2013/12/Adding_Element_ArrayList_diagram.png 650w, https://beginnersbook.com/wp-content/uploads/2013/12/Adding_Element_ArrayList_diagram-300x162.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<p><strong>Removing Element from ArrayList:</strong><br />
+<img class="aligncenter size-full wp-image-8737" src="https://beginnersbook.com/wp-content/uploads/2013/12/Removing_Element_from_ArrayList_diagram.png" alt="ArrayList in Java - Removing Element" width="650" height="326" srcset="https://beginnersbook.com/wp-content/uploads/2013/12/Removing_Element_from_ArrayList_diagram.png 650w, https://beginnersbook.com/wp-content/uploads/2013/12/Removing_Element_from_ArrayList_diagram-300x150.png 300w" sizes="(max-width: 650px) 100vw, 650px" /></p>
+<blockquote><p>There is a list of several tutorials on ArrayList at the end of this guide, refer it to understand and learn ArrayList concept fully.</p></blockquote>
+<h2>How to create an ArrayList?</h2>
+<p>We can create an ArrayList by writing a simple statement like this:</p>
+<p>This statement creates an ArrayList with the name <code>alist</code> with type &#8220;String&#8221;. The type determines which type of elements the list will have. Since this list is of &#8220;String&#8221; type, the elements that are going to be added to this list will be of type &#8220;String&#8221;.</p>
+<pre>ArrayList&lt;String&gt; alist=new ArrayList&lt;String&gt;();</pre>
+<p>Similarly we can create ArrayList that accepts int elements.</p>
+<pre>ArrayList&lt;Integer&gt; list=new ArrayList&lt;Integer&gt;();</pre>
+<h2>How to add elements to an ArrayList?</h2>
+<p>We add elements to an ArrayList by using add() method, this method has couple of variations, which we can use based on the requirement. For example: If we want to add the element at the end of the List then simply do it like this:</p>
+<pre>alist.add("Steve"); //This will add "Steve" at the end of List</pre>
+<p>To add the element at the specified location in ArrayList, we can specify the index in the add method like this:</p>
+<pre>alist.add(3, "Steve"); //This will add "Steve" at the fourth position</pre>
+<p>Lets write the complete code:</p>
+<pre>import java.util.*;  
+class JavaExample{  
+   public static void main(String args[]){  
+      ArrayList&lt;String&gt; alist=new ArrayList&lt;String&gt;();  
+      alist.add("Steve");
+      alist.add("Tim");
+      alist.add("Lucy");
+      alist.add("Pat");
+      alist.add("Angela");
+      alist.add("Tom");
+  
+      //displaying elements
+      System.out.println(alist);
+  
+      //Adding "Steve" at the fourth position
+      alist.add(3, "Steve");
+  
+      //displaying elements
+      System.out.println(alist);
+   }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>[Steve, Tim, Lucy, Pat, Angela, Tom]
+[Steve, Tim, Lucy, Steve, Pat, Angela, Tom]</pre>
+<p><strong>Note:</strong> Since the index starts with 0, index 3 would represent fourth position not 3.</p>
+<h2>How to remove elements from ArrayList?</h2>
+<p>We use remove() method to remove elements from an ArrayList, Same as add() method, this method also has few variations.</p>
+<p>For example:</p>
+<pre>import java.util.*;
+class JavaExample{
+   public static void main(String args[]){
+      ArrayList&lt;String&gt; alist=new ArrayList&lt;String&gt;(); 
+      alist.add("Steve");
+      alist.add("Tim");
+      alist.add("Lucy");
+      alist.add("Pat");
+      alist.add("Angela");
+      alist.add("Tom");
+
+      //displaying elements
+      System.out.println(alist);
+
+      //Removing "Steve" and "Angela"
+      alist.remove("Steve");
+      alist.remove("Angela");
+
+      //displaying elements
+      System.out.println(alist);
+
+      //Removing 3rd element
+      alist.remove(2);
+
+      //displaying elements
+      System.out.println(alist);
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>[Steve, Tim, Lucy, Pat, Angela, Tom]
+[Tim, Lucy, Pat, Tom]
+[Tim, Lucy, Tom]</pre>
+<h2>Iterating ArrayList</h2>
+<p>In the above examples, we have displayed the ArrayList elements just by referring the ArrayList instance, which is definitely not the right way to displays the elements. The correct way of displaying the elements is by using an advanced for loop like this.</p>
+<pre>import java.util.*;  
+class JavaExample{  
+  public static void main(String args[]){  
+     ArrayList&lt;String&gt; alist=new ArrayList&lt;String&gt;();  
+     alist.add("Gregor Clegane");  
+     alist.add("Khal Drogo");  
+     alist.add("Cersei Lannister");  
+     alist.add("Sandor Clegane"); 
+     alist.add("Tyrion Lannister");
+  
+     //iterating ArrayList
+     for(String str:alist)  
+        System.out.println(str);  
+     }  
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Gregor Clegane
+Khal Drogo
+Cersei Lannister
+Sandor Clegane
+Tyrion Lannister
+</pre>
+<h2>ArrayList Example in Java</h2>
+<p>This example demonstrates how to create, initialize, add and remove elements from ArrayList. In this example we have an ArrayList of type &#8220;String&#8221;. We have added 5 String element in the ArrayList using the method add(String E), this method adds the element at the end of the ArrayList.</p>
+<p>We are then adding two more elements in the ArrayList using method add(int index, String E), this method adds the specified element at the specified index, index 0 indicates first position and 1 indicates second position.</p>
+<p>We are then removing the elements &#8220;Chaitanya&#8221; and &#8220;Harry&#8221; from the ArrayList and then we are removing the second element of the ArrayList using method remove(int index). Since we have specified the index as 1 (remove(1)), it would remove the second element.</p>
+<pre>import java.util.*;
+
+public class JavaExample {
+   public static void main(String args[]) {
+      /* Creating ArrayList of type "String" which means
+       * we can only add "String" elements
+       */
+      ArrayList&lt;String&gt; obj = new ArrayList&lt;String&gt;();
+
+      /*This is how we add elements to an ArrayList*/
+      obj.add("Ajeet");
+      obj.add("Harry");
+      obj.add("Chaitanya");
+      obj.add("Steve");
+      obj.add("Anuj");
+
+      // Displaying elements
+      System.out.println("Original ArrayList:");
+      for(String str:obj)
+         System.out.println(str);
+
+      /* Add element at the given index
+       * obj.add(0, "Rahul") - Adding element "Rahul" at first position
+       * obj.add(1, "Justin") - Adding element "Justin" at second position
+       */
+      obj.add(0, "Rahul");
+      obj.add(1, "Justin");
+
+      // Displaying elements
+      System.out.println("ArrayList after add operation:");
+      for(String str:obj)
+         System.out.println(str);
+
+      //Remove elements from ArrayList like this
+      obj.remove("Chaitanya"); //Removes "Chaitanya" from ArrayList
+      obj.remove("Harry"); //Removes "Harry" from ArrayList
+
+      // Displaying elements
+      System.out.println("ArrayList after remove operation:");
+      for(String str:obj)
+         System.out.println(str);
+
+      //Remove element from the specified index
+      obj.remove(1); //Removes Second element from the List
+
+      // Displaying elements
+      System.out.println("Final ArrayList:");
+      for(String str:obj)
+         System.out.println(str);
+   }
+}
+
+<strong>Output:</strong></pre>
+<pre>Original ArrayList:
+Ajeet
+Harry
+Chaitanya
+Steve
+Anuj
+ArrayList after add operation:
+Rahul
+Justin
+Ajeet
+Harry
+Chaitanya
+Steve
+Anuj
+ArrayList after remove operation:
+Rahul
+Justin
+Ajeet
+Steve
+Anuj
+Final ArrayList:
+Rahul
+Ajeet
+Steve
+Anuj
+</pre>
+<h2>Methods of ArrayList class</h2>
+<p>In the above example we have used methods such as add() and remove(). However there are number of methods available which can be used directly using object of ArrayList class. Let&#8217;s discuss few important methods of ArrayList class.</p>
+<p>1) <strong>add( Object o)</strong>: This method adds an object o to the arraylist.</p>
+<pre>obj.add("hello");</pre>
+<p>This statement would add a string hello in the arraylist at last position.</p>
+<p>2) <strong>add(int index, Object o)</strong>: It adds the object o to the array list at the given index.</p>
+<pre>obj.add(2, "bye");</pre>
+<p>It will add the string bye to the 2nd index (3rd position as the array list starts with index 0) of array list.</p>
+<p>3) <strong>remove(Object o)</strong>: Removes the object o from the ArrayList.</p>
+<pre>obj.remove("Chaitanya");</pre>
+<p>This statement will remove the string &#8220;Chaitanya&#8221; from the ArrayList.</p>
+<p>4) <strong>remove(int index)</strong>: Removes element from a given index.</p>
+<pre>obj.remove(3);</pre>
+<p>It would remove the element of index 3 (4th element of the list &#8211; List starts with o).</p>
+<p>5) <strong>set(int index, Object o)</strong>: Used for updating an element. It replaces the element present at the specified index with the object o.</p>
+<pre>obj.set(2, "Tom");</pre>
+<p>It would replace the 3rd element (index =2 is 3rd element) with the value Tom.</p>
+<p>6)<strong> int indexOf(Object o)</strong>: Gives the index of the object o. If the element is not found in the list then this method returns the value -1.</p>
+<pre>int pos = obj.indexOf("Tom");</pre>
+<p>This would give the index (position) of the string Tom in the list.</p>
+<p>7) <strong>Object get(int index)</strong>: It returns the object of list which is present at the specified index.</p>
+<pre>String str= obj.get(2);</pre>
+<p>Function get would return the string stored at 3rd position (index 2) and would be assigned to the string &#8220;str&#8221;. We have stored the returned value in string variable because in our example we have defined the ArrayList is of String type. If you are having integer array list then the returned value should be stored in an integer variable.</p>
+<p>8) <strong>int size()</strong>: It gives the size of the ArrayList &#8211; Number of elements of the list.</p>
+<pre>int numberofitems = obj.size();</pre>
+<p>9) <strong>boolean contains(Object o)</strong>: It checks whether the given object o is present in the array list if its there then it returns true else it returns false.</p>
+<pre>obj.contains("Steve");</pre>
+<p>It would return true if the string &#8220;Steve&#8221; is present in the list else we would get false.</p>
+<p>10) <strong>clear():</strong> It is used for removing all the elements of the array list in one go. The below code will remove all the elements of ArrayList whose object is obj.</p>
+<pre>obj.clear();</pre>
+<div class="bb-nav"><a class="pretut" href="/java/throw">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/link">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}
+
+

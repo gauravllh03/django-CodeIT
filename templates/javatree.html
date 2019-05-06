@@ -1,0 +1,84 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">TreeMap in Java with Example</h1>
+<div class="entry-content" itemprop="text"><p>TreeMap is Red-Black tree based NavigableMap implementation. It is sorted according to the natural ordering of its keys.<br />
+<strong>TreeMap class</strong> implements Map interface similar to <code>HashMap</code> class. The main difference between them is that HashMap is an unordered collection while TreeMap is sorted in the ascending order of its keys. TreeMap is unsynchronized collection class which means it is not suitable for thread-safe operations until unless synchronized explicitly.</p>
+<h2>TreeMap Example</h2>
+<p>In this example we are storing the key and value mappings into the TreeMap and we are getting a sorted key-value mapping upon fetching the data from TreeMap.</p>
+<pre>import java.util.TreeMap;
+import java.util.Set;
+import java.util.Iterator;
+import java.util.Map;
+
+public class Details {
+
+   public static void main(String args[]) {
+
+      /* This is how to declare TreeMap */
+      TreeMap&lt;Integer, String&gt; tmap = 
+             new TreeMap&lt;Integer, String&gt;();
+
+      /*Adding elements to TreeMap*/
+      tmap.put(1, "Data1");
+      tmap.put(23, "Data2");
+      tmap.put(70, "Data3");
+      tmap.put(4, "Data4");
+      tmap.put(2, "Data5");
+
+      /* Display content using Iterator*/
+      Set set = tmap.entrySet();
+      Iterator iterator = set.iterator();
+      while(iterator.hasNext()) {
+         Map.Entry mentry = (Map.Entry)iterator.next();
+         System.out.print("key is: "+ mentry.getKey() + " &amp; Value is: ");
+         System.out.println(mentry.getValue());
+      }
+
+   }
+}</pre>
+<p>Output:</p>
+<pre>key is: 1 &amp; Value is: Data1
+key is: 2 &amp; Value is: Data5
+key is: 4 &amp; Value is: Data4
+key is: 23 &amp; Value is: Data2
+key is: 70 &amp; Value is: Data3</pre>
+<p>As you can see that we have inserted the data in random order however when we displayed the TreeMap content we got the sorted result in the ascending order of keys.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<div class="bb-nav"><a class="pretut" href="/java/hash">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/hashset">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>  
+</div>
+
+{% endblock %}

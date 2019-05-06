@@ -1,0 +1,228 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<title>C++ Tutorial</title>
+	<link type="text/css" rel="stylesheet" href="style.css">
+</head>
+-->
+{% extends 'base.html' %}
+{% load staticfiles %}
+<style>
+    {% block style %}
+
+    body{
+	background-color: #e9ecef;
+    font-size: 100%;
+    }   
+    h1
+        {
+            font-size: 200%;
+        }
+    .jumbotron
+    {
+        margin-top:25px;
+        margin-bottom:25px;
+        box-shadow: 10px 5px 5px  #aaaaaa;
+    }
+    .border{
+        border: 1px ridge black;
+        padding: 30px;
+        background-color: white;
+    }
+
+    .logo{
+        font-style:italic;
+        font-size: 30px;
+        text-align: center;
+        color:#2471A3;
+    }
+
+    #main-header{
+        color:#FF7F50;
+    }
+
+    .line{
+        border-top: 1px dotted black;
+    }
+
+    h2,h3{
+        color:#FF7F50;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    a:link {
+        color:#2471A3  ;
+        text-decoration: none;
+    }
+
+    a:visited {
+    color: green;
+    }
+
+    a:hover {
+    color: gold;
+    text-decoration: underline;
+    }
+
+    a:active {
+    color: red;
+    }
+    .margin
+    {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    iframe {
+        width: 90%;
+        height: 250px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        }
+    {% endblock %}
+</style>
+{% block content %}
+	<div class="border">
+		<div class="logo">
+			<p style="color:#FF7F50;font-size:54px;">
+                    
+				<b style="font-family: 'Diplomata', cursive;font-size: 40px;text-shadow:#000000 0px 3px;">Gaurav's Coding Classes</b>
+            </p>
+		</div>
+		<div class="content" id="Heading">
+            <div class="jumbotron">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="line">
+                            <h1 id="main-header" style="margin-top: 30px;margin-bottom: 20px;">
+                                Java Tutorials For Beginners
+                            </h1>
+                            <p>
+                                This tutorial would help you learn Java like a pro. I have shared 500+ tutorials on various topics of Java including tutorials on core java and advanced Java concepts and Java programming examples. This core Java Tutorial contains the links of all the tutorials in a systematic order starting from beginner’s level to the advanced topics. 
+                            </p>
+                        </div>
+                        <div class="line">
+                            <h2 style="margin-top: 30px;margin-bottom: 20px;">
+                                Java Tutorial
+                            </h2>
+                            <p>
+                                To learn Java programming, refer these tutorials in the given order. These tutorials are written for beginners so even if you have no prior knowledge in Java, you won’t face any difficulty understanding these tutorials(this page includes core Java tutorial and advanced Java tutorial).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" style="margin-top: 105px;margin-bottom: 20px;">
+                        <iframe width="300" height="300" style="margin-left: 30px;margin-right: 30px" src="https://www.youtube.com/embed/Zv8-hrGiGno" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+			<div class="line">
+				<h3>
+					<b>Java Basics</b>
+                </h3>
+                <div class="jumbotron">
+                    1. <a href="/java/intro">Introduction to Java</a><br /><br>
+2. <a href="/java/first">First Java Program</a><br /><br />
+3. <a href="/java/var">Variables in Java</a><br /><br />
+4. <a href="/java/datatype">Java Data Types</a><br /><br />
+5. <a href="/java/op">Java Operators</a><br /><br />
+6. <a href="/java/if">If-else in Java</a><br /><br />
+7. <a href="/java/switch">Switch-Case in Java</a><br /><br />
+8. <a href="/java/for">Java For loop</a><br /><br /> 
+9. <a href="/java/while">Java While loop</a><br /><br />
+10. <a href="/java/dowhile">do-while loop in Java</a><br /><br />
+11. <a href="/java/cont">Java Continue statement</a><br /><br />
+12. <a href="/java/break">Java Break statement</a>
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>Java OOP</b>
+                </h3>
+                <div class="jumbotron">
+                        <p>13. <a href="/java/const">Constructor in Java</a><br /><br />
+14. <a href="/java/static">Static keyword in Java</a><br /><br />
+15. <a href="/java/inherit">Java Inheritance with example</a><br /><br />
+16. <a href="/java/super">Super Keyword in Java</a><br /><br />
+17. <a href="/java/poly">Polymorphism in Java</a><br /><br />
+18. <a href="/java/inter">Interface in Java</a><br /><br />
+19. <a href="/java/encap">Java Encapsulation with example</a><br /><br />
+20. <a href="/java/access">Access modifiers in Java</a><br /><br />
+
+
+                </div>	
+			</div>
+			<div class="line">
+				<h3>
+					<b>Java Exception Handling</b>
+                </h3>
+                <div class="jumbotron">
+				    <p>21. <a href="/java/handle">Java Exception handling</a><br /><br />
+22. <a href="/java/try">Java try-catch block</a><br /><br />
+23. <a href="/java/finally">Java finally block</a><br /><br />
+24. <a href="/java/throw">How to throw exception in Java</a><br /><br />
+
+
+                </div>
+			</div>
+			<div class="line">
+				<h3>
+					<b>Java Collections</b>
+                </h3>
+                <div class="jumbotron">
+				        <p>25. <a href="/java/array">Java ArrayList</a><br /><br />
+26. <a href="/java/link">Java LinkedList</a><br /><br />
+27. <a href="/java/vect">Vector in Java</a><br /><br />
+28. <a href="/java/hash">HashMap in Java</a><br /><br />
+29. <a href="/java/tree">Java TreeMap</a><br /><br />
+30. <a href="/java/hashset">Java HashSet</a><br /><br />
+31. <a href="/java/treeset">TreeSet in Java</a><br /><br />
+32. <a href="/java/linkhash">LinkedHashSet</a><br /><br />
+
+                </div>
+			</div>
+			
+			<div class="line">
+				<h3>
+					<b>Miscellaneous Core Java</b>
+                </h3>
+                <div class="jumbotron">
+				    <p>33. <a href="/java/string">String in Java</a><br /><br />
+34. <a href="/java/multi">Java Multithreading</a><br /><br />
+35. <a href="/java/serial">Java Serialization</a><br /><br />
+36. <a href="/java/awt">Java AWT Tutorial</a><br /><br />
+37. <a href="/java/swing">Java Swing Tutorial</a><br /><br />
+
+                </div>
+			</div>
+            <div class="line">
+				<h3 class="margin">
+					<b>Features of Java</b>
+                </h3>
+                <div class="jumbotron">
+				<p class="margin">
+					1) <b>Simple</b> - Java is very easy to learn, and its syntax is simple, clean and easy to understand. According to Sun, Java language is a simple programming language
+				<p class="margin">
+					2) <b>Object Oriented</b> - Java is an object-oriented programming language. Everything in Java is an object. Object-oriented means we organize our software as a combination of different types of objects that incorporates both data and behavior.
+				</p>
+				<p class="margin">
+					3) <b>Platform Independent</b> - Java is platform independent because it is different from other languages like C, C++, etc. which are compiled into platform specific machines while Java is a write once, run anywhere language
+				</p>
+				<p class="margin">
+					4) <b>Secured</b> - Security Manager determines what resources a class can access such as reading and writing to the local disk.
+				</p>
+				<p class="margin">
+					5) <b>Robust</b> -  It uses strong memory management.There is a lack of pointers that avoids security problems.
+				</p>
+                    
+				<p class="margin">
+					6) <b>Multi Threading</b> - A thread is like a separate program, executing concurrently. We can write Java programs that deal with many tasks at once by defining multiple threads.
+                </p>
+                </div>
+			</div>
+		</div>
+		</div>
+	</div>
+{% endblock %}

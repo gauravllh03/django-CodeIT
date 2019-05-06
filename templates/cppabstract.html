@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            h1
+        {
+            font-size: 200%;
+        }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Abstraction in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Abstraction is one of the feature of Object Oriented Programming, where you show only relevant details to the user and hide irrelevant details. For example, when you send an email to someone you just click send and you get the success message, what actually happens when you click send, how data is transmitted over network to the recipient is hidden from you (because it is irrelevant to you).</p>
+<p>Let&#8217;s see how this can be achieved in a C++ program using access specifiers:</p>
+<h2>Abstraction Example</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class AbstractionExample{
+private:
+   /* By making these data members private, I have
+    * hidden them from outside world.
+    * These data members are not accessible outside
+    * the class. The only way to set and get their
+    * values is through the public functions.
+    */
+   int num;
+   char ch;
+
+public:
+   void setMyValues(int n, char c) {
+      num = n; ch = c;
+   }
+   void getMyValues() {
+      cout&lt;&lt;"Numbers is: "&lt;&lt;num&lt;&lt; endl;
+      cout&lt;&lt;"Char is: "&lt;&lt;ch&lt;&lt;endl;
+   }
+};
+int main(){
+   AbstractionExample obj;
+   obj.setMyValues(100, 'X');
+   obj.getMyValues();
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+Numbers is: 100
+Char is: X</pre>
+<h2>Advantage of data abstraction</h2>
+<p>The major advantage of using this feature is that when the code evolves and you need to make some adjustments in the code then you only need to modify the high level class where you have declared the members as private. Since none class is accessing these data members directly, you do not need to change the low level(user level) class code.<br />
+Imagine if you had made these data members public, if at some point you want to change the code, you would have to make the necessary adjustments to all the classes that are accessing the members directly.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>Other advantages of data abstraction are:</strong><br />
+1) Makes the application secure by making data private and avoiding the user level error that may corrupt the data.<br />
+2) This avoids code duplication and increases the code reusability.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/encap">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/inter">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}

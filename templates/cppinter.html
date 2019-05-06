@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Interfaces in C++: Abstract Class</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>In C++, we use terms abstract class and interface interchangeably. A class with <strong>pure virtual function</strong> is known as abstract class. For example the following function is a pure virtual function:</p>
+<pre>virtual void fun() = 0;</pre>
+<p>A pure virtual function is marked with a virtual keyword and has <code>= 0</code> after its signature. You can call this function an abstract function as it has no body. The derived class must give the implementation to all the pure virtual functions of parent class else it will become abstract class by default.</p>
+<h2>Why we need a abstract class?</h2>
+<p>Let&#8217;s understand this with the help of a real life example. Lets say we have a class <code>Animal</code>, animal sleeps, animal make sound, etc. For now I am considering only these two behaviours and creating a class Animal with two functions <code>sound()</code> and <code>sleeping()</code>.</p>
+<p>Now, we know that animal sounds are different cat says &#8220;meow&#8221;, dog says &#8220;woof&#8221;. So what implementation do I give in <code>Animal</code> class for the function <code>sound()</code>, the only and correct way of doing this would be making this function pure abstract so that I need not give implementation in Animal class but all the classes that inherits Animal class must give implementation to this function. This way I am ensuring that all the Animals have sound but they have their unique sound.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p>The same example can be written in a C++ program like this:</p>
+<h2>Abstract class Example</h2>
+<pre>#include&lt;iostream&gt;
+using namespace std;
+class Animal{
+public:
+   //Pure Virtual Function
+   virtual void sound() = 0;
+
+   //Normal member Function
+   void sleeping() {
+      cout&lt;&lt;"Sleeping";
+   }
+};
+class Dog: public Animal{
+public:
+   void sound() {
+      cout&lt;&lt;"Woof"&lt;&lt;endl;
+   }
+};
+int main(){
+   Dog obj;
+   obj.sound();
+   obj.sleeping();
+   return 0;
+}</pre>
+<h2>Rules of Abstract Class</h2>
+<p>1) As we have seen that any class that has a <strong>pure virtual function</strong> is an abstract class.<br />
+2) We cannot create the instance of abstract class. For example: If I have written this line <code>Animal obj;</code> in the above program, it would have caused compilation error.<br />
+3) We can create pointer and reference of base abstract class points to the instance of child class. For example, this is valid:</p>
+<pre>Animal *obj = new Dog();
+obj-&gt;sound();</pre>
+<p>4) Abstract class can have constructors.<br />
+5) If the derived class does not implement the pure virtual function of parent class then the derived class becomes abstract.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/abstract">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/passobj">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

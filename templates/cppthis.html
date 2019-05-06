@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">C++ &#8216;this&#8217; Pointer</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>The <strong>this</strong> pointer holds the address of current object, in simple words you can say that this pointer points to the current object of the class. Let&#8217;s take an example to understand this concept.</p>
+<h2>C++ Example: this pointer</h2>
+<p>Here you can see that we have two data members num and ch. In member function setMyValues() we have two local variables having same name as data members name. In such case if you want to assign the local variable value to the data members then you won&#8217;t be able to do until unless you use this pointer, because the compiler won&#8217;t know that you are referring to object&#8217;s data members unless you use this pointer. This is one of the example where you must use <strong>this</strong> pointer.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Demo {
+private:
+  int num;
+  char ch;
+public:
+  void setMyValues(int num, char ch){
+    this-&gt;num =num;
+    this-&gt;ch=ch;
+  }
+  void displayMyValues(){
+    cout&lt;&lt;num&lt;&lt;endl;
+    cout&lt;&lt;ch;
+  }
+};
+int main(){
+  Demo obj;
+  obj.setMyValues(100, 'A');
+  obj.displayMyValues();
+  return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>100
+A</pre>
+<h2>Example 2: function chaining calls using this pointer</h2>
+<p>Another example of using this pointer is to return the reference of current object so that you can chain function calls, this way you can call all the functions for the current object in one go. Another important point to note in this program is that I have incremented the value of object&#8217;s num in the second function and you can see in the output that it actually incremented the value that we have set in the first function call. This shows that the chaining is sequential and the changes made to the object&#8217;s data members retains for further chaining calls.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Demo {
+private:
+  int num;
+  char ch;
+public:
+  Demo &amp;setNum(int num){
+    this-&gt;num =num;
+    return *this;
+  }
+  Demo &amp;setCh(char ch){
+    this-&gt;num++;
+    this-&gt;ch =ch;
+    return *this;
+  }
+  void displayMyValues(){
+    cout&lt;&lt;num&lt;&lt;endl;
+    cout&lt;&lt;ch;
+  }
+};
+int main(){
+  Demo obj;
+  //Chaining calls
+  obj.setNum(100).setCh('A');
+  obj.displayMyValues();
+  return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+101
+A</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/pointer">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/oops">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}

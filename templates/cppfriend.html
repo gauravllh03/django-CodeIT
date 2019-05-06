@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Friend Class and Friend Functions in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>As we know that a class cannot access the private members of other class. Similarly a class that doesn&#8217;t inherit another class cannot access its protected members.</p>
+<p><strong>Friend Class:</strong><br />
+A <strong>friend class</strong> is a class that can access the private and protected members of a class in which it is declared as <strong>friend</strong>. This is needed when we want to allow a particular class to access the private and protected members of a class.</p>
+<h2>Function Class Example</h2>
+<p>In this example we have two classes <code>XYZ</code> and <code>ABC</code>. The <code>XYZ</code> class has two private data members <code>ch</code> and <code>num</code>, this class declares <code>ABC</code> as friend class. This means that <code>ABC</code> can access the private members of <code>XYZ</code>, the same has been demonstrated in the example where the function <code>disp()</code> of <code>ABC</code> class accesses the private members <code>num</code> and <code>ch</code>. In this example we are passing object as an argument to the function.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class XYZ {
+private:
+   char ch='A';
+   int num = 11;
+public:
+   /* This statement would make class ABC
+    * a friend class of XYZ, this means that
+    * ABC can access the private and protected
+    * members of XYZ class. 
+    */
+   friend class ABC;
+};
+class ABC {
+public:
+   void disp(XYZ obj){
+      cout&lt;&lt;obj.ch&lt;&lt;endl;
+      cout&lt;&lt;obj.num&lt;&lt;endl;
+   }
+};
+int main() {
+   ABC obj;
+   XYZ obj2;
+   obj.disp(obj2);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>A
+11</pre>
+<p><strong><br />
+Friend Function:</strong><br />
+Similar to friend class, this function can access the private and protected members of another class. A global function can also be declared as friend as shown in the example below:</p>
+<h2>Friend Function Example</h2>
+<pre>
+#include &lt;iostream&gt;
+using namespace std;
+class XYZ {
+private:
+   int num=100;
+   char ch='Z';
+public:
+   friend void disp(XYZ obj);
+};
+//Global Function
+void disp(XYZ obj){
+   cout&lt;&lt;obj.num&lt;&lt;endl; 
+   cout&lt;&lt;obj.ch&lt;&lt;endl;
+}
+int main() {
+   XYZ obj;
+   disp(obj);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>100
+Z</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/passobj">❮ Previous</a></div>
+</p></div>
+</div>
+
+{% endblock %}

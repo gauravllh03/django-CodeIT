@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+<style>
+        {% block style %}
+            .text-align-center
+            {
+                text-align: center;
+                
+            }
+            .mb-4, .my-4 {
+              margin-bottom: 20px!important;
+          }
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+        }
+        #hello
+        {
+            box-shadow: 10px 10px 5px #aaaaaa;
+            margin-left: 45px;
+            margin-right: 45px;
+        }
+        #ok
+        {
+            font-size:17px;
+        }
+        .margin
+        {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        {% endblock %}
+    </style>
+{% block gaurav %}
+<h1 class="text-align-center">About Us</h1>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 " id="ok">
+                <p> JUSL Code Club is the department society of Information</p> 
+                <p>Technology.It is Jadavpur University's's programming and development</p>
+                <p>organization. It is responsible for organizing coding contests which </p>
+                <p>are used to find real talent, designed to promote sincerity and</p>
+                <p>a culture of competitive programming in the campus.</p>
+                <p>It also organizes Srijan, the annual fest of JUSL in association</p>
+                <p>with IEEE department</p>
+                
+            </div>
+            <div class="col-sm-6 text-align-center">
+                <img src="data:image/png;base64,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" height='300' width='250' alt="hello">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-sm-3 text-align-center" id="hello">
+            <p class="margin">
+            <div class="mql-sales__logo-wrapper">
+                <img class="mql-sales__logo-wrapper--logo" src="https://offers.hubspot.com/hubfs/assets/hubspot.com/landing-pages/sales/Images/Phone_Icon.svg" alt="Phone_Icon.svg">
+            </div>
+            <br>
+            <div class="mql-sales__phone-text">
+                <h5 class="mql-sales__phone-header">Call us directly at</h5>
+            </div>
+            <br>
+            <div class="mql-sales__phone-text">
+                    <h5 class="mql-sales__phone-header">7980303431</h5>
+            </div>
+            </p>
+        </div>
+       
+        <div class="col-sm-3 text-align-center" id="hello">
+            <p class="margin">
+            <div class="mql-sales__logo-wrapper">
+                <img class="mql-sales__logo-wrapper--logo" src="https://offers.hubspot.com/hubfs/assets/hubspot.com/landing-pages/sales/Images/Chat_Icon.svg" height='100' width='100' alt="Chat_Icon.png">>
+            </div>
+            <br>
+            <div class="mql-sales__phone-text">
+                <h5 class="mql-sales__phone-header">Whatsapp at</h5>
+            </div>
+            <br>
+            <div class="mql-sales__phone-text">
+                    <h5 class="mql-sales__phone-header">8582959232</h5>
+            </div>
+            </p>
+        </div>
+
+        
+        <div class="col-sm-3 text-align-center" id="hello">
+            <p>                                      </p>
+            <p class="margin">
+                <div class="mql-sales__logo-wrapper">
+                    <img class="mql-sales__logo-wrapper--logo" src="https://blog.hubspot.com/hs-fs/hub/53/file-701939601-png/email-icon-orange-1.png"  height='100' width='100' alt="Phone_Icon.svg">
+                </div>
+                <br>
+                <div class="mql-sales__phone-text">
+                    <h5 class="mql-sales__phone-header">Email at</h5>
+                </div>
+                <br>
+                <div class="mql-sales__phone-text">
+                        <h5 class="mql-sales__phone-header">gauravlucia@gmail.com</h5>
+                </div>
+            </p>
+        </div>
+        
+    </div>
+{% endblock %}

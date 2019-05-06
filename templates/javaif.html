@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">If, If..else Statement in Java with Examples</h1>
+</header><div class="entry-content" itemprop="text"><p>When we need to execute a set of statements based on a condition then we need to use <strong>control flow statements</strong>. For example, if a number is greater than zero then we want to print &#8220;Positive Number&#8221; but if it is less than zero then we want to print &#8220;Negative Number&#8221;. In this case we have two print statements in the program, but only one print statement executes at a time based on the input value. We will see how to write such type of conditions in the java program using control statements.</p>
+<p>In this tutorial, we will see four types of control statements that you can use in java programs based on the requirement: In this tutorial we will cover following conditional statements:</p>
+<p>a) if statement<br />
+b) nested if statement<br />
+c) if-else statement<br />
+d) if-else-if statement</p>
+<h2>If statement</h2>
+<p>If statement consists a condition, followed by statement or a set of statements as shown below:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>if(condition){
+  Statement(s);
+}</pre>
+<p>The statements gets executed only when the given condition is true. If the condition is false then the statements inside if statement body are completely ignored.<br />
+<img class="aligncenter size-full wp-image-6529" src="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram.jpg" alt="if statement flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/if_statement_flow_diagram-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h3>Example of if statement</h3>
+<pre>public class IfStatementExample {
+
+   public static void main(String args[]){
+      int num=70;
+      if( num &lt; 100 ){
+    /* This println statement will only execute,
+     * if the above condition is true
+     */
+    System.out.println("number is less than 100");
+      }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>number is less than 100</pre>
+<h2>Nested if statement in Java</h2>
+<p>When there is an if statement inside another if statement then it is called the <strong>nested if statement</strong>.<br />
+The structure of nested if looks like this:</p>
+<pre>if(condition_1) {
+   Statement1(s);
+
+   if(condition_2) {
+      Statement2(s);
+   }
+}</pre>
+<p>Statement1 would execute if the condition_1 is true. Statement2 would only execute if both the conditions( condition_1 and condition_2) are true.</p>
+<h3>Example of Nested if statement</h3>
+<pre>public class NestedIfExample {
+
+   public static void main(String args[]){
+        int num=70;
+  if( num &lt; 100 ){ 
+           System.out.println("number is less than 100"); 
+           if(num &gt; 50){
+        System.out.println("number is greater than 50");
+     }
+  }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>number is less than 100
+number is greater than 50
+</pre>
+<h2>If else statement in Java</h2>
+<p>This is how an if-else statement looks:</p>
+<pre>if(condition) {
+   Statement(s);
+}
+else {
+   Statement(s);
+}</pre>
+<p>The statements inside &#8220;if&#8221; would execute if the condition is true, and the statements inside &#8220;else&#8221; would execute if the condition is false.<br />
+<img class="aligncenter size-full wp-image-6530" src="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram.jpg" alt="If else flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/If_else_flow_diagram-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h3>Example of if-else statement</h3>
+<pre>public class IfElseExample {
+
+   public static void main(String args[]){
+     int num=120;
+     if( num &lt; 50 ){
+  System.out.println("num is less than 50");
+     }
+     else {
+  System.out.println("num is greater than or equal 50");
+     }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>num is greater than or equal 50
+</pre>
+<h2>if-else-if Statement</h2>
+<p>if-else-if statement is used when we need to check multiple conditions. In this statement we have only one &#8220;if&#8221; and one &#8220;else&#8221;, however we can have multiple &#8220;else if&#8221;. It is also known as <strong>if else if ladder</strong>. This is how it looks:</p>
+<pre>if(condition_1) {
+   /*if condition_1 is true execute this*/
+   statement(s);
+}
+else if(condition_2) {
+   /* execute this if condition_1 is not met and
+    * condition_2 is met
+    */
+   statement(s);
+}
+else if(condition_3) {
+   /* execute this if condition_1 &amp; condition_2 are
+    * not met and condition_3 is met
+    */
+   statement(s);
+}
+.
+.
+.
+else {
+   /* if none of the condition is true
+    * then these statements gets executed
+    */
+   statement(s);
+}</pre>
+<p><strong>Note:</strong> The most important point to note here is that in if-else-if statement, as soon as the condition is met, the corresponding set of statements get executed, rest gets ignored. If none of the condition is met then the statements inside &#8220;else&#8221; gets executed.</p>
+<h3>Example of if-else-if</h3>
+<pre>public class IfElseIfExample {
+
+   public static void main(String args[]){
+  int num=1234;
+  if(num &lt;100 &amp;&amp; num&gt;=1) {
+    System.out.println("Its a two digit number");
+  }
+  else if(num &lt;1000 &amp;&amp; num&gt;=100) {
+    System.out.println("Its a three digit number");
+  }
+  else if(num &lt;10000 &amp;&amp; num&gt;=1000) {
+    System.out.println("Its a four digit number");
+  }
+  else if(num &lt;100000 &amp;&amp; num&gt;=10000) {
+    System.out.println("Its a five digit number");      
+  }
+  else {
+    System.out.println("number is not between 1 &amp; 99999");      
+  }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Its a four digit number
+</pre>
+<div class="bb-nav"><a class="pretut" href="/java/op">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/switch">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>  
+</div>
+
+{% endblock %}

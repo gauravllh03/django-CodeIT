@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Encapsulation in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Encapsulation is a process of combining data members and functions in a single unit called class. This is to prevent the access to the data directly, the access to them is provided through the functions of the class. It is one of the popular feature of Object Oriented Programming(OOPs) that helps in <strong>data hiding</strong>.</p>
+<h2>How Encapsulation is achieved in a class</h2>
+<p>To do this:<br />
+1) Make all the data members private.<br />
+2) Create public setter and getter functions for each data member in such a way that the set function set the value of data member and get function get the value of data member.</p>
+<p>Let&#8217;s see this in an example Program:</p>
+<h2>Encapsulation Example in C++</h2>
+<p>Here we have two data members num and ch, we have declared them as private so that they are not accessible outside the class, this way we are hiding the data. The only way to get and set the values of these data members is through the public getter and setter functions.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>#include&lt;iostream&gt;
+using namespace std;
+class ExampleEncap{
+private:
+   /* Since we have marked these data members private,
+    * any entity outside this class cannot access these
+    * data members directly, they have to use getter and
+    * setter functions.
+    */
+   int num;
+   char ch;
+public:
+   /* Getter functions to get the value of data members.
+    * Since these functions are public, they can be accessed
+    * outside the class, thus provide the access to data members
+    * through them
+    */
+   int getNum() const {
+      return num;
+   }
+   char getCh() const {
+      return ch;
+   }
+   /* Setter functions, they are called for assigning the values
+    * to the private data members.
+    */
+   void setNum(int num) {
+      this-&gt;num = num;
+   }
+   void setCh(char ch) {
+      this-&gt;ch = ch;
+   }
+};
+int main(){
+   ExampleEncap obj;
+   obj.setNum(100);
+   obj.setCh('A');
+   cout&lt;&lt;obj.getNum()&lt;&lt;endl;
+   cout&lt;&lt;obj.getCh()&lt;&lt;endl;
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+100
+A</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/virtual">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/abstract">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+

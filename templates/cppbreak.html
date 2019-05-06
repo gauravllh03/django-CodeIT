@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        
+       img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Break statement in C++ with example</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>The <strong>break statement</strong> is used in following two scenarios:</p>
+<p>a) Use break statement to come out of the loop instantly. Whenever a break statement is encountered inside a loop, the control directly comes out of loop terminating it. It is used along with if statement, whenever used inside loop(see the example below) so that it occurs only for a particular condition.</p>
+<p>b) It is used in switch case control structure after the case blocks. Generally all cases in switch case are followed by a break statement to avoid the subsequent cases (see the example below) execution. Whenever it is encountered in switch-case block, the control comes out of the switch-case body.</p>
+<h4>Syntax of break statement</h4>
+<pre>break;</pre>
+<h2>break statement flow diagram</h2>
+<p><img class="aligncenter size-full wp-image-6656" src="https://beginnersbook.com/wp-content/uploads/2017/08/break_statement_cpp.jpg" alt="C++ break statement" width="450" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/break_statement_cpp.jpg 450w, https://beginnersbook.com/wp-content/uploads/2017/08/break_statement_cpp-300x267.jpg 300w" sizes="(max-width: 450px) 100vw, 450px" /></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<h2>Example – Use of break statement in a while loop</h2>
+<p>In the example below, we have a while loop running from 10 to 200 but since we have a break statement that gets encountered when the loop counter variable value reaches 12, the loop gets terminated and the control jumps to the next statement in program after the loop body.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num =10;
+   while(num&lt;=200) {
+      cout&lt;&lt;"Value of num is: "&lt;&lt;num&lt;&lt;endl;
+      if (num==12) {
+         break;
+      }
+      num++;
+   } 
+   cout&lt;&lt;"Hey, I'm out of the loop";
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Value of num is: 10
+Value of num is: 11
+Value of num is: 12
+Hey, I'm out of the loop</pre>
+<h2>Example: break statement in for loop</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int var;
+   for (var =200; var&gt;=10; var --) {
+      cout&lt;&lt;"var: "&lt;&lt;var&lt;&lt;endl;
+      if (var==197) {
+         break;
+      }
+   }
+   cout&lt;&lt;"Hey, I'm out of the loop";
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>var: 200
+var: 199
+var: 198
+var: 197
+Hey, I'm out of the loop</pre>
+<h2>Example: break statement in Switch Case</h2>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+int main(){
+   int num=2;
+   switch (num) {
+      case 1: cout&lt;&lt;"Case 1 "&lt;&lt;endl;
+      break;
+      case 2: cout&lt;&lt;"Case 2 "&lt;&lt;endl;
+      break;
+      case 3: cout&lt;&lt;"Case 3 "&lt;&lt;endl;
+      break;
+      default: cout&lt;&lt;"Default "&lt;&lt;endl;
+   }
+   cout&lt;&lt;"Hey, I'm out of the switch case";
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Case 2 
+Hey, I'm out of the switch case</pre>
+<p>In this example, we have break statement after each Case block, this is because if we don’t have it then the subsequent case block would also execute. The output of the same program without break would be:</p>
+<pre>Case 2
+Case 3
+Default
+Hey, I'm out of the switch case</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/cont">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/goto">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+
+
+

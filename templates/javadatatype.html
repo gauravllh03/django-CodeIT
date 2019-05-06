@@ -1,0 +1,303 @@
+
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+     <h1 class="entry-title" itemprop="headline">Data Types in Java</h1>
+</header><div class="entry-content" itemprop="text"><p><strong>Data type</strong> defines the values that a variable can take, for example if a variable has int data type, it can only take integer values. In java we have two categories of data type: 1) Primitive data types 2) Non-primitive data types &#8211; Arrays and Strings are non-primitive data types, we will discuss them later in the coming tutorials. Here we will discuss primitive data types and literals in Java.</p>
+<p>Java is a statically typed language. A language is statically typed, if the data type of a variable is known at compile time. This means that you must specify the type of the variable (Declare the variable) before you can use it.<br />
+In the last tutorial about Java Variables , we learned how to declare a variable, lets recall it:</p>
+<pre>int num;</pre>
+<p>So in order to use the variable num in our program, we must declare it first as shown above. It is a good programming practice to declare all the variables ( that you are going to use) in the beginning of the program.</p>
+<h2>1) Primitive data types</h2>
+<p>In Java, we have eight primitive data types: boolean, char, byte, short, int, long, float and double. Java developers included these data types to maintain the portability of java as the size of these primitive data types do not change from one operating system to another.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> and <strong>long</strong> data types are used for storing whole numbers.</p>
+<p><strong>float</strong> and <strong>double</strong> are used for fractional numbers.</p>
+<p><strong>char</strong> is used for storing characters(letters).</p>
+<p><strong>boolean</strong> data type is used for variables that holds either true or false.</p>
+<h3>byte:</h3>
+<p>This can hold whole number between -128 and 127. Mostly used to save memory and when you are certain that the numbers would be in the limit specified by byte data type.<br />
+Default size of this data type: 1 byte.<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      byte num;
+      
+      num = 113;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>113</pre>
+<blockquote><p>Try the same program by assigning value assigning 150 value to variable num, you would get <strong>type mismatch</strong> error because the value 150 is out of the range of byte data type. The range of byte as I mentioned above is -128 to 127.</p></blockquote>
+<h3>short:</h3>
+<p>This is greater than byte in terms of size and less than integer. Its range is -32,768 to 32767.<br />
+Default size of this data type: 2 byte</p>
+<pre>short num = 45678;</pre>
+<p><strong>int</strong>: Used when short is not large enough to hold the number, it has a wider range: -2,147,483,648 to 2,147,483,647<br />
+Default size: 4 byte<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      short num;
+      
+      num = 150;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>150</pre>
+<p>The byte data type couldn&#8217;t hold the value 150 but a short data type can because it has a wider range.</p>
+<h2>long:</h2>
+<p>Used when int is not large enough to hold the value, it has wider range than int data type, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.<br />
+size: 8 bytes<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      long num = -12332252626L;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>-12332252626</pre>
+<p><strong>double</strong>: Sufficient for holding 15 decimal digits<br />
+size: 8 bytes<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      double num = -42937737.9d;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>-4.29377379E7</pre>
+<p><strong>float</strong>: Sufficient for holding 6 to 7 decimal digits<br />
+size: 4 bytes</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      float num = 19.98f;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>19.98</pre>
+<p><strong>boolean</strong>: holds either true of false.</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      boolean b = false;
+      System.out.println(b);
+    }
+}</pre>
+<p>Output:</p>
+<pre>false</pre>
+<p><strong>char</strong>: holds characters.<br />
+size: 2 bytes</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      char ch = 'Z';
+      System.out.println(ch);
+    }
+}</pre>
+<p>Output:</p>
+<pre>Z</pre>
+<h2>Literals in Java</h2>
+<p>A literal is a fixed value that we assign to a variable in a Program.</p>
+<pre>int num=10;</pre>
+<p>Here value 10 is a Integer literal.</p>
+<pre>char ch = 'A';</pre>
+<p>Here A is a char literal</p>
+<h3>Integer Literal</h3>
+<p>Integer literals are assigned to the variables of data type <code>byte</code>, <code>short</code>, <code>int</code> and <code>long</code>.</p>
+<pre>byte b = 100;
+short s = 200;
+int num = 13313131;
+long l = 928389283L;</pre>
+<h3>Float Literals</h3>
+<p>Used for data type <code>float</code> and <code>double</code>.</p>
+<pre>double num1 = 22.4;
+float num2 = 22.4f;</pre>
+<p>Note: Always suffix float value with the &#8220;f&#8221; else compiler will consider it as double.</p>
+<h3>Char and String Literal</h3>
+<p>Used for char and String type.</p>
+<pre>char ch = 'Z';
+String str = "BeginnersBook";
+</pre>
+<div class="bb-nav"><a class="pretut" href="">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="">Next ❯</a></div>
+
+   margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+        <h1 class="entry-title" itemprop="headline">Data Types in Java</h1>
+</header><div class="entry-content" itemprop="text"><p><strong>Data type</strong> defines the values that a variable can take, for example if a variable has int data type, it can only take integer values. In java we have two categories of data type: 1) Primitive data types 2) Non-primitive data types &#8211; Arrays and Strings are non-primitive data types, we will discuss them later in the coming tutorials. Here we will discuss primitive data types and literals in Java.</p>
+<p>Java is a statically typed language. A language is statically typed, if the data type of a variable is known at compile time. This means that you must specify the type of the variable (Declare the variable) before you can use it.<br />
+In the last tutorial about Java Variables , we learned how to declare a variable, lets recall it:</p>
+<pre>int num;</pre>
+<p>So in order to use the variable num in our program, we must declare it first as shown above. It is a good programming practice to declare all the variables ( that you are going to use) in the beginning of the program.</p>
+<h2>1) Primitive data types</h2>
+<p>In Java, we have eight primitive data types: boolean, char, byte, short, int, long, float and double. Java developers included these data types to maintain the portability of java as the size of these primitive data types do not change from one operating system to another.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<p><strong>byte</strong>, <strong>short</strong>, <strong>int</strong> and <strong>long</strong> data types are used for storing whole numbers.</p>
+<p><strong>float</strong> and <strong>double</strong> are used for fractional numbers.</p>
+<p><strong>char</strong> is used for storing characters(letters).</p>
+<p><strong>boolean</strong> data type is used for variables that holds either true or false.</p>
+<h3>byte:</h3>
+<p>This can hold whole number between -128 and 127. Mostly used to save memory and when you are certain that the numbers would be in the limit specified by byte data type.<br />
+Default size of this data type: 1 byte.<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      byte num;
+      
+      num = 113;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>113</pre>
+<blockquote><p>Try the same program by assigning value assigning 150 value to variable num, you would get <strong>type mismatch</strong> error because the value 150 is out of the range of byte data type. The range of byte as I mentioned above is -128 to 127.</p></blockquote>
+<h3>short:</h3>
+<p>This is greater than byte in terms of size and less than integer. Its range is -32,768 to 32767.<br />
+Default size of this data type: 2 byte</p>
+<pre>short num = 45678;</pre>
+<p><strong>int</strong>: Used when short is not large enough to hold the number, it has a wider range: -2,147,483,648 to 2,147,483,647<br />
+Default size: 4 byte<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      short num;
+      
+      num = 150;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>150</pre>
+<p>The byte data type couldn&#8217;t hold the value 150 but a short data type can because it has a wider range.</p>
+<h2>long:</h2>
+<p>Used when int is not large enough to hold the value, it has wider range than int data type, ranging from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807.<br />
+size: 8 bytes<br />
+Default value: 0<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      long num = -12332252626L;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>-12332252626</pre>
+<p><strong>double</strong>: Sufficient for holding 15 decimal digits<br />
+size: 8 bytes<br />
+Example:</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      double num = -42937737.9d;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>-4.29377379E7</pre>
+<p><strong>float</strong>: Sufficient for holding 6 to 7 decimal digits<br />
+size: 4 bytes</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      float num = 19.98f;
+      System.out.println(num);
+    }
+}</pre>
+<p>Output:</p>
+<pre>19.98</pre>
+<p><strong>boolean</strong>: holds either true of false.</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      boolean b = false;
+      System.out.println(b);
+    }
+}</pre>
+<p>Output:</p>
+<pre>false</pre>
+<p><strong>char</strong>: holds characters.<br />
+size: 2 bytes</p>
+<pre>class JavaExample {
+    public static void main(String[] args) {
+      
+      char ch = 'Z';
+      System.out.println(ch);
+    }
+}</pre>
+<p>Output:</p>
+<pre>Z</pre>
+<h2>Literals in Java</h2>
+<p>A literal is a fixed value that we assign to a variable in a Program.</p>
+<pre>int num=10;</pre>
+<p>Here value 10 is a Integer literal.</p>
+<pre>char ch = 'A';</pre>
+<p>Here A is a char literal</p>
+<h3>Integer Literal</h3>
+<p>Integer literals are assigned to the variables of data type <code>byte</code>, <code>short</code>, <code>int</code> and <code>long</code>.</p>
+<pre>byte b = 100;
+short s = 200;
+int num = 13313131;
+long l = 928389283L;</pre>
+<h3>Float Literals</h3>
+<p>Used for data type <code>float</code> and <code>double</code>.</p>
+<pre>double num1 = 22.4;
+float num2 = 22.4f;</pre>
+<p>Note: Always suffix float value with the &#8220;f&#8221; else compiler will consider it as double.</p>
+<h3>Char and String Literal</h3>
+<p>Used for char and String type.</p>
+<pre>char ch = 'Z';
+String str = "BeginnersBook";
+</pre>
+<div class="bb-nav"><a class="pretut" href="/java/var">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/op">Next ❯</a></div>
+
+
+      
+</div>
+
+{% endblock %}
+

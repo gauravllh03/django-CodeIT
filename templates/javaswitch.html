@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      	<h1 class="entry-title" itemprop="headline">Switch Case statement in Java with example</h1>
+</header><div class="entry-content" itemprop="text"><p><strong>Switch case statement</strong> is used when we have number of options (or choices) and we may need to perform a different task for each choice.</p>
+<p>The syntax of Switch case statement looks like this –</p>
+<pre>switch (variable or an integer expression)
+{
+     case constant:
+     //Java code
+     ;
+     case constant:
+     //Java code
+     ;
+     default:
+     //Java code
+     ;
+}</pre>
+<blockquote><p>Switch Case statement is mostly used with break statement even though it is optional. We will first see an example without break statement and then we will discuss switch case with break</p></blockquote>
+<h2>A Simple Switch Case Example</h2>
+<pre>public class SwitchCaseExample1 {
+
+   public static void main(String args[]){
+     int num=2;
+     switch(num+2)
+     {
+        case 1:
+    System.out.println("Case1: Value is: "+num);
+  case 2:
+    System.out.println("Case2: Value is: "+num);
+  case 3:
+    System.out.println("Case3: Value is: "+num);
+        default:
+    System.out.println("Default: Value is: "+num);
+      }
+   }
+}</pre>
+<p><strong>Output:</strong></p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>Default: Value is: 2</pre>
+<p><strong>Explanation:</strong> In switch I gave an expression, you can give variable also. I gave num+2, where num value is 2 and after addition the expression resulted 4. Since there is no case defined with value 4 the default case got executed. This is why we should use default in switch case, so that if there is no catch that matches the condition, the default block gets executed.</p>
+<h2>Switch Case Flow Diagram</h2>
+<p>First the variable, value or expression which is provided in the switch parenthesis is evaluated and then based on the result, the corresponding case block is executed that matches the result.<br />
+<img class="aligncenter size-full wp-image-6535" src="https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram.jpg" alt="switch case flow diagram" width="400" height="400" srcset="https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram.jpg 400w, https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram-150x150.jpg 150w, https://beginnersbook.com/wp-content/uploads/2017/08/switch_case_flow_diagram-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Break statement in Switch Case</h2>
+<p>Break statement is optional in switch case but you would use it almost every time you deal with switch case. Before we discuss about break statement, Let&#8217;s have a look at the example below where I am not using the break statement:</p>
+<pre>public class SwitchCaseExample2 {
+
+   public static void main(String args[]){
+      int i=2;
+      switch(i)
+      {
+   case 1:
+     System.out.println("Case1 ");
+   case 2:
+     System.out.println("Case2 ");
+   case 3:
+     System.out.println("Case3 ");
+   case 4:
+           System.out.println("Case4 ");
+   default:
+     System.out.println("Default ");
+      }
+   }
+}
+</pre>
+<p><strong>Output:</strong></p>
+<pre>Case2 
+Case3 
+Case4 
+Default 
+</pre>
+<blockquote><p>In the above program, we have passed integer value 2 to the switch, so the control switched to the case 2, however we don&#8217;t have break statement after the case 2 that caused the flow to pass to the subsequent cases till the end. The solution to this problem is break statement</p></blockquote>
+<p>Break statements are used when you want your program-flow to come out of the switch body. Whenever a break statement is encountered in the switch body, the execution flow would directly come out of the switch, ignoring rest of the cases</p>
+<p>Let&#8217;s take the same example but this time with break statement.</p>
+<h2>Example with break statement</h2>
+<pre>public class SwitchCaseExample2 {
+
+   public static void main(String args[]){
+      int i=2;
+      switch(i)
+      {
+   case 1:
+     System.out.println("Case1 ");
+     break;
+   case 2:
+     System.out.println("Case2 ");
+     break;
+   case 3:
+     System.out.println("Case3 ");
+     break;
+   case 4:
+           System.out.println("Case4 ");
+           break;
+   default:
+     System.out.println("Default ");
+      }
+   }
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>Case2</pre>
+<p>Now you can see that only case 2 had been executed, rest of the cases were ignored.</p>
+<p><strong>Why didn’t I use break statement after default?</strong><br />
+The control would itself come out of the switch after default so I didn’t use it, however if you still want to use the break after default then you can use it, there is no harm in doing that.</p>
+<h2>Few points about Switch Case</h2>
+<p>1) Case doesn&#8217;t always need to have order 1, 2, 3 and so on. It can have any integer value after case keyword. Also, case doesn’t need to be in an ascending order always, you can specify them in any order based on the requirement.</p>
+<p>2) You can also use characters in switch case. for example –</p>
+<pre>public class SwitchCaseExample2 {
+
+   public static void main(String args[]){
+      char ch='b';
+      switch(ch)
+      {
+   case 'd':
+     System.out.println("Case1 ");
+     break;
+   case 'b':
+     System.out.println("Case2 ");
+     break;
+   case 'x':
+     System.out.println("Case3 ");
+     break;
+   case 'y':
+           System.out.println("Case4 ");
+           break;
+   default:
+     System.out.println("Default ");
+      }
+   }
+}</pre>
+<p>3) The expression given inside switch should result in a constant value otherwise it would not be valid.<br />
+For example:</p>
+<p><strong>Valid expressions for switch:</strong></p>
+<pre>switch(1+2+23)
+switch(1*2+3%4)</pre>
+<p><strong>Invalid switch expressions:</strong></p>
+<pre>switch(ab+cd)
+switch(a+b+c)</pre>
+<p>4) Nesting of switch statements are allowed, which means you can have switch statements inside another switch. However nested switch statements should be avoided as it makes program more complex and less readable.</p>
+<div class="bb-nav"><a class="pretut" href="/java/if">❮ Previous</a>&nbsp&nbsp&nbsp<a class="nexttut" href="/java/for">Next ❯</a></div>
+</p></div><footer class="entry-footer"><p class="entry-meta"></p></footer></article><div class="after-entry" class="widget-area"><section id="custom_html-41" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><!-- 728x90/300x250/320x50 --><div id="waldo-tag-3340"></div></div></div></section>
+</div>
+</div>
+
+{% endblock %}
+
+

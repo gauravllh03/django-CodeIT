@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Function Overriding in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Function overriding is a feature that allows us to have a same function in child class which is already present in the parent class. A child class inherits the data members and member functions of parent class, but when you want to override a functionality in the child class then you can use function overriding. It is like creating a new version of an old function, in the child class.</p>
+<h2>Function Overriding Example</h2>
+<p>To override a function you must have the same signature in child class. By signature I mean the data type and sequence of parameters. Here we don&#8217;t have any parameter in the parent function so we didn&#8217;t use any parameter in the child function.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class BaseClass {
+public:
+   void disp(){
+      cout&lt;&lt;"Function of Parent Class";
+   }
+};
+class DerivedClass: public BaseClass{
+public:
+   void disp() {
+      cout&lt;&lt;"Function of Child Class";
+   }
+};
+int main() {
+   DerivedClass obj = DerivedClass();
+   obj.disp();
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>Function of Child Class</pre>
+<blockquote><p><strong>Note:</strong> In function overriding, the function in parent class is called the overridden function and function in child class is called overriding function.</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div></blockquote>
+<h2>How to call overridden function from the child class</h2>
+<p>As we have seen above that when we make the call to function (involved in overriding), the child class function (overriding function) gets called. What if you want to call the overridden function by using the object of child class. You can do that by creating the child class object in such a way that the reference of parent class points to it. Lets take an example to understand it.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class BaseClass {
+public:
+   void disp(){
+      cout&lt;&lt;"Function of Parent Class";
+   }
+};
+class DerivedClass: public BaseClass{
+public:
+   void disp() {
+      cout&lt;&lt;"Function of Child Class";
+   }
+};
+int main() {
+   /* Reference of base class pointing to
+    * the object of child class.
+    */
+   BaseClass obj = DerivedClass(); 
+   obj.disp();
+   return 0;
+}</pre>
+<p>Output:</p>
+<pre>Function of Parent Class</pre>
+<p>If you want to call the Overridden function from overriding function then you can do it like this:</p>
+<pre>parent_class_name::function_name</pre>
+<p>To do this in the above example, we can write following statement in the disp() function of child class:</p>
+<pre>BaseClass::disp();</pre>
+<div class="bb-nav"><a class="pretut" href="/c++/over">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/virtual">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
+

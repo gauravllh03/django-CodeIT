@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+<style>
+        {% block style %}
+            .margin
+            {
+                margin-left: 45px;
+                margin-right: 75px;
+                
+            }
+            
+          .jumbotron {
+            margin-bottom: 5rem;
+            background-color: #e9ecef;
+            border-radius: .3rem;
+            box-shadow: gray 10px 5px 5px;
+        }
+        img {
+        width: 60%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:25px;
+        margin-bottom: 25px;
+        }
+       
+        {% endblock %}
+    </style>
+
+{% block content %}
+
+<div class="jumbotron">
+        <!--  Copy content here -->
+      <h1 class="entry-title" itemprop="headline">Function overloading in C++</h1>
+<!--<p class="entry-meta">By <span class="entry-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><span class="entry-author-name" itemprop="name">Chaitanya Singh</span></span> | <span class="entry-categories">Filed Under: <a href="https://beginnersbook.com/category/learn-c/" rel="category tag">Learn C++</a></span> </p></header>--><div class="entry-content" itemprop="text"><p>Function overloading is a C++ programming feature that allows us to have more than one function having same name but different parameter list, when I say parameter list, it means the data type and sequence of the parameters, for example the parameters list of a function <code>myfuncn(int a, float b)</code> is <code>(int, float)</code> which is different from the function <code>myfuncn(float a, int b)</code> parameter list <code>(float, int)</code>. Function overloading is a compile-time polymorphism.<br />
+Now that we know what is parameter list lets see the rules of overloading: we can have following functions in the same scope.</p>
+<pre>sum(int num1, int num2)
+sum(int num1, int num2, int num3)
+sum(int num1, double num2)
+</pre>
+<blockquote><p>The easiest way to remember this rule is that the parameters should qualify any one or more of the following conditions, they should have different <strong>type</strong>, <strong>number</strong> or <strong>sequence</strong> of parameters.</p></blockquote>
+<p><strong>For example:</strong><br />
+These two functions have different parameter <strong>type</strong>:</p>
+<pre>sum(int num1, int num2)
+sum(double num1, double num2)</pre>
+<p>These two have different <strong>number</strong> of parameters:</p><div class="lq"><div data-type="ad" data-publisher="Beginnersbook.com" data-format="300x250" data-zone="ros" ></div></div>
+<pre>sum(int num1, int num2)
+sum(int num1, int num2, int num3)
+</pre>
+<p>These two have different <strong>sequence</strong> of parameters:</p>
+<pre>sum(int num1, double num2)
+sum(double num1, int num2)</pre>
+<p>All of the above three cases are valid case of overloading. We can have any number of functions, just remember that the parameter list should be different. For example:</p>
+<pre>int sum(int, int)
+double sum(int, int)</pre>
+<p>This is not allowed as the parameter list is same. Even though they have different return types, its not valid.</p>
+<h2>Function overloading Example</h2>
+<p>Lets take an example to understand function overloading in C++.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class Addition {
+public:
+    int sum(int num1,int num2) {
+        return num1+num2;
+    }
+    int sum(int num1,int num2, int num3) {
+       return num1+num2+num3;
+    }
+};
+int main(void) {
+    Addition obj;
+    cout&lt;&lt;obj.sum(20, 15)&lt;&lt;endl;
+    cout&lt;&lt;obj.sum(81, 100, 10);
+    return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>35
+191</pre>
+<h2>Function overloading Example 2</h2>
+<p>As I mentioned in the beginning of this guide that functions having different return types and same parameter list cannot be overloaded. However if the functions have different parameter list then they can have same or different return types to be eligible for overloading. In short the return type of a function<br />
+does not play any role in function overloading. All that matters is the parameter list of function.</p>
+<pre>#include &lt;iostream&gt;
+using namespace std;
+class DemoClass {
+public:
+    int demoFunction(int i) {
+        return i;
+    }
+    double demoFunction(double d) {
+        return d;
+    }
+};
+int main(void) {
+    DemoClass obj;
+    cout&lt;&lt;obj.demoFunction(100)&lt;&lt;endl;
+    cout&lt;&lt;obj.demoFunction(5005.516);
+   return 0;
+}</pre>
+<p><strong>Output:</strong></p>
+<pre>
+100
+5006.52</pre>
+<h2>Advantages of Function overloading</h2>
+<p>The main advantage of function overloading is to the improve the <strong>code readability</strong> and allows <strong>code reusability</strong>. In the example 1, we have seen how we were able to have more than one function for the same task(addition) with different parameters, this allowed us to add two integer numbers as well as three integer numbers, if we wanted we could have some more functions with same name and four or five arguments.<br />
+Imagine if we didn&#8217;t have function overloading, we either have the limitation to add only two integers or we had to write different name functions for the same task addition, this would reduce the code readability and reusability.</p>
+<div class="bb-nav"><a class="pretut" href="/c++/poly">❮ Previous</a>&nbsp;&nbsp;&nbsp;<a class="nexttut" href="/c++/override">Next ❯</a></div>
+</p></div>
+</div>
+
+{% endblock %}
+
