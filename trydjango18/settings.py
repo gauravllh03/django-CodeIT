@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='gaurav.llh03@gmail.com'
+EMAIL_HOST_USER='gauravcodeclub@gmail.com'
 EMAIL_HOST_PASSWORD='gaurav1234'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
